@@ -16,9 +16,9 @@ jobs:
       - name: Deploy via SSH (SFTP)
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: deepakwebdeveloper.com
+          host: 92.249.46.134
           username: u692901164
           password: ${{ secrets.SSH_PASSWORD }}
-          port: 22
+          port: 65002
           source: "."
           target: "/public_html/wp-content/themes/deepak-sherawat-web-developer/"
