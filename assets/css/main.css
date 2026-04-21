@@ -950,7 +950,7 @@ body.loaded {
 .tj-header-area .header-menu ul > li.has-dropdown > a::after {
 	position: absolute;
 	content: "\2b";
-	font-family: "Font Awesome 6 Pro";
+	font-family: 'FontAwesome';
 	top: 50%;
 	transform: translateY(-50%);
 	right: 0;
