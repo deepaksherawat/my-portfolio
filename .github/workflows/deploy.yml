@@ -6,18 +6,19 @@ on:
       - main
 
 jobs:
-  ftp-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Deploy to Server
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Deploy via SSH (SFTP)
+        uses: appleboy/scp-action@v0.1.7
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./
-          server-dir: /public_html/wp-content/themes/deepak-sherawat-web-developer/
+          host: deepakwebdeveloper.com
+          username: u692901164
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
+          source: "."
+          target: "/public_html/wp-content/themes/deepak-sherawat-web-developer/"
