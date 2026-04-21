@@ -46,48 +46,48 @@
 <div class="row">
 <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
 <div class="logo-box">
-<a href="index.html">
-<img src="assets/images/logo-9.png" alt="Logo" />
+<a href="<?php echo site_url(); ?>">
+<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-9.png" alt="Logo" />
 </a>
 </div>
 <div class="header-menu" id="headerMenu">
 <nav>
 <ul>
 <li class="has-dropdown current-menu-ancestor">
-<a class="current-menu-item" href="index.html">Home</a>
+<a class="current-menu-item" href="<?php echo site_url(); ?>">Home</a>
 <ul class="sub-menu">
 <li class="has-dropdown current-menu-ancestor">
-<a href="index.html">Dark Mode</a>
+<a href="<?php echo site_url(); ?>">Dark Mode</a>
 <ul class="sub-menu">
 <li>
-<a href="index.html">Home One</a>
+<a href="<?php echo site_url(); ?>">Home One</a>
 </li>
 <li>
-<a href="index.html">Home Two</a>
+<a href="<?php echo site_url(); ?>">Home Two</a>
 </li>
 <li>
-<a href="index.html">Home Three</a>
+<a href="<?php echo site_url(); ?>">Home Three</a>
 </li>
 <li>
-<a href="index.html">Home Four</a>
+<a href="<?php echo site_url(); ?>">Home Four</a>
 </li>
 <li>
-<a href="index.html">Home Five</a>
+<a href="<?php echo site_url(); ?>">Home Five</a>
 </li>
 <li>
-<a href="index.html">Home Six</a>
+<a href="<?php echo site_url(); ?>">Home Six</a>
 </li>
 <li>
-<a href="index.html">Home Seven</a>
+<a href="<?php echo site_url(); ?>">Home Seven</a>
 </li>
 <li>
-<a href="index.html">Home Eight</a>
+<a href="<?php echo site_url(); ?>">Home Eight</a>
 </li>
 <li>
-<a href="index.html">Home Nine</a>
+<a href="<?php echo site_url(); ?>">Home Nine</a>
 </li>
 <li class="current-menu-item">
-<a href="index.html">Home Ten</a>
+<a href="<?php echo site_url(); ?>">Home Ten</a>
 </li>
 </ul>
 </li>
@@ -95,34 +95,34 @@
 <a href="index-light.html">Light Mode</a>
 <ul class="sub-menu">
 <li>
-<a href="index.html">Home One</a>
+<a href="<?php echo site_url(); ?>">Home One</a>
 </li>
 <li>
-<a href="index.html">Home Two</a>
+<a href="<?php echo site_url(); ?>">Home Two</a>
 </li>
 <li>
-<a href="index.html">Home Three</a>
+<a href="<?php echo site_url(); ?>">Home Three</a>
 </li>
 <li>
-<a href="index.html">Home Four</a>
+<a href="<?php echo site_url(); ?>">Home Four</a>
 </li>
 <li>
-<a href="index.html">Home Five</a>
+<a href="<?php echo site_url(); ?>">Home Five</a>
 </li>
 <li>
-<a href="index.html">Home Six</a>
+<a href="<?php echo site_url(); ?>">Home Six</a>
 </li>
 <li>
-<a href="index.html">Home Seven</a>
+<a href="<?php echo site_url(); ?>">Home Seven</a>
 </li>
 <li>
-<a href="index.html">Home Eight</a>
+<a href="<?php echo site_url(); ?>">Home Eight</a>
 </li>
 <li>
-<a href="index.html">Home Nine</a>
+<a href="<?php echo site_url(); ?>">Home Nine</a>
 </li>
 <li>
-<a href="index.html">Home Ten</a>
+<a href="<?php echo site_url(); ?>">Home Ten</a>
 </li>
 </ul>
 </li>
@@ -185,48 +185,48 @@
 <div class="row">
 <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
 <div class="logo-box">
-<a href="index.html">
-<img src="assets/images/logo-9.png" alt="Logo" />
+<a href="<?php echo site_url(); ?>">
+<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-9.png" alt="Logo" />
 </a>
 </div>
 <div class="header-menu">
 <nav>
 <ul>
 <li class="has-dropdown current-menu-ancestor">
-<a class="current-menu-item" href="index.html">Home</a>
+<a class="current-menu-item" href="<?php echo site_url(); ?>">Home</a>
 <ul class="sub-menu">
 <li class="has-dropdown current-menu-ancestor">
-<a href="index.html">Dark Mode</a>
+<a href="<?php echo site_url(); ?>">Dark Mode</a>
 <ul class="sub-menu">
 <li>
-<a href="index.html">Home One</a>
+<a href="<?php echo site_url(); ?>">Home One</a>
 </li>
 <li>
-<a href="index.html">Home Two</a>
+<a href="<?php echo site_url(); ?>">Home Two</a>
 </li>
 <li>
-<a href="index.html">Home Three</a>
+<a href="<?php echo site_url(); ?>">Home Three</a>
 </li>
 <li>
-<a href="index.html">Home Four</a>
+<a href="<?php echo site_url(); ?>">Home Four</a>
 </li>
 <li>
-<a href="index.html">Home Five</a>
+<a href="<?php echo site_url(); ?>">Home Five</a>
 </li>
 <li>
-<a href="index.html">Home Six</a>
+<a href="<?php echo site_url(); ?>">Home Six</a>
 </li>
 <li>
-<a href="index.html">Home Seven</a>
+<a href="<?php echo site_url(); ?>">Home Seven</a>
 </li>
 <li>
-<a href="index.html">Home Eight</a>
+<a href="<?php echo site_url(); ?>">Home Eight</a>
 </li>
 <li>
-<a href="index.html">Home Nine</a>
+<a href="<?php echo site_url(); ?>">Home Nine</a>
 </li>
 <li class="current-menu-item">
-<a href="index.html">Home Ten</a>
+<a href="<?php echo site_url(); ?>">Home Ten</a>
 </li>
 </ul>
 </li>
@@ -234,34 +234,34 @@
 <a href="index-light.html">Light Mode</a>
 <ul class="sub-menu">
 <li>
-<a href="index.html">Home One</a>
+<a href="<?php echo site_url(); ?>">Home One</a>
 </li>
 <li>
-<a href="index.html">Home Two</a>
+<a href="<?php echo site_url(); ?>">Home Two</a>
 </li>
 <li>
-<a href="index.html">Home Three</a>
+<a href="<?php echo site_url(); ?>">Home Three</a>
 </li>
 <li>
-<a href="index.html">Home Four</a>
+<a href="<?php echo site_url(); ?>">Home Four</a>
 </li>
 <li>
-<a href="index.html">Home Five</a>
+<a href="<?php echo site_url(); ?>">Home Five</a>
 </li>
 <li>
-<a href="index.html">Home Six</a>
+<a href="<?php echo site_url(); ?>">Home Six</a>
 </li>
 <li>
-<a href="index.html">Home Seven</a>
+<a href="<?php echo site_url(); ?>">Home Seven</a>
 </li>
 <li>
-<a href="index.html">Home Eight</a>
+<a href="<?php echo site_url(); ?>">Home Eight</a>
 </li>
 <li>
-<a href="index.html">Home Nine</a>
+<a href="<?php echo site_url(); ?>">Home Nine</a>
 </li>
 <li>
-<a href="index.html">Home Ten</a>
+<a href="<?php echo site_url(); ?>">Home Ten</a>
 </li>
 </ul>
 </li>
