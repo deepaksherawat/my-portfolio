@@ -21,4 +21,4 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: 65002
           source: "."
-          target: "/public_html/wp-content/themes/deepak-sherawat-web-developer/"
+          target: "/home/u692901164/domains/deepakwebdeveloper.com/public_html/wp-content/themes/deepak-sherawat-web-developer/"
