@@ -55,7 +55,7 @@ wp_enqueue_script('backToTop', get_template_directory_uri() . '/assets/js/backTo
 wp_enqueue_script(
     'main-js',
     get_template_directory_uri() . '/assets/js/main.js',
-    array('jquery','imagesloaded','isotope','appear'),
+    array('jquery','splitting-js','imagesloaded','isotope','appear'),
     '1.0',
     true
 );
