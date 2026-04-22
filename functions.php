@@ -28,6 +28,8 @@ wp_enqueue_script('gsap-scroll-to-plugin-min-js', get_template_directory_uri() .
 wp_enqueue_script('gsap-scroll-trigger.-min-js', get_template_directory_uri() . '/assets/js/gsap-scroll-trigger.min.js', array(), null, true);
 wp_enqueue_script('gsap-split-text-js', get_template_directory_uri() . '/assets/js/gsap-split-text.min.js', array(), null, true);
 wp_enqueue_script('imagesloaded-pkgd-js', get_template_directory_uri() . '/assets/js/imagesloaded-pkgd.js', array(), null, true);
+wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css', array(), null);
+wp_enqueue_script('jquery-appear', get_template_directory_uri() . '/assets/js/jquery.appear.min.js', array('jquery'), null, true);
 wp_enqueue_script('isotope-pkgd-min-js', get_template_directory_uri() . '/assets/js/isotope.pkgd.min.js', array(), null, true);
 wp_enqueue_script('jquery-min-js', get_template_directory_uri() . '/assets/js/jquery.min.js', array(), null, true);
 wp_enqueue_script('lenis-min-js', get_template_directory_uri() . '/assets/js/lenis.min.js', array(), null, true);
@@ -82,5 +84,13 @@ function remove_archive_prefix($title) {
     return $title;
 }
 add_filter('get_the_archive_title', 'remove_archive_prefix');
+
+
+wp_enqueue_style(
+    'font-awesome',
+    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',
+    array(),
+    null
+);
 
 ?>
