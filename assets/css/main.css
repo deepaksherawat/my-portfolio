@@ -4843,6 +4843,11 @@ position: absolute;
 .tj-single__post h1, .tj-single__post h2, .tj-single__post h3, .tj-single__post h4, .tj-single__post h5, .tj-single__post h6, .single-post_tag_share .tj_tag .tag__title{
 	color: var(--dark-blue-1);
 }
+.tj-single__post h2{font-size: 34px}
+.tj-single__post h3{font-size: 30px}
+.tj-single__post h4{font-size: 28px}
+.tj-single__post h5{font-size: 24px}
+.tj-single__post h6{font-size: 20px}
 .tj-post__content .tj-post__btn {
 	margin-top: 30px;
 }
@@ -4991,7 +4996,7 @@ blockquote cite::before {
 .tj-single__post h4,
 .tj-single__post h5,
 .tj-single__post h6 {
-	margin-top: 30px;
+	margin-top: 0px;
 }
 .tj-single__post p {
 	margin-bottom: 20px;
