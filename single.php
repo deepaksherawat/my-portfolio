@@ -23,94 +23,10 @@
                               <span><i class="fa-solid fa-calendar"></i> 11 Jul, 2023</span>
                               <span><i class="fa-solid fa-comment"></i><a href="#">Comments (3)</a></span>
                            </div>
-                           <h3 class="tj-post__title entry-title">The Role of Technology in Modern Logistics Management
-                           </h3>
+                           <h3 class="tj-post__title entry-title"><?php the_title(); ?></h3>
 
                            <div class="tj-post__content">
-                              <p>
-                                 Welcome to our blog, where we celebrate our achievement as an AWS SaaS Competency
-                                 Partner and share insights on
-                                 how we accomplished this significant milestone.
-                              </p>
-
-                              <p>
-                                 As businesses unlock growth opportunities in the digital age, harnessing the power of
-                                 cloud computing has become
-                                 essential. Amazon Web Services (AWS) offers the AWS SaaS Competency Partner program,
-                                 recognizing companies with
-                                 exceptional expertise in delivering Software-as-a-Service solutions on the AWS
-                                 platform.
-                              </p>
-
-                              <p>
-                                 In this blog, we will delve into the strategies, best practices, and key factors that
-                                 accelerated our business
-                                 growth and earned us the prestigious AWS SaaS Competency Partner status.
-                              </p>
-
-                              <blockquote class="wp-block-quote">
-                                <div class="bg-shape">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
-</div>
-                                 <p>
-                                    “Welcome to our blog, where we celebrate our achievement as an AWS SaaS Competency
-                                    Partner and share insights
-                                    on how we accomplished this significant milestone. As businesses unlock growth
-                                    opportunities in the digital
-                                    age, harnessing the power of cloud computing has become essential. Amazon Web
-                                    Services (AWS) offers the AWS
-                                    SaaS Competency.”
-                                 </p>
-                                 <p><cite>Silvester Scott</cite></p>
-                              </blockquote>
-
-                              <h4>The Role of Technology in Modern Logistics Management</h4>
-                              <p>
-                                 Welcome to our blog, where we celebrate our achievement as an AWS SaaS Competency
-                                 Partner and share insights on
-                                 how we accomplished this significant milestone.
-                              </p>
-
-                              <p>
-                                 As businesses unlock growth opportunities in the digital age, harnessing the power of
-                                 cloud computing has become
-                                 essential. Amazon Web Services (AWS) offers the AWS SaaS Competency Partner program,
-                                 recognizing companies with
-                                 exceptional expertise in delivering Software-as-a-Service solutions on the AWS
-                                 platform.
-                              </p>
-
-                              <p>
-                                 In this blog, we will delve into the strategies, best practices, and key factors that
-                                 accelerated our business
-                                 growth and earned us the prestigious AWS SaaS Competency Partner status.
-                              </p>
-                              <p>
-                                 Explore the transformative impact of technology on logistics management. Discuss how
-                                 technologies like IoT, AI,
-                                 and blockchain are reshaping the industry and improving efficiency.
-                              </p>
-
-                              <h6>Key Points</h6>
-                              <ul>
-                                 <li>IoT and Real-Time Tracking</li>
-                                 <li>Artificial Intelligence in Route Optimization and Predictive Analytics</li>
-                                 <li>Blockchain for Enhanced Transparency and Security</li>
-                                 <li>Warehouse Automation and Robotics</li>
-                              </ul>
-
-                              <h4>Conclusion</h4>
-                              <p>
-                                 Emphasize the long-term benefits of integrating sustainable practices into logistics
-                                 operations, both for the
-                                 planet and a company's reputation.
-                              </p>
-
-                              <p>
-                                 These outlines can be expanded into comprehensive blog posts, each providing valuable
-                                 insights and information on
-                                 the respective topics.
-                              </p>
+                              <?php the_content(); ?>
                            </div>
                         </div>
                      </article>
