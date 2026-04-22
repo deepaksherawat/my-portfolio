@@ -1404,7 +1404,6 @@ Description: Gerold - Personal Portfolio HTML5 Template
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  // ===== PORTFOLIO =====
   const cards = document.querySelectorAll(".portfolio_card");
   const portfolioBtn = document.getElementById("loadMorePortfolio");
 
@@ -1418,20 +1417,25 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    portfolioBtn.style.display = (portfolioCount >= cards.length) ? "none" : "inline-block";
+    if (portfolioBtn) {
+      portfolioBtn.style.display =
+        (portfolioCount >= cards.length) ? "none" : "inline-block";
+    }
   }
 
   showPortfolio();
 
-  portfolioBtn.addEventListener("click", function () {
-    let start = portfolioCount;
-    portfolioCount += 3;
-    showPortfolio();
+  if (portfolioBtn) {
+    portfolioBtn.addEventListener("click", function () {
+      let start = portfolioCount;
+      portfolioCount += 3;
+      showPortfolio();
 
-    if (cards[start]) {
-      cards[start].scrollIntoView({ behavior: "smooth" });
-    }
-  });
+      if (cards[start]) {
+        cards[start].scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  }
 
 });
 
@@ -1440,7 +1444,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  // ===== BLOGS =====
   const blogs = document.querySelectorAll(".blog-col");
   const blogBtn = document.getElementById("loadMoreBlog");
 
@@ -1454,14 +1457,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    if (blogCount >= blogs.length) {
-      blogBtn.style.display = "none";
-    } else {
-      blogBtn.style.display = "flex";
+    if (blogBtn) {
+      blogBtn.style.display =
+        (blogCount >= blogs.length) ? "none" : "flex";
     }
   }
 
-  // FORCE RESET (important)
   blogs.forEach(blog => {
     blog.style.display = "none";
     blog.classList.remove("show");
@@ -1469,9 +1470,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   showBlogs();
 
-  blogBtn.addEventListener("click", function () {
-    blogCount += 3;
-    showBlogs();
-  });
+  if (blogBtn) {
+    blogBtn.addEventListener("click", function () {
+      blogCount += 3;
+      showBlogs();
+    });
+  }
 
 });

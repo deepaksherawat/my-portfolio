@@ -27,7 +27,7 @@ wp_enqueue_script('gsap-min-js', get_template_directory_uri() . '/assets/js/gsap
 wp_enqueue_script('gsap-scroll-to-plugin-min-js', get_template_directory_uri() . '/assets/js/gsap-scroll-to-plugin.min.js', array(), null, true);
 wp_enqueue_script('gsap-scroll-trigger.-min-js', get_template_directory_uri() . '/assets/js/gsap-scroll-trigger.min.js', array(), null, true);
 wp_enqueue_script('gsap-split-text-js', get_template_directory_uri() . '/assets/js/gsap-split-text.min.js', array(), null, true);
-wp_enqueue_script('imagesloaded-pkgd-js', get_template_directory_uri() . '/assets/js/imagesloaded-pkgd.js', array(), null, true);
+wp_enqueue_script('imagesloaded-pkgd-js', get_template_directory_uri() . '/assets/js/imagesloaded.pkgd.js', array('jquery'), null, true);
 wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css', array(), null);
 wp_enqueue_script('jquery-appear', get_template_directory_uri() . '/assets/js/jquery.appear.min.js', array('jquery'), null, true);
 wp_enqueue_script('isotope-pkgd-min-js', get_template_directory_uri() . '/assets/js/isotope.pkgd.min.js', array(), null, true);
@@ -35,7 +35,7 @@ wp_enqueue_script('jquery-min-js', get_template_directory_uri() . '/assets/js/jq
 wp_enqueue_script('lenis-min-js', get_template_directory_uri() . '/assets/js/lenis.min.js', array(), null, true);
 wp_enqueue_script('lightcase-js', get_template_directory_uri() . '/assets/js/lightcase.js', array(), null, true);
 wp_enqueue_script('magnific-popup-js', get_template_directory_uri() . '/assets/js/magnific-popup.js', array(), null, true);
-wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js', array(), null, true);
+wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery', 'imagesloaded', 'jquery-appear'), null, true);
 wp_enqueue_script('meanmenu-js', get_template_directory_uri() . '/assets/js/meanmenu.js', array(), null, true);
 wp_enqueue_script('nice-select-min-js', get_template_directory_uri() . '/assets/js/nice-select.min.js', array(), null, true);
 wp_enqueue_script('odometer-min-js', get_template_directory_uri() . '/assets/js/odometer.min.js', array(), null, true);

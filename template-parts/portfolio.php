@@ -236,3 +236,6 @@
 </div>
 </div>
 <!-- end: Portfolio Popup -->
+ </main>
+<!-- End Main Section -->
+<?php get_footer(); ?>
