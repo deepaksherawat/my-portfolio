@@ -10,6 +10,11 @@ get_header();
 get_template_part('template-parts/hero');
 get_template_part('template-parts/service');
 get_template_part('template-parts/portfolio');
+get_template_part('template-parts/resume');
+get_template_part('template-parts/skills');
+get_template_part('template-parts/testimonials');
+get_template_part('template-parts/blog-slider');
+get_template_part('template-parts/faqs');
 ?>
 </main>
 <!-- End Main Section -->

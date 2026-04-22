@@ -5,6 +5,9 @@ Template Name: Portfolio
 get_header();
 ?>
 <main class="site-content" id="content">
+<!-- START: Breadcrumb and Skill Marquee Section -->
+<?php get_template_part('template-parts/breadcrumb'); ?>
+<!-- END: Breadcrumb and Skill Marquee Section -->
 <!-- start: Portfolio Area -->
 <section class="tj-portfolio-section style-8">
 <div class="container">
