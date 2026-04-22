@@ -3,7 +3,7 @@ name: Deploy WordPress Theme (Live)
 on:
   push:
     branches:
-      - main   # 👈 recommend: staging branch use karo
+      - main
 
 jobs:
   deploy:
@@ -13,6 +13,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Clear old theme files
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 92.249.46.134
+          username: u692901164
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 65002
+          script: |
+            rm -rf /public_html/wp-content/themes/deepak-sherawat-web-developer/*
+
       - name: Deploy via SSH (SFTP)
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -20,5 +30,5 @@ jobs:
           username: u692901164
           password: ${{ secrets.SSH_PASSWORD }}
           port: 65002
-          source: "."
-          target: "/public_html/wp-content/themes/deepak-sherawat-web-developer/"
+          source: "./wp-content/themes/deepak-sherawat-web-developer"
+          target: "/public_html/wp-content/themes/"
