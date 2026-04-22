@@ -75,6 +75,11 @@ function load_fontawesome() {
 }
 add_action('wp_enqueue_scripts', 'load_fontawesome');
 
+function my_theme_setup() {
+    add_theme_support('post-thumbnails');
+}
+add_action('after_setup_theme', 'my_theme_setup');
+
 
 function register_my_menus() {
     register_nav_menus(
