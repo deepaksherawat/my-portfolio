@@ -24,4 +24,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD_LIVE }}
           port: 22
           source: "."
-          target: "/home/u692901164/public_html/wp-content/themes/"
+          target: "/home/u692901164/public_html/wp-content/themes/deepak-sherawat-web-developer/"
