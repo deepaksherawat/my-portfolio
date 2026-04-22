@@ -18,6 +18,7 @@ wp_enqueue_style('odometer-theme-default-css', get_template_directory_uri() . '/
 wp_enqueue_style('owl-carousel-min-css', get_template_directory_uri() . '/assets/css/owl.carousel.min.css');
 wp_enqueue_style('responsive-css', get_template_directory_uri() . '/assets/css/responsive.css');
 wp_enqueue_style('swiper-min-css', get_template_directory_uri() . '/assets/css/swiper.min.css');
+wp_enqueue_style('splitting-css', 'https://unpkg.com/splitting/dist/splitting.css', array(), null);
 
 // JS
 // 1. jQuery (WordPress default)
@@ -40,6 +41,7 @@ wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/assets/js/owl
 wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/js/swiper.min.js', array(), null, true);
 wp_enqueue_script('lenis', get_template_directory_uri() . '/assets/js/lenis.min.js', array(), null, true);
 wp_enqueue_script('gsap', get_template_directory_uri() . '/assets/js/gsap.min.js', array(), null, true);
+wp_enqueue_script('splitting-js', 'https://unpkg.com/splitting/dist/splitting.min.js', array(), null, true);
 wp_enqueue_script('gsap-scroll-trigger', get_template_directory_uri() . '/assets/js/gsap-scroll-trigger.min.js', array('gsap'), null, true);
 wp_enqueue_script('gsap-scroll-to', get_template_directory_uri() . '/assets/js/gsap-scroll-to-plugin.min.js', array('gsap'), null, true);
 
