@@ -22,6 +22,6 @@ jobs:
           host: ${{ secrets.FTP_SERVER_LIVE }}
           username: ${{ secrets.FTP_USERNAME_LIVE }}
           password: ${{ secrets.FTP_PASSWORD_LIVE }}
-          port: 65002
+          port: 22
           source: "."
-          target: "/public_html/wp-content/themes/"
+          target: "/home/u692901164/public_html/wp-content/themes/"
