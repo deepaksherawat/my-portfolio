@@ -1,9 +1,9 @@
-name: Deploy WordPress Theme (Staging)
+name: Deploy WordPress Theme (Live)
 
 on:
   push:
     branches:
-      - staging   # 👈 recommend: staging branch use karo
+      - main   # 👈 recommend: staging branch use karo
 
 jobs:
   deploy:
@@ -21,4 +21,4 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: 65002
           source: "."
-          target: "/home/u692901164/domains/deepakwebdeveloper.com/public_html/staging/wp-content/themes/deepak-sherawat-web-developer/"
+          target: "/public_html/wp-content/themes/deepak-sherawat-web-developer/"
