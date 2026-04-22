@@ -58,7 +58,7 @@
 <div class="swiper-slide">
 <div class="service_card">
 <div class="bg-shape">
-<img src="http://deepakwebdeveloper.42web.io/wp-content/themes/deepaksherawat/<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
+<img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
 </div>
 <div class="row">
 <div class="col-lg-6 col-md-6 col-12 service_card_left">
@@ -88,7 +88,7 @@
 <div class="swiper-slide">
 <div class="service_card">
 <div class="bg-shape">
-<img src="http://deepakwebdeveloper.42web.io/wp-content/themes/deepaksherawat/<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
+<img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
 </div>
 <div class="row">
 <div class="col-lg-6 col-md-6 col-12 service_card_left">

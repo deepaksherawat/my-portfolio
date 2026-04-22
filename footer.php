@@ -140,5 +140,33 @@
 <!-- End Footer Area -->
 <!-- JSS here -->
 <?php wp_footer(); ?>
+<scipt>
+    document.addEventListener("DOMContentLoaded", function () {
+    var swiper = new Swiper(".service-slider-8", {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+
+        navigation: {
+            nextEl: ".service-next",
+            prevEl: ".service-prev",
+        },
+
+        pagination: {
+            el: ".service-pagination",
+            clickable: true,
+        },
+
+        breakpoints: {
+            768: {
+                slidesPerView: 1
+            },
+            1024: {
+                slidesPerView: 1
+            }
+        }
+    });
+});
+</script>
 </body>
 </html>
