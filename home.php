@@ -8,6 +8,7 @@ get_header();
 <main class="site-content" id="content">
 <?php
 get_template_part('template-parts/hero');
+get_template_part('template-parts/service');
 
 ?>
 </main>
