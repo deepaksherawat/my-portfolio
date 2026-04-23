@@ -32,7 +32,7 @@
 <div class="swiper-wrapper">
 <?php
 $args = array(
-    'post_type' => 'blog',
+    'post_type' => 'post',
     'posts_per_page' => -1
 );
 $query = new WP_Query($args);
