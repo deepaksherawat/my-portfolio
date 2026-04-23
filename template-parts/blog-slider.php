@@ -30,120 +30,38 @@
 <div class="col-12">
 <div class="swiper blog-slider 5">
 <div class="swiper-wrapper">
-<div class="swiper-slide">
-<div class="blog-item wow fadeInUp" data-wow-delay=".5s">
-<div class="blog-thumb">
-<a href="blog-details.html">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog-1.jpg" alt="" />
-</a>
-<a href="#" class="category">Tutorial</a>
-</div>
-<div class="blog-content">
-<div class="blog-meta">
-<ul class="ul-reset">
-<li><i class="fa-solid fa-calendar"></i> Oct 01, 2022</li>
-<li><i class="fa-solid fa-comment"></i> <a href="#">Comment (0)</a></li>
-</ul>
-</div>
-<h3 class="blog-title"><a href="blog-details.html">top 10 ui ux designers</a></h3>
-</div>
-</div>
-</div>
+<?php
+$args = array(
+    'post_type' => 'blog',
+);
+$query = new WP_Query($args);
+if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
 <div class="swiper-slide">
 <div class="blog-item wow fadeInUp" data-wow-delay=".6s">
 <div class="blog-thumb">
-<a href="blog-details.html">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog-2.jpg" alt="" />
+<a href="<?php the_permalink(); ?>">
+<?php the_post_thumbnail('medium'); ?>
 </a>
-<a href="#" class="category">TIPS</a>
+<?php
+$categories = get_the_category();
+foreach ($categories as $cat) {
+echo '<a class="category" href="' . get_category_link($cat->term_id) . '">' . $cat->name . '</a> ';
+}
+?>
 </div>
 <div class="blog-content">
 <div class="blog-meta">
 <ul class="ul-reset">
-<li><i class="fa-solid fa-calendar"></i> Nov 01, 2022</li>
-<li><i class="fa-solid fa-comment"></i> <a href="#">Comment (0)</a></li>
+<li><i class="fa-solid fa-calendar"></i> <?php echo get_the_date('d M Y'); ?></li>
+<li><i class="fa-solid fa-comment"></i> <a href="<?php comments_link(); ?>"><?php comments_number('0 Comments', '1 Comment', '% Comments'); ?></a></li>
 </ul>
 </div>
-<h3 class="blog-title"><a href="blog-details.html">App Development Guides</a></h3>
+<h3 class="blog-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 </div>
 </div>
 </div>
-<div class="swiper-slide">
-<div class="blog-item wow fadeInUp" data-wow-delay=".7s">
-<div class="blog-thumb">
-<a href="blog-details.html">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog-3.jpg" alt="" />
-</a>
-<a href="#" class="category">FREEBIES</a>
-</div>
-<div class="blog-content">
-<div class="blog-meta">
-<ul class="ul-reset">
-<li><i class="fa-solid fa-calendar"></i> Dec 01, 2022</li>
-<li><i class="fa-solid fa-comment"></i> <a href="#">Comment (0)</a></li>
-</ul>
-</div>
-<h3 class="blog-title"><a href="blog-details.html">learn graphic design free</a></h3>
-</div>
-</div>
-</div>
-<div class="swiper-slide">
-<div class="blog-item wow fadeInUp" data-wow-delay=".5s">
-<div class="blog-thumb">
-<a href="blog-details.html">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog-1.jpg" alt="" />
-</a>
-<a href="#" class="category">Tutorial</a>
-</div>
-<div class="blog-content">
-<div class="blog-meta">
-<ul class="ul-reset">
-<li><i class="fa-solid fa-calendar"></i> Oct 01, 2022</li>
-<li><i class="fa-solid fa-comment"></i> <a href="#">Comment (0)</a></li>
-</ul>
-</div>
-<h3 class="blog-title"><a href="blog-details.html">top 10 ui ux designers</a></h3>
-</div>
-</div>
-</div>
-<div class="swiper-slide">
-<div class="blog-item wow fadeInUp" data-wow-delay=".6s">
-<div class="blog-thumb">
-<a href="blog-details.html">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog-2.jpg" alt="" />
-</a>
-<a href="#" class="category">TIPS</a>
-</div>
-<div class="blog-content">
-<div class="blog-meta">
-<ul class="ul-reset">
-<li><i class="fa-solid fa-calendar"></i> Nov 01, 2022</li>
-<li><i class="fa-solid fa-comment"></i> <a href="#">Comment (0)</a></li>
-</ul>
-</div>
-<h3 class="blog-title"><a href="blog-details.html">App Development Guides</a></h3>
-</div>
-</div>
-</div>
-<div class="swiper-slide">
-<div class="blog-item wow fadeInUp" data-wow-delay=".7s">
-<div class="blog-thumb">
-<a href="blog-details.html">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog-3.jpg" alt="" />
-</a>
-<a href="#" class="category">FREEBIES</a>
-</div>
-<div class="blog-content">
-<div class="blog-meta">
-<ul class="ul-reset">
-<li><i class="fa-solid fa-calendar"></i> Dec 01, 2022</li>
-<li><i class="fa-solid fa-comment"></i> <a href="#">Comment (0)</a></li>
-</ul>
-</div>
-<h3 class="blog-title"><a href="blog-details.html">learn graphic design free</a></h3>
-</div>
-</div>
-</div>              
+<?php endwhile; wp_reset_postdata(); endif; ?>
+              
 </div>
 <div class="blog-pagination"></div>
 </div>
