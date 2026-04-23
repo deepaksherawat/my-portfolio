@@ -20,11 +20,6 @@ jobs:
           username: u692901164
           password: ${{ secrets.FTP_PASSWORD_LIVE }}
           port: 65002
-
-          # 👇 IMPORTANT: sirf theme folder upload karo
-          source: "wp-content/themes/deepak-sherawat-web-developer/*"
-
-          # 👇 LIVE SITE theme folder
+          source: "./*"
           target: "/home/u692901164/public_html/wp-content/themes/deepak-sherawat-web-developer/"
-
           overwrite: true
