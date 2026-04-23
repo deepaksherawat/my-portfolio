@@ -13,19 +13,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Prepare files
-        run: |
-          rm -rf deploy
-          mkdir deploy
-          rsync -av --exclude=deploy ./ deploy/
-
-      - name: Deploy via SSH
+      - name: Deploy Theme to Live Site
         uses: appleboy/scp-action@v0.1.7
         with:
           host: 92.249.46.134
           username: u692901164
           password: ${{ secrets.FTP_PASSWORD_LIVE }}
           port: 65002
-          source: "deploy/*"
+
+          # 👇 IMPORTANT: sirf theme folder upload karo
+          source: "wp-content/themes/deepak-sherawat-web-developer/*"
+
+          # 👇 LIVE SITE theme folder
           target: "/home/u692901164/public_html/wp-content/themes/deepak-sherawat-web-developer/"
+
           overwrite: true
