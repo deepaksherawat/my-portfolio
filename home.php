@@ -9,6 +9,7 @@ get_header();
 <?php
 get_template_part('template-parts/hero');
 get_template_part('template-parts/service');
+get_template_part('template-parts/projects');
 get_template_part('template-parts/resume');
 get_template_part('template-parts/skills');
 get_template_part('template-parts/testimonials');
