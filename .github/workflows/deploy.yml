@@ -1,9 +1,9 @@
-name: Deploy WordPress Theme (Live)
+name: Deploy WordPress Theme (Staging)
 
 on:
   push:
     branches:
-      - main
+      - main   # 👈 recommend: staging branch use karo
 
 jobs:
   deploy:
@@ -11,15 +11,14 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      - name: Deploy Theme to Live Site
+      - name: Deploy via SSH (SFTP)
         uses: appleboy/scp-action@v0.1.7
         with:
           host: 92.249.46.134
           username: u692901164
-          password: ${{ secrets.FTP_PASSWORD_LIVE }}
+          password: ${{ secrets.SSH_PASSWORD }}
           port: 65002
-          source: "./*"
-          target: "/home/u692901164/public_html/wp-content/themes/deepak-sherawat-web-developer/"
-          overwrite: true
+          source: "."
+          target: "/home/u692901164/deepakwebdeveloper.com/public_html/wp-content/themes/deepak-sherawat-web-developer/"
