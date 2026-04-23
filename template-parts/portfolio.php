@@ -142,7 +142,7 @@
         </section>
         <!-- end: Portfolio Area -->
 <!-- start: Portfolio Popup -->
-<?php get_template_part('template-parts/popup-project-detail'); ?>
+
 <!-- end: Portfolio Popup -->
  </main>
 <!-- End Main Section -->
