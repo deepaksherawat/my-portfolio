@@ -114,4 +114,8 @@ wp_enqueue_style(
     null
 );
 
+add_theme_support('post-thumbnails');
+
+add_image_size('blog-card', 409, 368, true); // true = hard crop
+
 ?>

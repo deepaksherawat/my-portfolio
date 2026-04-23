@@ -41,7 +41,7 @@ if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?
 <div class="blog-item wow fadeInUp" data-wow-delay=".6s">
 <div class="blog-thumb">
 <a href="<?php the_permalink(); ?>">
-<?php the_post_thumbnail('full'); ?>
+<?php the_post_thumbnail('blog-card'); ?>
 </a>
 <?php
 $categories = get_the_category();
