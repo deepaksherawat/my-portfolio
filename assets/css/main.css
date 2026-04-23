@@ -4534,6 +4534,7 @@ position: absolute;
 	width: 100%;
 	border-radius: 15px;
 	transition: all 0.5s ease-in-out 0s;
+	height: 320px
 }
 .blog-item:hover .blog-thumb img {
 	transform: scale(1.1);
@@ -4606,6 +4607,11 @@ position: absolute;
 	text-transform: capitalize;
 	margin-bottom: 0;
 	transition: all 0.4s ease-in-out 0s;
+	display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+     overflow: hidden;
+     text-overflow: ellipsis;
 }
 /* END: Blog Section */
 
