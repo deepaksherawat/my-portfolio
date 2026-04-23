@@ -5,29 +5,27 @@ on:
     branches:
       - main
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true   # optional
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4   # ✅ updated
+        uses: actions/checkout@v4
 
       - name: Prepare files
         run: |
-         rm -rf deploy
-         mkdir deploy
-         cp -r $(ls -A | grep -v deploy) deploy/
+          rm -rf deploy
+          mkdir deploy
+          rsync -av --exclude=deploy ./ deploy/
 
       - name: Deploy via SSH
         uses: appleboy/scp-action@v0.1.7
         with:
-         host: 92.249.46.134
-         username: u692901164
-         password: ${{ secrets.FTP_PASSWORD_LIVE }}
-         port: 65002
-         source: "deploy/*"
-         target: "/home/u692901164/public_html/wp-content/themes/deepak-sherawat-web-developer/"
+          host: 92.249.46.134
+          username: u692901164
+          password: ${{ secrets.FTP_PASSWORD_LIVE }}
+          port: 65002
+          source: "deploy/*"
+          target: "/home/u692901164/public_html/wp-content/themes/deepak-sherawat-web-developer/"
+          overwrite: true
