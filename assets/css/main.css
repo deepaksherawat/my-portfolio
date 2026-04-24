@@ -461,7 +461,7 @@ a h6:hover {
 }
 .social-icons li a:hover {
 	border: 1px solid var(--tj-theme-primary);
-	color: var(--tj-white);
+	color: var(--full-black) !important;
 }
 .social-icons li a:hover::before {
 	-webkit-transform: scale(1.1);
@@ -504,7 +504,7 @@ a h6:hover {
 }
 .tj-progress-7-area .section-header .section-title{color: var(--white-1);}
 .section-header .section-title {
-	font-size: 45px;
+	font-size: 44px;
 	color: var(--dark-blue-1);
 	margin-bottom: 0;
 }
@@ -1668,7 +1668,7 @@ body.loaded {
     gap: 20px;
 }
 .hero-section.style-10 .hero-10-socials .social-icons li a {
-    color: var(--tj-white);
+    color: var(--white-1);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -1686,8 +1686,8 @@ body.loaded {
     z-index: 1;
 }
 .hero-section.style-10 .hero-10-socials .social-icons li a::before {
-    background: -webkit-gradient(linear, right top, left top, from(var(--tj-theme-secondary)), to(var(--tj-theme-primary)));
-    background: linear-gradient(-90deg, var(--tj-theme-secondary) 0%, var(--tj-theme-primary) 100%);
+    background: -webkit-gradient(linear-gradient(to right, var(--golden-yellow-1), var(--golden-yellow-2), var(--golden-yellow-3)));
+    background: linear-gradient(to right, var(--golden-yellow-1), var(--golden-yellow-2), var(--golden-yellow-3));
 }
 
 .social-icons li a::before {
@@ -1957,7 +1957,7 @@ body.loaded {
 }
 .tj-portfolio-section.style-8 {
     padding-top: 120px;
-    background-color: var(--tj-theme-accent-1);
+    background: linear-gradient(to right, var(--white-1) 0%, var(--white-2) 51%, var(--white-3) 100%);
     position: relative;
     z-index: 1;
 }
@@ -2186,10 +2186,42 @@ body.loaded {
     margin-bottom: 25px;
 }
 .portfolio_card {
-    border: 1px solid var(--tj-theme-primary);
+    border: 1px solid var(--golden-yellow-1);
     padding: 30px 30px 30px 50px;
     border-radius: 15px;
-    background: #00000000;
+    position: relative;
+    z-index: 9;
+    background: linear-gradient(135deg, var(--dark-blue-2), var(--dark-blue-3), var(--dark-blue-1));
+}
+.portfolio_card .bg-shape{
+	    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+.portfolio_card .bg-shape img{
+	width: 100%;
+	height: 100%;
+}
+.tj-portfolio-5-accordion-list-button a.btn:first-child, button#loadMorePortfolio{
+	background: linear-gradient(to right, var(--golden-yellow-1), var(--golden-yellow-2), var(--golden-yellow-3));
+	color: var(--full-black);
+}
+.tj-portfolio-5-accordion-list-button a.btn:first-child:hover{
+	background: linear-gradient(to right, var(--white-1) 0%, var(--white-2) 51%, var(--white-3) 100%);
+}
+button#loadMorePortfolio:hover{
+	background: linear-gradient(to right, var(--dark-blue-2), var(--dark-blue-3), var(--dark-blue-1));
+	color: var(--white-1);
+}
+.tj-portfolio-5-accordion-list-button a.btn:last-child{
+	background: linear-gradient(to right, var(--white-1) 0%, var(--white-2) 51%, var(--white-3) 100%) !important;
+	color: var(--full-black);
+}
+.tj-portfolio-5-accordion-list-button a.btn:last-child:hover{
+	background: linear-gradient(to right, var(--golden-yellow-1), var(--golden-yellow-2), var(--golden-yellow-3)) !important;
 }
 .service_card_left, .portfolio_card_left {
     padding: 50px 50px 50px 0;
@@ -2513,6 +2545,13 @@ img.service-image, img.portfolio-image {
 *  START: Portfolio Section
 * ===============================
 */
+.tj_main_sidebar .sidebar_widget button.tj-btn-primary{
+	background: linear-gradient(to right, var(--golden-yellow-1), var(--golden-yellow-2), var(--golden-yellow-3));
+	color: var(--full-black);
+}
+.tj_main_sidebar .sidebar_widget button.tj-btn-primary:hover{
+	background: linear-gradient(to right, var(--white-1) 0%, var(--white-2) 51%, var(--white-3) 100%);
+}
 .popup_modal_content .portfolio_info a.btn.tj-btn-primary {
     background: linear-gradient(to right, var(--golden-yellow-1) 0%, var(--golden-yellow-2) 51%, var(--golden-yellow-3) 100%);
     color: var(--full-black);
@@ -4786,7 +4825,7 @@ position: absolute;
 	font-size: 16px;
 	line-height: 1;
 	letter-spacing: 0.01em;
-	color: var(--tj-body);
+	color: var(--full-black);
 }
 .tj-post__meta span a {
 	text-decoration: none;
@@ -4794,7 +4833,9 @@ position: absolute;
 	line-height: 1;
 	color: inherit;
 	transition: all 0.4s ease-in-out 0s;
+	color: var(--full-black);
 }
+.tj_recent_posts ul li .recent-post_content .tj-post__meta span, .tj_recent_posts ul li .recent-post_content .tj-post__meta span a{color: var(--white-1);}
 .tj-post__meta span a:hover {
 	color: var(--tj-theme-primary);
 }
