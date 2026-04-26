@@ -15,9 +15,7 @@
 <div class="service-button wow fadeInRight" data-wow-delay=".5s">
 <a class="btn tj-btn-primary" href="#">View All Expertise <i class="fa-solid fa-arrow-right"></i></a>
 </div>
-<div class="service-shapes">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/h5-progress-2.png" alt="">
-</div>
+
 </div>
 </div>
 </div>
