@@ -1899,6 +1899,24 @@ body.loaded {
 *  START: Services Section Style 8
 * ===============================
 */
+.tj-service-section.style-8.service-page .section-header.style-5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tj-service-section.style-8.service-page .section-header.style-5 .sec-text {
+    justify-items: center;
+}
+.tj-service-section.style-8.service-page .portfolio-shapes {
+    position: absolute;
+    bottom: 20px;
+    right: 10%;
+    max-width: 100px;
+    width: 100%;
+    z-index: -1;
+    -webkit-animation: up-down-move-2 3s forwards infinite alternate;
+    animation: up-down-move-2 3s forwards infinite alternate;
+}
 .tj-service-5-accordion-list-image {
     height: 300px;
     padding: 20px;
@@ -2545,6 +2563,24 @@ img.service-image, img.portfolio-image {
 *  START: Portfolio Section
 * ===============================
 */
+.tj-portfolio-section.style-8.portfolio-page .section-header.style-5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+}
+.tj-portfolio-section.style-8.portfolio-page .section-header.style-5 .sec-text {
+    justify-items: center;
+}
+.tj-portfolio-section.style-8.portfolio-page .portfolio-shapes {
+    position: absolute;
+    right: 10%;
+    max-width: 100px;
+    width: 100%;
+    z-index: -1;
+    -webkit-animation: up-down-move-2 3s forwards infinite alternate;
+    animation: up-down-move-2 3s forwards infinite alternate;
+}
 .tj_main_sidebar .sidebar_widget button.tj-btn-primary{
 	background: linear-gradient(to right, var(--golden-yellow-1), var(--golden-yellow-2), var(--golden-yellow-3));
 	color: var(--full-black);
@@ -2600,8 +2636,8 @@ img.service-image, img.portfolio-image {
 }
 .portfolio-section.style-5 .section-header .portfolio-shapes, .tj-service-section.style-8 .section-header .service-shapes {
     position: absolute;
-    bottom: 20px;
-    right: 32%;
+    bottom: 55px;
+    left: 18%;
     max-width: 100px;
     width: 100%;
     z-index: -1;
@@ -3254,9 +3290,12 @@ img.service-image, img.portfolio-image {
 	gap: 50px;
 	padding: 0px 40px 0px 0px;
 }
-.popup_modal_content .portfolio_info .portfolio_info_text,
 .popup_modal_content .portfolio_info .portfolio_info_items {
-	max-width: calc(50% - 25px);
+	max-width: calc(65% - 25px);
+	width: 100%;
+}
+.popup_modal_content .portfolio_info .portfolio_info_text{
+	max-width: calc(35% - 25px);
 	width: 100%;
 }
 .portfolio_description .title,
@@ -3289,7 +3328,7 @@ img.service-image, img.portfolio-image {
 	row-gap: 30px;
 }
 .portfolio_info .portfolio_info_items .info_item {
-	max-width: calc(50% - 10px);
+	max-width: calc(33% - 15px);
 	width: 100%;
 }
 .portfolio_info_items .info_item .key {

@@ -2,7 +2,10 @@
 <!-- Start Main Section -->
 <main class="site-content" id="content">
 <!-- START: Breadcrumb and Skill Marquee Section -->
-<?php get_template_part('template-parts/breadcrumb'); ?>
+<?php
+get_template_part('template-parts/breadcrumb');
+get_template_part('template-parts/marquee');
+?>
 <!-- END: Breadcrumb and Skill Marquee Section -->
 </main>
 <!-- End Main Section -->
