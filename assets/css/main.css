@@ -2643,6 +2643,7 @@ img.service-image, img.portfolio-image {
     z-index: -1;
     -webkit-animation: up-down-move-2 3s forwards infinite alternate;
     animation: up-down-move-2 3s forwards infinite alternate;
+	display: none;
 }
 .portfolio-section.style-5 .section-header .portfolio-shapes img {
     width: 100%;
