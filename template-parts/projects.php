@@ -54,8 +54,8 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 </div>
 <div class="content-box">
 <div class="portfolio-text">
-<h5 class="portfolio-title"><a class="modal-popup" href="#portfolio-wrapper">Deloitte</a></h5>
-<p><?php the_title(); ?></p>
+<h5 class="portfolio-title"><a class="modal-popup" href="#portfolio-wrapper"><?php the_title(); ?></a></h5>
+<p>Project was about precision and information.</p>
 </div>
 <div class="portfolio-arrow">
 <a class="modal-popup" href="#portfolio-wrapper">
