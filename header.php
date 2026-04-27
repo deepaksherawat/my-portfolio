@@ -48,7 +48,7 @@
 <div class="logo-box">
 <a href="<?php echo site_url(); ?>">
 <?php 
-$logo = get_field('main_logo');
+$logo = get_field('main_logo', 'option');
 if( !empty( $logo ) ): ?>
     <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" />
 <?php endif; ?>
@@ -86,7 +86,7 @@ wp_nav_menu(array(
 <div class="logo-box">
 <a href="<?php echo site_url(); ?>">
 <?php 
-$logo = get_field('main_logo');
+$logo = get_field('main_logo', 'option');
 if( !empty( $logo ) ): ?>
     <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" />
 <?php endif; ?>
