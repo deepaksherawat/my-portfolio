@@ -682,12 +682,12 @@
 	width: 0;
 	height: 1px;
 	bottom: -14px;
-	left: 0;
+	left: -70%;
 	background: var(--tj-white);
 	transition: 0.4s;
 }
 .text-section .section-header .chat-mail .link:hover:before {
-	width: 100%;
+	width: 170%;
 }
 .text-section .section-header .chat-mail .link i {
 	display: inline-flex;
