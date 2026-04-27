@@ -47,7 +47,11 @@
 <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
 <div class="logo-box">
 <a href="<?php echo site_url(); ?>">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-9.png" alt="Logo" />
+<?php 
+$logo = get_field('main_logo');
+if( !empty( $logo ) ): ?>
+    <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" />
+<?php endif; ?>
 </a>
 </div>
 <div class="header-menu" id="headerMenu">
@@ -81,7 +85,11 @@ wp_nav_menu(array(
 <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
 <div class="logo-box">
 <a href="<?php echo site_url(); ?>">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-9.png" alt="Logo" />
+<?php 
+$logo = get_field('main_logo');
+if( !empty( $logo ) ): ?>
+    <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" />
+<?php endif; ?>
 </a>
 </div>
 <div class="header-menu">
