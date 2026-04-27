@@ -8,8 +8,14 @@
 <!-- Site Title -->
 <title>Portfolio | Gerold - Personal Portfolio HTML5 Template</title>
 <!-- Place favicon.ico in the root directory -->
-<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.png" />
-<link rel="shortcut icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.png" />
+ <?php 
+$favicon = get_field('favicon', 'option');
+if($favicon){
+?>
+<link rel="apple-touch-icon" href="<?php echo $favicon['url'] ?>" />
+<link rel="shortcut icon" type="image/png" href="<?php echo $favicon['url'] ?>" />
+<?php } ?>
+
 <!-- CSS here -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
 <?php wp_head(); ?>
