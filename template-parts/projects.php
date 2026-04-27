@@ -43,7 +43,7 @@ while($query->have_posts()) : $query->the_post();
 <div class="swiper-slide">
 <div class="portfolio-item style-5 wow fadeInUp" data-wow-delay=".9s">
 <div class="image-box">
-<a class="modal-popup" href="#portfolio-wrapper">
+<a class="modal-popup" href="#portfolio-wrapper-<?php echo get_the_ID(); ?>">
 <?php 
 if ( has_post_thumbnail() ) {
 $img = get_the_post_thumbnail_url(get_the_ID(), 'full');
@@ -54,11 +54,11 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 </div>
 <div class="content-box">
 <div class="portfolio-text">
-<h5 class="portfolio-title"><a class="modal-popup" href="#portfolio-wrapper"><?php the_title(); ?></a></h5>
+<h5 class="portfolio-title"><a class="modal-popup" href="#portfolio-wrapper-<?php echo get_the_ID(); ?>"><?php the_title(); ?></a></h5>
 <p><?php the_category(', '); ?></p>
 </div>
 <div class="portfolio-arrow">
-<a class="modal-popup" href="#portfolio-wrapper">
+<a class="modal-popup" href="#portfolio-wrapper-<?php echo get_the_ID(); ?>">
 <span class="icon_box">
 <i class="icon_first fa-solid fa-arrow-right"></i>
 <i class="icon_second fa-solid fa-arrow-right"></i>

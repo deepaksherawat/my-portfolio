@@ -1,5 +1,5 @@
 <!-- start: Portfolio Popup -->
-<div id="portfolio-wrapper" class="popup_content_area zoom-anim-dialog mfp-hide" data-lenis-prevent>
+<div id="portfolio-wrapper-<?php echo get_the_ID(); ?>" class="popup_content_area zoom-anim-dialog mfp-hide" data-lenis-prevent>
 <div class="popup_modal_content">
 <div class="portfolio_info">
 <div class="portfolio_info_text">
