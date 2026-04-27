@@ -52,8 +52,8 @@ $logo = get_field('main_logo', 'option');
 if( !empty( $logo ) ): ?>
     <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" />
 <?php endif; ?>
-</a>
 <p class="logo_tagline"><?php echo get_field('main_logo_tagline', 'option'); ?></p>
+</a>
 </div>
 <div class="header-menu" id="headerMenu">
 <?php
