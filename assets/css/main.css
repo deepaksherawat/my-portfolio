@@ -902,7 +902,7 @@ body.loaded {
     justify-items: center;
 }
 .tj-header-area.header-10 .logo-box p.logo_tagline {
-    color: #fff;
+    color: #dcb86c;
     text-decoration: none !important;
     font-size: 14px;
 	text-transform: uppercase;
@@ -915,6 +915,8 @@ body.loaded {
   flex: 1;
   height: 1px;
   background: #dcb86c;
+  flex: none;
+  width: 40px;
 }
 .tj-header-area.header-10 .logo-box p.logo_tagline::before{
   margin-right: 10px;
