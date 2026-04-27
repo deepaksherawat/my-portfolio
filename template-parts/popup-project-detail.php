@@ -3,7 +3,7 @@
 <div class="popup_modal_content">
 <div class="portfolio_info">
 <div class="portfolio_info_text">
-<h2 class="title">DStudio</h2>
+<h2 class="title"><?php the_title(); ?></h2>
 <div class="desc">
 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered  alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
 </div>
