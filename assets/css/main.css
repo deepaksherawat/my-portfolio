@@ -3300,7 +3300,7 @@ img.service-image, img.portfolio-image {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 }
-#portfolio-wrapper .popup_modal_content{
+[id^="portfolio-wrapper-"] .popup_modal_content{
 	background: linear-gradient(to right, var(--dark-blue-2) 0%, var(--dark-blue-3) 51%, var(--dark-blue-1) 100%);
 }
 .popup_modal_content {
