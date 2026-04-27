@@ -76,7 +76,13 @@ function load_fontawesome() {
 add_action('wp_enqueue_scripts', 'load_fontawesome');
 
 function my_theme_setup() {
+    add_theme_support('title-tag');
+    add_theme_support('custom-logo');
+    add_theme_support('site-icon');
     add_theme_support('post-thumbnails');
+    add_theme_support('automatic-feed-links');
+    add_theme_support('customize-selective-refresh-widgets');
+    add_theme_support('html5', array('search-form', 'comment-form', 'gallery', 'caption'));
 }
 add_action('after_setup_theme', 'my_theme_setup');
 

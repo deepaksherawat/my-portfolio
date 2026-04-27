@@ -4,18 +4,6 @@
 <meta charset="utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="" />
-<!-- Site Title -->
-<title>Portfolio | Gerold - Personal Portfolio HTML5 Template</title>
-<!-- Place favicon.ico in the root directory -->
- <?php 
-$favicon = get_field('favicon', 'option');
-if($favicon){
-?>
-<link rel="apple-touch-icon" href="<?php echo $favicon['url'] ?>" />
-<link rel="shortcut icon" type="image/png" href="<?php echo $favicon['url'] ?>" />
-<?php } ?>
-
 <!-- CSS here -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
 <?php wp_head(); ?>
