@@ -51,118 +51,13 @@
 </a>
 </div>
 <div class="header-menu" id="headerMenu">
-<nav>
-<ul>
-<li class="has-dropdown current-menu-ancestor">
-<a class="current-menu-item" href="<?php echo site_url(); ?>">Home</a>
-<ul class="sub-menu">
-<li class="has-dropdown current-menu-ancestor">
-<a href="<?php echo site_url(); ?>">Dark Mode</a>
-<ul class="sub-menu">
-<li>
-<a href="<?php echo site_url(); ?>">Home One</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Two</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Three</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Four</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Five</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Six</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Seven</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Eight</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Nine</a>
-</li>
-<li class="current-menu-item">
-<a href="<?php echo site_url(); ?>">Home Ten</a>
-</li>
-</ul>
-</li>
-<li class="has-dropdown">
-<a href="index-light.html">Light Mode</a>
-<ul class="sub-menu">
-<li>
-<a href="<?php echo site_url(); ?>">Home One</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Two</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Three</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Four</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Five</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Six</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Seven</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Eight</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Nine</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Ten</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="about.html">About</a></li>
-<li class="has-dropdown"><a href="services.html">Services</a>
-<ul class="sub-menu">
-<li>
-<a href="services.html">Service</a>
-</li>
-<li>
-<a href="single-services.html">Single Service</a>
-</li>
-</ul>
-</li>
-<li class="has-dropdown"><a href="portfolio.html">Portfolios</a>
-<ul class="sub-menu">
-<li>
-<a href="portfolio.html">Portfolios</a>
-</li>
-<li>
-<a href="single-portfolio.html">Single Portfolio</a>
-</li>
-</ul>
-</li>
-<li class="has-dropdown">
-<a href="blog.html">Blog</a>
-<ul class="sub-menu">
-<li>
-<a href="blog.html">Blog</a>
-</li>
-<li>
-<a href="blog-details.html">Blog Details</a>
-</li>
-</ul>
-</li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
+<?php
+wp_nav_menu(array(
+'theme_location' => 'primary-menu',
+'menu_class'     => 'main-menu',
+'container'      => 'nav'
+));
+?>
 </div>
 <div class="mobile-menu d-lg-none"></div>
 <div class="header-button d-none d-lg-inline-flex">
@@ -190,118 +85,13 @@
 </a>
 </div>
 <div class="header-menu">
-<nav>
-<ul>
-<li class="has-dropdown current-menu-ancestor">
-<a class="current-menu-item" href="<?php echo site_url(); ?>">Home</a>
-<ul class="sub-menu">
-<li class="has-dropdown current-menu-ancestor">
-<a href="<?php echo site_url(); ?>">Dark Mode</a>
-<ul class="sub-menu">
-<li>
-<a href="<?php echo site_url(); ?>">Home One</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Two</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Three</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Four</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Five</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Six</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Seven</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Eight</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Nine</a>
-</li>
-<li class="current-menu-item">
-<a href="<?php echo site_url(); ?>">Home Ten</a>
-</li>
-</ul>
-</li>
-<li class="has-dropdown">
-<a href="index-light.html">Light Mode</a>
-<ul class="sub-menu">
-<li>
-<a href="<?php echo site_url(); ?>">Home One</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Two</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Three</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Four</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Five</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Six</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Seven</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Eight</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Nine</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Ten</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="about.html">About</a></li>
-<li class="has-dropdown"><a href="services.html">Services</a>
-<ul class="sub-menu">
-<li>
-<a href="services.html">Service</a>
-</li>
-<li>
-<a href="single-services.html">Single Service</a>
-</li>
-</ul>
-</li>
-<li class="has-dropdown"><a href="portfolio.html">Portfolios</a>
-<ul class="sub-menu">
-<li>
-<a href="portfolio.html">Portfolios</a>
-</li>
-<li>
-<a href="single-portfolio.html">Single Portfolio</a>
-</li>
-</ul>
-</li>
-<li class="has-dropdown">
-<a href="blog.html">Blog</a>
-<ul class="sub-menu">
-<li>
-<a href="blog.html">Blog</a>
-</li>
-<li>
-<a href="blog-details.html">Blog Details</a>
-</li>
-</ul>
-</li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
+<?php
+wp_nav_menu(array(
+'theme_location' => 'primary-menu',
+'menu_class'     => 'main-menu',
+'container'      => 'nav'
+));
+?>
 </div>
 <div class="mobile-menu d-lg-none"></div>
 <div class="header-button d-none d-lg-inline-flex">
