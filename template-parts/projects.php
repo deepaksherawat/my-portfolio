@@ -122,7 +122,6 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered  alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
 </div>
 </div>
-
 <div class="portfolio_story_approach">
 <div class="portfolio_story">
 <div class="story_title">
@@ -141,35 +140,26 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 </div>
 </div>
 </div>
-<?php
-$prev = get_previous_post();
-$next = get_next_post();
-?>
 <div class="portfolio_navigation">
-<?php if($prev): ?>
 <div class="navigation_item prev-project">
-<a href="<?php echo get_permalink($prev->ID); ?>" class="project">
+<a href="#" class="project">
 <i class="fa-solid fa-arrow-right"></i>
 <div class="nav_project">
 <div class="label">Previous Project</div>
-<h3 class="title"><?php echo get_the_title($prev->ID); ?></h3>
+<h3 class="title">Sebastian</h3>
 </div>
 </a>
 </div>
-<?php endif; ?>
-<?php if($next): ?>
 <div class="navigation_item next-project">
-<a href="<?php echo get_permalink($next->ID); ?>" class="project">
+<a href="#" class="project">
 <div class="nav_project">
 <div class="label">Next Project</div>
-<h3 class="title"><?php echo get_the_title($next->ID); ?></h3>
+<h3 class="title">Qwillo</h3>
 </div>
 <i class="fa-solid fa-arrow-right"></i>
 </a>
 </div>
-<?php endif; ?>
 </div>
-<?php endif; ?>
 </div>
 </div>
 <!-- end: Portfolio Popup -->
