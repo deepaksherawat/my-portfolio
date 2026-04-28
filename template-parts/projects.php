@@ -83,20 +83,20 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 <div class="portfolio_info_items">
 <?php if( get_field('project_name') ): ?>
 <div class="info_item">
-<div class="key">Project Name</div>
+<div class="key">Project Name 1</div>
 <div class="value"><?php the_field('project_name'); ?></div>
 </div>
 <?php endif; ?>
 <div class="info_item">
-<div class="key">Client</div>
+<div class="key">Client 1</div>
 <div class="value">Artboard Studio</div>
 </div>
 <div class="info_item">
-<div class="key">Start Date</div>
+<div class="key">Start Date 1</div>
 <div class="value">August 20, 2023</div>
 </div>
 <div class="info_item">
-<div class="key">Designer</div>
+<div class="key">Designer 1</div>
 <div class="value"><a href="#">ThemeJunction</a></div>
 </div>
 </div>
