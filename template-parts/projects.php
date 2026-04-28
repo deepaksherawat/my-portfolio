@@ -151,25 +151,27 @@ $case_study_content = get_sub_field('case_study_content');
 <?php endif;
 $prev = get_previous_post();
 $next = get_next_post();
+$prev_id = $prev ? $prev->ID : '';
+$next_id = $next ? $next->ID : '';
 ?>
 <div class="portfolio_navigation">
 <?php if($prev): ?>
 <div class="navigation_item prev-project">
-<a href="<?php echo get_permalink($prev->ID); ?>" class="project">
+<a href="#portfolio-wrapper-<?php echo $prev_id; ?>" class="project popup-link">
 <i class="fa-solid fa-arrow-right"></i>
 <div class="nav_project">
 <div class="label">Previous Project</div>
-<h3 class="title"><?php echo get_the_title($prev->ID); ?></h3>
+<h3 class="title"><?php echo get_the_title($prev_id); ?></h3>
 </div>
 </a>
 </div>
 <?php endif;
 if($next): ?>
 <div class="navigation_item next-project">
-<a href="<?php echo get_permalink($next->ID); ?>" class="project">
+<a href="#portfolio-wrapper-<?php echo $next_id; ?>" class="project popup-link">
 <div class="nav_project">
 <div class="label">Next Project</div>
-<h3 class="title"><?php echo get_the_title($next->ID); ?></h3>
+<h3 class="title"><?php echo get_the_title($next_id); ?></h3>
 </div>
 <i class="fa-solid fa-arrow-right"></i>
 </a>
