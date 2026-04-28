@@ -3318,11 +3318,11 @@ img.service-image, img.portfolio-image {
 	padding: 0px 40px 0px 0px;
 }
 .popup_modal_content .portfolio_info .portfolio_info_items {
-	max-width: calc(65% - 25px);
+	max-width: calc(50% - 25px);
 	width: 100%;
 }
 .popup_modal_content .portfolio_info .portfolio_info_text{
-	max-width: calc(35% - 25px);
+	max-width: calc(50% - 25px);
 	width: 100%;
 }
 .portfolio_description .title,
@@ -3355,7 +3355,7 @@ img.service-image, img.portfolio-image {
 	row-gap: 30px;
 }
 .portfolio_info .portfolio_info_items .info_item {
-	max-width: calc(33% - 15px);
+	max-width: calc(50% - 15px);
 	width: 100%;
 }
 .portfolio_info_items .info_item .key {
