@@ -76,7 +76,17 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 <div class="portfolio_info_text">
 <h2 class="title"><?php the_title(); ?></h2>
 <div class="desc">
-<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered  alteration in some form.</p>
+<?php
+$desc = get_field('project_description');
+$limit = 120; // jitne characters chahiye
+if($desc){
+echo substr(strip_tags($desc), 0, $limit);
+if(strlen($desc) > $limit){
+echo '... ';
+echo '<a href="#project-full-content" class="project_read_more">Read More</a>';
+}
+}
+?>
 </div>
 <?php if( get_field('website_url') ): ?>
 <a href="<?php the_field('website_url'); ?>" target="_blank" class="btn tj-btn-primary">live preview <i class="fa-solid fa-arrow-right"></i></a>
@@ -124,7 +134,7 @@ if( get_field('launch_date') ): ?>
 </div>
 </div>
 <?php if( get_field('project_description') ): ?>
-<div class="portfolio_description">
+<div id="project-full-content" class="portfolio_description">
 <h2 class="title">Project Description</h2>
 <div class="desc">
 <?php the_field('project_description'); ?>
@@ -148,36 +158,7 @@ $case_study_content = get_sub_field('case_study_content');
 </div>
 <?php endwhile; ?>
 </div>
-<?php endif;
-$prev = get_previous_post();
-$next = get_next_post();
-$prev_id = $prev ? $prev->ID : '';
-$next_id = $next ? $next->ID : '';
-?>
-<div class="portfolio_navigation">
-<?php if($prev): ?>
-<div class="navigation_item prev-project">
-<a href="#portfolio-wrapper-<?php echo get_the_ID(); ?>" class="project popup-link">
-<i class="fa-solid fa-arrow-right"></i>
-<div class="nav_project">
-<div class="label">Previous Project</div>
-<h3 class="title"><?php echo get_the_title($prev_id); ?></h3>
-</div>
-</a>
-</div>
-<?php endif;
-if($next): ?>
-<div class="navigation_item next-project">
-<a href="#portfolio-wrapper-<?php echo get_the_ID(); ?>" class="project popup-link">
-<div class="nav_project">
-<div class="label">Next Project</div>
-<h3 class="title"><?php echo get_the_title($next_id); ?></h3>
-</div>
-<i class="fa-solid fa-arrow-right"></i>
-</a>
-</div>
 <?php endif; ?>
-</div>
 
 </div>
 </div>
