@@ -3304,7 +3304,7 @@ img.service-image, img.portfolio-image {
 	background: linear-gradient(to right, var(--dark-blue-2) 0%, var(--dark-blue-3) 51%, var(--dark-blue-1) 100%);
 }
 .popup_modal_content {
-	background-color: var(--tj-white);
+	background: linear-gradient(to right, var(--dark-blue-2) 0%, var(--dark-blue-3) 51%, var(--dark-blue-1) 100%);
 	padding: 40px;
 }
 .popup_modal_content .portfolio_info {
