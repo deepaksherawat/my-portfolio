@@ -46,7 +46,7 @@ while($query->have_posts()) : $query->the_post();
 <a class="modal-popup" href="#portfolio-wrapper-<?php echo get_the_ID(); ?>">
 <?php 
 if ( has_post_thumbnail() ) {
-$img = get_the_post_thumbnail_url(get_the_ID(), 'full');
+$img = get_the_post_thumbnail_url(get_the_ID(), 'project_thumbnail');
 echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 }
 ?>
@@ -78,7 +78,7 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 <div class="desc">
 <?php
 $desc = get_field('project_description');
-$limit = 200; // jitne characters chahiye
+$limit = 250; // jitne characters chahiye
 if($desc){
 echo substr(strip_tags($desc), 0, $limit);
 if(strlen($desc) > $limit){
