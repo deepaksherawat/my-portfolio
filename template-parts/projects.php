@@ -7,25 +7,18 @@
 <div class="row">
 <div class="col-12">
 <div class="section-header style-3 portfolio_nav_desktop">
-<?php if( get_field('project_sub_heading', 'option') || get_field('project_main_heading', 'option') ): ?>
 <div class="sec-text">
-<?php if( get_field('project_sub_heading', 'option') ): ?>
-<span class="subtitle wow fadeInLeft" data-wow-delay=".3s"><?php the_field('project_sub_heading', 'option'); ?></span>
-<?php endif; ?>
-<?php if( get_field('project_main_heading', 'option') ): ?>
-<h2 class="title"><?php the_field('project_main_heading', 'option'); ?></h2>
-<?php endif; ?>
+<span class="subtitle wow fadeInLeft" data-wow-delay=".3s">Behind the Pixels</span>
+<h2 class="title">My Latest Projects</h2>
 </div>
-<?php endif; ?>
 <div class="portfolio-navigation d-none d-lg-inline-flex wow fadeInRight" data-wow-delay=".4s">
 <div class="portfolio-prev"><i class="fa-solid fa-arrow-left"></i></div>
 <div class="portfolio-next"><i class="fa-solid fa-arrow-right"></i></div>
 </div>
-<?php if( get_field('project_button_link', 'option') ): ?>
 <div class="portfolio-button wow fadeInRight" data-wow-delay=".5s">
-<a class="btn tj-btn-primary" href="<?php the_field('project_button_link', 'option'); ?>"><?php the_field('project_button_text', 'option'); ?> <i class="fa-solid fa-arrow-right"></i></a>
+<a class="btn tj-btn-primary" href="#">View All Project <i class="fa-solid fa-arrow-right"></i></a>
 </div>
-<?php endif; ?>
+
 </div>
 </div>
 </div>
@@ -62,14 +55,7 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 <div class="content-box">
 <div class="portfolio-text">
 <h5 class="portfolio-title"><a class="modal-popup" href="#portfolio-wrapper-<?php echo get_the_ID(); ?>"><?php the_title(); ?></a></h5>
-<p>
-<?php 
-$terms = get_the_terms(get_the_ID(), 'project-type');
-if( $terms && !is_wp_error($terms) ):
-    echo implode(', ', wp_list_pluck($terms, 'name'));
-endif;
-?>
-</p>
+<p><?php the_category(', '); ?></p>
 </div>
 <div class="portfolio-arrow">
 <a class="modal-popup" href="#portfolio-wrapper-<?php echo get_the_ID(); ?>">
@@ -99,25 +85,25 @@ endif;
 <div class="portfolio_info_items">
 <?php if( get_field('project_name') ): ?>
 <div class="info_item">
-<div class="key">PROJECT NAME</div>
+<div class="key">Project Name</div>
 <div class="value"><?php the_field('project_name'); ?></div>
 </div>
 <?php endif; ?>
 <?php if( get_field('developed_in') ): ?>
 <div class="info_item">
-<div class="key">DEVELOPED IN</div>
+<div class="key">Developed In</div>
 <div class="value"><?php the_field('developed_in'); ?></div>
 </div>
 <?php endif; ?>
 <?php if( get_field('technology') ): ?>
 <div class="info_item">
-<div class="key">TECHNOLOGY</div>
+<div class="key">Technology</div>
 <div class="value"><?php the_field('technology'); ?></div>
 </div>
 <?php endif; ?>
 <?php if( get_field('launch_date') ): ?>
 <div class="info_item">
-<div class="key">LAUNCH DATE</div>
+<div class="key">Launch Date</div>
 <div class="value"><a href="#"><?php the_field('launch_date'); ?></a></div>
 </div>
 <?php endif; ?>
@@ -211,11 +197,9 @@ $next = get_next_post();
 <div class="portfolio-prev"><i class="fa-solid fa-arrow-left"></i></div>
 <div class="portfolio-next"><i class="fa-solid fa-arrow-right"></i></div>
 </div>
-<?php if( get_field('project_button_link', 'option') ): ?>
 <div class="portfolio-button wow fadeInRight" data-wow-delay=".5s">
-<a class="btn tj-btn-primary" href="<?php the_field('project_button_link', 'option'); ?>"><?php the_field('project_button_text', 'option'); ?> <i class="fa-solid fa-arrow-right"></i></a>
+<a class="btn tj-btn-primary" href="#">View All Project <i class="fa-solid fa-arrow-right"></i></a>
 </div>
-<?php endif; ?>
 </div>
 </div>
 </div>
