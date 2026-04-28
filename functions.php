@@ -80,6 +80,7 @@ function my_theme_setup() {
     add_theme_support('custom-logo');
     add_theme_support('site-icon');
     add_theme_support('post-thumbnails');
+    add_image_size('project_image_size', 937, 429, true); // true = crop (no stretch)
     add_theme_support('automatic-feed-links');
     add_theme_support('customize-selective-refresh-widgets');
     add_theme_support('html5', array('search-form', 'comment-form', 'gallery', 'caption'));
