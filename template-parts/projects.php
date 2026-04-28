@@ -121,13 +121,12 @@ if( get_field('launch_date') ): ?>
 </div>
 <?php
 $images = get_field('project_gallery');
-$size = 'full'; // (thumbnail, medium, large, full or custom size)
 if( $images ):
 ?>
 <div class="portfolio_gallery owl-carousel">
-<?php foreach( $images as $image_id ): ?>
+<?php foreach( $images as $image ): ?>
 <div class="gallery_item">
-<?php echo wp_get_attachment_image( $image_id, $size ); ?>
+<img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 </div>
 <?php endforeach; ?>
 </div>
