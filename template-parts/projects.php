@@ -78,27 +78,35 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 <div class="desc">
 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered  alteration in some form.</p>
 </div>
-<a href="#" class="btn tj-btn-primary">live preview <i class="fa-solid fa-arrow-right"></i></a>
+<?php if( get_field('website_url') ): ?>
+<a href="<?php the_field('website_url'); ?>" target="_blank" class="btn tj-btn-primary">live preview <i class="fa-solid fa-arrow-right"></i></a>
+<?php endif; ?>
 </div>
 <div class="portfolio_info_items">
 <?php if( get_field('project_name') ): ?>
 <div class="info_item">
-<div class="key">Project Name 1</div>
+<div class="key">Project Name</div>
 <div class="value"><?php the_field('project_name'); ?></div>
 </div>
+<?php endif;
+if( get_field('developed_in') ): ?>
+<div class="info_item">
+<div class="key">Developed In</div>
+<div class="value"><?php the_field('developed_in'); ?></div>
+</div>
+<?php endif;
+if( get_field('technology') ): ?>
+<div class="info_item">
+<div class="key">Technology</div>
+<div class="value"><?php the_field('technology'); ?></div>
+</div>
+<?php endif;
+if( get_field('launch_date') ): ?>
+<div class="info_item">
+<div class="key">Launch Date</div>
+<div class="value"><?php the_field('launch_date'); ?></div>
+</div>
 <?php endif; ?>
-<div class="info_item">
-<div class="key">Client 1</div>
-<div class="value">Artboard Studio</div>
-</div>
-<div class="info_item">
-<div class="key">Start Date 1</div>
-<div class="value">August 20, 2023</div>
-</div>
-<div class="info_item">
-<div class="key">Designer 1</div>
-<div class="value"><a href="#">ThemeJunction</a></div>
-</div>
 </div>
 </div>
 <div class="portfolio_gallery owl-carousel">
