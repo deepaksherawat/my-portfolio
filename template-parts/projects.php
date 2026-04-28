@@ -157,7 +157,7 @@ $next_id = $next ? $next->ID : '';
 <div class="portfolio_navigation">
 <?php if($prev): ?>
 <div class="navigation_item prev-project">
-<a href="#portfolio-wrapper-<?php echo $prev_id; ?>" class="project popup-link">
+<a href="#portfolio-wrapper-<?php echo get_the_ID(); ?>" class="project popup-link">
 <i class="fa-solid fa-arrow-right"></i>
 <div class="nav_project">
 <div class="label">Previous Project</div>
@@ -168,7 +168,7 @@ $next_id = $next ? $next->ID : '';
 <?php endif;
 if($next): ?>
 <div class="navigation_item next-project">
-<a href="#portfolio-wrapper-<?php echo $next_id; ?>" class="project popup-link">
+<a href="#portfolio-wrapper-<?php echo get_the_ID(); ?>" class="project popup-link">
 <div class="nav_project">
 <div class="label">Next Project</div>
 <h3 class="title"><?php echo get_the_title($next_id); ?></h3>
