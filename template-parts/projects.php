@@ -78,7 +78,7 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 <div class="desc">
 <?php
 $desc = get_field('project_description');
-$limit = 120; // jitne characters chahiye
+$limit = 200; // jitne characters chahiye
 if($desc){
 echo substr(strip_tags($desc), 0, $limit);
 if(strlen($desc) > $limit){
@@ -119,20 +119,19 @@ if( get_field('launch_date') ): ?>
 <?php endif; ?>
 </div>
 </div>
+<?php
+$images = get_field('project_gallery');
+$size = 'full'; // (thumbnail, medium, large, full or custom size)
+if( $images ):
+?>
 <div class="portfolio_gallery owl-carousel">
+<?php foreach( $images as $image_id ): ?>
 <div class="gallery_item">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/p-gallery-1.jpg" alt="" />
+<?php echo wp_get_attachment_image( $image_id, $size ); ?>
 </div>
-<div class="gallery_item">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/p-gallery-2.jpg" alt="" />
+<?php endforeach; ?>
 </div>
-<div class="gallery_item">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/p-gallery-3.jpg" alt="" />
-</div>
-<div class="gallery_item">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/p-gallery-4.jpg" alt="" />
-</div>
-</div>
+<?php endif; ?>
 <?php if( get_field('project_description') ): ?>
 <div id="project-full-content" class="portfolio_description">
 <h2 class="title">Project Description</h2>
