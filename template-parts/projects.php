@@ -131,24 +131,24 @@ if( get_field('launch_date') ): ?>
 </div>
 </div>
 <?php endif; ?>
+<?php if( have_rows('project_case_study') ): ?>
 <div class="portfolio_story_approach">
+<?php
+while( have_rows('project_case_study') ) : the_row();
+$case_study_heading = get_sub_field('case_study_heading');
+$case_study_content = get_sub_field('case_study_content');
+?>
 <div class="portfolio_story">
 <div class="story_title">
-<h4 class="title">The story</h4>
+<h4 class="title"><?php echo $case_study_heading; ?></h4>
 </div>
 <div class="story_content">
-<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered  alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+<p><?php echo $case_study_content; ?></p>
 </div>
 </div>
-<div class="portfolio_approach">
-<div class="approach_title">
-<h4 class="title">OUR APPROACH</h4>
+<?php endwhile; ?>
 </div>
-<div class="approach_content">
-<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered  alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-</div>
-</div>
-</div>
+<?php endif; ?>
 <div class="portfolio_navigation">
 <div class="navigation_item prev-project">
 <a href="#" class="project">
