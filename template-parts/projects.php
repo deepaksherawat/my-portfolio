@@ -7,18 +7,25 @@
 <div class="row">
 <div class="col-12">
 <div class="section-header style-3 portfolio_nav_desktop">
+<?php if( get_field('project_sub_heading', 'option') || get_field('project_main_heading', 'option') ): ?>
 <div class="sec-text">
-<span class="subtitle wow fadeInLeft" data-wow-delay=".3s">Behind the Pixels</span>
-<h2 class="title">My Latest Projects</h2>
+<?php if( get_field('project_sub_heading', 'option') ): ?>
+<span class="subtitle wow fadeInLeft" data-wow-delay=".3s"><?php the_field('project_sub_heading', 'option'); ?></span>
+<?php endif; ?>
+<?php if( get_field('project_main_heading', 'option') ): ?>
+<h2 class="title"><?php the_field('project_main_heading', 'option'); ?></h2>
+<?php endif; ?>
 </div>
+<?php endif; ?>
 <div class="portfolio-navigation d-none d-lg-inline-flex wow fadeInRight" data-wow-delay=".4s">
 <div class="portfolio-prev"><i class="fa-solid fa-arrow-left"></i></div>
 <div class="portfolio-next"><i class="fa-solid fa-arrow-right"></i></div>
 </div>
+<?php if( get_field('project_button_link', 'option') ): ?>
 <div class="portfolio-button wow fadeInRight" data-wow-delay=".5s">
-<a class="btn tj-btn-primary" href="#">View All Project <i class="fa-solid fa-arrow-right"></i></a>
+<a class="btn tj-btn-primary" href="<?php the_field('project_button_link', 'option'); ?>"><?php the_field('project_button_text', 'option'); ?> <i class="fa-solid fa-arrow-right"></i></a>
 </div>
-
+<?php endif; ?>
 </div>
 </div>
 </div>
@@ -55,7 +62,14 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 <div class="content-box">
 <div class="portfolio-text">
 <h5 class="portfolio-title"><a class="modal-popup" href="#portfolio-wrapper-<?php echo get_the_ID(); ?>"><?php the_title(); ?></a></h5>
-<p><?php the_category(', '); ?></p>
+<p>
+<?php 
+$terms = get_the_terms(get_the_ID(), 'project-type');
+if( $terms && !is_wp_error($terms) ):
+    echo implode(', ', wp_list_pluck($terms, 'name'));
+endif;
+?>
+</p>
 </div>
 <div class="portfolio-arrow">
 <a class="modal-popup" href="#portfolio-wrapper-<?php echo get_the_ID(); ?>">
@@ -75,10 +89,12 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 <div class="portfolio_info">
 <div class="portfolio_info_text">
 <h2 class="title"><?php the_title(); ?></h2>
-<!-- <div class="desc">
-<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered  alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-</div> -->
-<a href="#" class="btn tj-btn-primary">live preview <i class="fa-solid fa-arrow-right"></i></a>
+<?php if( get_field('project_short_description') ): ?>
+<div class="desc">
+<p><?php the_field('project_short_description'); ?></p>
+</div>
+<?php endif; ?>
+<?php if( get_field('website_url') ): ?><a href="<?php the_field('website_url'); ?>" class="btn tj-btn-primary">live preview <i class="fa-solid fa-arrow-right"></i></a><?php endif; ?>
 </div>
 <div class="portfolio_info_items">
 <?php if( get_field('project_name') ): ?>
@@ -87,18 +103,24 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 <div class="value"><?php the_field('project_name'); ?></div>
 </div>
 <?php endif; ?>
+<?php if( get_field('developed_in') ): ?>
 <div class="info_item">
-<div class="key">Client</div>
-<div class="value">Artboard Studio</div>
+<div class="key">Developed In</div>
+<div class="value"><?php the_field('developed_in'); ?></div>
 </div>
+<?php endif; ?>
+<?php if( get_field('technology') ): ?>
 <div class="info_item">
-<div class="key">Start Date</div>
-<div class="value">August 20, 2023</div>
+<div class="key">Technology</div>
+<div class="value"><?php the_field('technology'); ?></div>
 </div>
+<?php endif; ?>
+<?php if( get_field('launch_date') ): ?>
 <div class="info_item">
-<div class="key">Designer</div>
-<div class="value"><a href="#">ThemeJunction</a></div>
+<div class="key">Launch Date</div>
+<div class="value"><a href="#"><?php the_field('launch_date'); ?></a></div>
 </div>
+<?php endif; ?>
 </div>
 </div>
 <div class="portfolio_gallery owl-carousel">
@@ -115,51 +137,67 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/p-gallery-4.jpg" alt="" />
 </div>
 </div>
+<?php if( get_field('project_description') ): ?>
 <div class="portfolio_description">
 <h2 class="title">Project Description</h2>
 <div class="desc">
-<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered  alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered  alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+<?php the_field('project_description'); ?>
 </div>
 </div>
+<?php endif; ?>
+<?php if( get_field('project_first_para_title') || get_field('project_second_para_title') ): ?>
 <div class="portfolio_story_approach">
+<?php if( get_field('project_first_para_title') ): ?>
 <div class="portfolio_story">
 <div class="story_title">
-<h4 class="title">The story</h4>
+<h4 class="title"><?php the_field('project_first_para_title'); ?></h4>
 </div>
 <div class="story_content">
-<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered  alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+<p><?php the_field('project_first_para_content'); ?></p>
 </div>
 </div>
+<?php endif; ?>
+<?php if( get_field('project_second_para_title') ): ?>
 <div class="portfolio_approach">
 <div class="approach_title">
-<h4 class="title">OUR APPROACH</h4>
+<h4 class="title"><?php the_field('project_second_para_title'); ?></h4>
 </div>
 <div class="approach_content">
-<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered  alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+<p><?php the_field('project_second_para_content'); ?></p>
 </div>
 </div>
+<?php endif; ?>
 </div>
+<?php endif; ?>
+<?php
+$prev = get_previous_post();
+$next = get_next_post();
+?>
 <div class="portfolio_navigation">
+<?php if($prev): ?>
 <div class="navigation_item prev-project">
-<a href="#" class="project">
+<a href="<?php echo get_permalink($prev->ID); ?>" class="project">
 <i class="fa-solid fa-arrow-right"></i>
 <div class="nav_project">
 <div class="label">Previous Project</div>
-<h3 class="title">Sebastian</h3>
+<h3 class="title"><?php echo get_the_title($prev->ID); ?></h3>
 </div>
 </a>
 </div>
+<?php endif; ?>
+<?php if($next): ?>
 <div class="navigation_item next-project">
-<a href="#" class="project">
+<a href="<?php echo get_permalink($next->ID); ?>" class="project">
 <div class="nav_project">
 <div class="label">Next Project</div>
-<h3 class="title">Qwillo</h3>
+<h3 class="title"><?php echo get_the_title($next->ID); ?></h3>
 </div>
 <i class="fa-solid fa-arrow-right"></i>
 </a>
 </div>
+<?php endif; ?>
 </div>
+<?php endif; ?>
 </div>
 </div>
 <!-- end: Portfolio Popup -->
@@ -173,9 +211,11 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 <div class="portfolio-prev"><i class="fa-solid fa-arrow-left"></i></div>
 <div class="portfolio-next"><i class="fa-solid fa-arrow-right"></i></div>
 </div>
+<?php if( get_field('project_button_link', 'option') ): ?>
 <div class="portfolio-button wow fadeInRight" data-wow-delay=".5s">
-<a class="btn tj-btn-primary" href="#">View All Project <i class="fa-solid fa-arrow-right"></i></a>
+<a class="btn tj-btn-primary" href="<?php the_field('project_button_link', 'option'); ?>"><?php the_field('project_button_text', 'option'); ?> <i class="fa-solid fa-arrow-right"></i></a>
 </div>
+<?php endif; ?>
 </div>
 </div>
 </div>
