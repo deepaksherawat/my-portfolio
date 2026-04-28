@@ -75,12 +75,10 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 <div class="portfolio_info">
 <div class="portfolio_info_text">
 <h2 class="title"><?php the_title(); ?></h2>
-<?php if( get_field('project_short_description') ): ?>
-<div class="desc">
-<p><?php the_field('project_short_description'); ?></p>
-</div>
-<?php endif; ?>
-<?php if( get_field('website_url') ): ?><a href="<?php the_field('website_url'); ?>" class="btn tj-btn-primary">live preview <i class="fa-solid fa-arrow-right"></i></a><?php endif; ?>
+<!-- <div class="desc">
+<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered  alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+</div> -->
+<a href="#" class="btn tj-btn-primary">live preview <i class="fa-solid fa-arrow-right"></i></a>
 </div>
 <div class="portfolio_info_items">
 <?php if( get_field('project_name') ): ?>
@@ -89,24 +87,18 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 <div class="value"><?php the_field('project_name'); ?></div>
 </div>
 <?php endif; ?>
-<?php if( get_field('developed_in') ): ?>
 <div class="info_item">
-<div class="key">Developed In</div>
-<div class="value"><?php the_field('developed_in'); ?></div>
+<div class="key">Client</div>
+<div class="value">Artboard Studio</div>
 </div>
-<?php endif; ?>
-<?php if( get_field('technology') ): ?>
 <div class="info_item">
-<div class="key">Technology</div>
-<div class="value"><?php the_field('technology'); ?></div>
+<div class="key">Start Date</div>
+<div class="value">August 20, 2023</div>
 </div>
-<?php endif; ?>
-<?php if( get_field('launch_date') ): ?>
 <div class="info_item">
-<div class="key">Launch Date</div>
-<div class="value"><a href="#"><?php the_field('launch_date'); ?></a></div>
+<div class="key">Designer</div>
+<div class="value"><a href="#">ThemeJunction</a></div>
 </div>
-<?php endif; ?>
 </div>
 </div>
 <div class="portfolio_gallery owl-carousel">
@@ -123,38 +115,32 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/p-gallery-4.jpg" alt="" />
 </div>
 </div>
-<?php if( get_field('project_description') ): ?>
 <div class="portfolio_description">
 <h2 class="title">Project Description</h2>
 <div class="desc">
-<?php the_field('project_description'); ?>
+<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered  alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered  alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
 </div>
 </div>
-<?php endif; ?>
-<?php if( get_field('project_first_para_title') || get_field('project_second_para_title') ): ?>
+
 <div class="portfolio_story_approach">
-<?php if( get_field('project_first_para_title') ): ?>
 <div class="portfolio_story">
 <div class="story_title">
-<h4 class="title"><?php the_field('project_first_para_title'); ?></h4>
+<h4 class="title">The story</h4>
 </div>
 <div class="story_content">
-<p><?php the_field('project_first_para_content'); ?></p>
+<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered  alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
 </div>
 </div>
-<?php endif; ?>
-<?php if( get_field('project_second_para_title') ): ?>
 <div class="portfolio_approach">
 <div class="approach_title">
-<h4 class="title"><?php the_field('project_second_para_title'); ?></h4>
+<h4 class="title">OUR APPROACH</h4>
 </div>
 <div class="approach_content">
-<p><?php the_field('project_second_para_content'); ?></p>
+<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered  alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
 </div>
 </div>
-<?php endif; ?>
 </div>
-<?php endif; ?>
 <?php
 $prev = get_previous_post();
 $next = get_next_post();
