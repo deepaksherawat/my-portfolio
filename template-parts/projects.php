@@ -126,7 +126,7 @@ if( $images ):
 <div class="portfolio_gallery owl-carousel">
 <?php foreach( $images as $image ): ?>
 <div class="gallery_item">
-<img src="<?php echo esc_url($image['sizes']['full']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+<img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 </div>
 <?php endforeach; ?>
 </div>
