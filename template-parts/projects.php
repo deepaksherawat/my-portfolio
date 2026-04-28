@@ -123,13 +123,14 @@ if( get_field('launch_date') ): ?>
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/p-gallery-4.jpg" alt="" />
 </div>
 </div>
+<?php if( get_field('project_description') ): ?>
 <div class="portfolio_description">
 <h2 class="title">Project Description</h2>
 <div class="desc">
-<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered  alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered  alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+<?php the_field('project_description'); ?>
 </div>
 </div>
+<?php endif; ?>
 <div class="portfolio_story_approach">
 <div class="portfolio_story">
 <div class="story_title">
