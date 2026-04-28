@@ -148,27 +148,35 @@ $case_study_content = get_sub_field('case_study_content');
 </div>
 <?php endwhile; ?>
 </div>
-<?php endif; ?>
+<?php endif;
+$prev = get_previous_post();
+$next = get_next_post();
+?>
 <div class="portfolio_navigation">
+<?php if($prev): ?>
 <div class="navigation_item prev-project">
-<a href="#" class="project">
+<a href="<?php echo get_permalink($prev->ID); ?>" class="project">
 <i class="fa-solid fa-arrow-right"></i>
 <div class="nav_project">
 <div class="label">Previous Project</div>
-<h3 class="title">Sebastian</h3>
+<h3 class="title"><?php echo get_the_title($prev->ID); ?></h3>
 </div>
 </a>
 </div>
+<?php endif;
+if($next): ?>
 <div class="navigation_item next-project">
-<a href="#" class="project">
+<a href="<?php echo get_permalink($next->ID); ?>" class="project">
 <div class="nav_project">
 <div class="label">Next Project</div>
-<h3 class="title">Qwillo</h3>
+<h3 class="title"><?php echo get_the_title($next->ID); ?></h3>
 </div>
 <i class="fa-solid fa-arrow-right"></i>
 </a>
 </div>
+<?php endif; ?>
 </div>
+
 </div>
 </div>
 <!-- end: Portfolio Popup -->

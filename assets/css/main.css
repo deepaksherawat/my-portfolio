@@ -3364,6 +3364,7 @@ img.service-image, img.portfolio-image {
 	letter-spacing: 0.02em;
 	color: var(--golden-yellow-1);
 	text-transform: uppercase;
+	font-weight: 600;
 }
 .portfolio_info_items .info_item .value {
 	display: block;
