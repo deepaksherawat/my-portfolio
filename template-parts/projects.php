@@ -99,25 +99,25 @@ endif;
 <div class="portfolio_info_items">
 <?php if( get_field('project_name') ): ?>
 <div class="info_item">
-<div class="key">Project Name</div>
+<div class="key">PROJECT NAME</div>
 <div class="value"><?php the_field('project_name'); ?></div>
 </div>
 <?php endif; ?>
 <?php if( get_field('developed_in') ): ?>
 <div class="info_item">
-<div class="key">Developed In</div>
+<div class="key">DEVELOPED IN</div>
 <div class="value"><?php the_field('developed_in'); ?></div>
 </div>
 <?php endif; ?>
 <?php if( get_field('technology') ): ?>
 <div class="info_item">
-<div class="key">Technology</div>
+<div class="key">TECHNOLOGY</div>
 <div class="value"><?php the_field('technology'); ?></div>
 </div>
 <?php endif; ?>
 <?php if( get_field('launch_date') ): ?>
 <div class="info_item">
-<div class="key">Launch Date</div>
+<div class="key">LAUNCH DATE</div>
 <div class="value"><a href="#"><?php the_field('launch_date'); ?></a></div>
 </div>
 <?php endif; ?>
