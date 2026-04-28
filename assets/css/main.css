@@ -2697,6 +2697,12 @@ img.service-image, img.portfolio-image {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 }
+.portfolio-item.style-5 .image-box a.modal-popup{
+	width: 584px;
+    height: 320px;
+    overflow: hidden;
+    display: block;
+}
 .portfolio-item.style-5 .image-box img {
     border-radius: 15px;
     border-bottom-left-radius: 0px;
@@ -2706,6 +2712,9 @@ img.service-image, img.portfolio-image {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1);
+	width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .portfolio-item.style-5 .content-box {
     display: -webkit-box;
