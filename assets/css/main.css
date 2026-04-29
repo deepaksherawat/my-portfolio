@@ -2714,7 +2714,7 @@ img.service-image, img.portfolio-image {
     transform: scale(1);
 	width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
 }
 .portfolio-item.style-5 .content-box {
     display: -webkit-box;
