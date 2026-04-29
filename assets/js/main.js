@@ -1403,23 +1403,23 @@ Description: Gerold - Personal Portfolio HTML5 Template
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
 
   const cards = document.querySelectorAll(".portfolio_card");
   const portfolioBtn = document.getElementById("loadMorePortfolio");
 
-  let portfolioCount = 5; // 👈 first 5 show karne ke liye
+  console.log("Cards:", cards.length);
+
+  let portfolioCount = 5;
 
   function showPortfolio() {
 
-    // 🔴 sabko reset (important)
     cards.forEach((card) => {
       card.style.display = "none";
       card.style.opacity = "0";
       card.classList.remove("animate");
     });
 
-    // ✅ jitne show karne hain unko visible karo
     cards.forEach((card, i) => {
       if (i < portfolioCount) {
         card.style.display = "block";
@@ -1431,23 +1431,26 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // button hide/show
-    portfolioBtn.style.display =
-      (portfolioCount >= cards.length) ? "none" : "inline-block";
+    if (portfolioBtn) {
+      portfolioBtn.style.display =
+        (portfolioCount >= cards.length) ? "none" : "inline-block";
+    }
   }
 
   showPortfolio();
 
-  portfolioBtn.addEventListener("click", function () {
-    let start = portfolioCount;
-    portfolioCount += 3;
+  if (portfolioBtn) {
+    portfolioBtn.addEventListener("click", function () {
+      let start = portfolioCount;
+      portfolioCount += 3;
 
-    showPortfolio();
+      showPortfolio();
 
-    if (cards[start]) {
-      cards[start].scrollIntoView({ behavior: "smooth" });
-    }
-  });
+      if (cards[start]) {
+        cards[start].scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  }
 
 });
 
