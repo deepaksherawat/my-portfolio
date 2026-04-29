@@ -18,7 +18,7 @@ get_template_part('template-parts/marquee');
 <div class="col-12">
 <div class="section-header style-5">
 <div class="sec-text">
-<span class="subtitle" data-wow-delay=".3s">My portfolios</span>
+<span class="subtitle" data-wow-delay=".3s">My portfolios 23</span>
 <!-- <h2 class="title tj-text-invert">Here's How I can Help!</h2> -->
 <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">Here's How I can Help!</h2>
 </div>
@@ -103,3 +103,4 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 </section>
 <!-- end: Portfolio Area -->
 </main>
+<?php get_footer(); ?>
