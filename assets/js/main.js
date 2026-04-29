@@ -1405,21 +1405,35 @@ Description: Gerold - Personal Portfolio HTML5 Template
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  // ===== PORTFOLIO =====
   const cards = document.querySelectorAll(".portfolio_card");
   const portfolioBtn = document.getElementById("loadMorePortfolio");
 
-  let portfolioCount = 3;
+  let portfolioCount = 5; // 👈 first 5 show karne ke liye
 
   function showPortfolio() {
+
+    // 🔴 sabko reset (important)
+    cards.forEach((card) => {
+      card.style.display = "none";
+      card.style.opacity = "0";
+      card.classList.remove("animate");
+    });
+
+    // ✅ jitne show karne hain unko visible karo
     cards.forEach((card, i) => {
       if (i < portfolioCount) {
         card.style.display = "block";
-        setTimeout(() => card.classList.add("animate"), 150 * i);
+
+        setTimeout(() => {
+          card.style.opacity = "1";
+          card.classList.add("animate");
+        }, 150 * i);
       }
     });
 
-    portfolioBtn.style.display = (portfolioCount >= cards.length) ? "none" : "inline-block";
+    // button hide/show
+    portfolioBtn.style.display =
+      (portfolioCount >= cards.length) ? "none" : "inline-block";
   }
 
   showPortfolio();
@@ -1427,6 +1441,7 @@ document.addEventListener("DOMContentLoaded", function () {
   portfolioBtn.addEventListener("click", function () {
     let start = portfolioCount;
     portfolioCount += 3;
+
     showPortfolio();
 
     if (cards[start]) {
