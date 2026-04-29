@@ -1406,78 +1406,64 @@ Description: Gerold - Personal Portfolio HTML5 Template
 document.addEventListener("DOMContentLoaded", function () {
 
   const cards = document.querySelectorAll(".portfolio_card");
-  const portfolioBtn = document.getElementById("loadMorePortfolio");
+  const btn = document.getElementById("loadMorePortfolio");
 
-  if (!cards.length) return;
+  let count = 3;
 
-  let portfolioCount = 3;
-
-  function showPortfolio() {
+  function showCards() {
     cards.forEach((card, i) => {
-      if (i < portfolioCount) {
+      if (i < count) {
         card.style.display = "block";
-        setTimeout(() => card.classList.add("animate"), 150 * i);
       }
     });
 
-    if (portfolioBtn) {
-      portfolioBtn.style.display =
-        (portfolioCount >= cards.length) ? "none" : "inline-block";
+    if (btn) {
+      btn.style.display = count >= cards.length ? "none" : "inline-block";
     }
   }
 
-  showPortfolio();
+  showCards();
 
-  if (portfolioBtn) {
-    portfolioBtn.addEventListener("click", function () {
-      let start = portfolioCount;
-      portfolioCount += 3;
-      showPortfolio();
-
-      if (cards[start]) {
-        cards[start].scrollIntoView({ behavior: "smooth" });
-      }
-    });
-  }
-
-});
-
-
-
-document.querySelectorAll(".open-popup").forEach(btn => {
-  btn.addEventListener("click", function () {
-
-    const card = this.closest(".portfolio_card");
-
-    // Basic Data
-    document.getElementById("popupTitle").innerText = card.dataset.title;
-    document.getElementById("popupShortDesc").innerText = card.dataset.desc;
-    document.getElementById("popupFullDesc").innerText = card.dataset.desc;
-    document.getElementById("popupLink").href = card.dataset.url;
-
-    // META (optional - agar add karna ho)
-    document.getElementById("popupMeta").innerHTML = "";
-
-    // Gallery
-    let gallery = JSON.parse(card.dataset.gallery || "[]");
-    let galleryHTML = "";
-
-    gallery.forEach(img => {
-      galleryHTML += `<div class="gallery_item">
-        <img src="${img.sizes.project_image_size}" alt="">
-      </div>`;
-    });
-
-    document.getElementById("popupGallery").innerHTML = galleryHTML;
-
-    // Owl re-init (important)
-    if ($(".popup_content_area .owl-carousel").length) {
-      $(".popup_content_area .owl-carousel").owlCarousel("destroy");
-      $(".popup_content_area .owl-carousel").owlCarousel();
-    }
-
+  btn?.addEventListener("click", () => {
+    count += 3;
+    showCards();
   });
+
+  // 🔥 Popup Logic
+  const popup = document.getElementById("portfolio-popup");
+
+  document.querySelectorAll(".open-popup").forEach(btn => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const card = this.closest(".portfolio_card");
+
+      document.getElementById("popup-title").innerText = card.dataset.title;
+      document.getElementById("popup-desc").innerText = card.dataset.desc;
+      document.getElementById("popup-img").src = card.dataset.img;
+
+      document.getElementById("popup-project").innerText = card.dataset.project;
+      document.getElementById("popup-developed").innerText = card.dataset.developed;
+      document.getElementById("popup-tech").innerText = card.dataset.tech;
+      document.getElementById("popup-date").innerText = card.dataset.date;
+
+      document.getElementById("popup-url").href = card.dataset.url;
+
+      // Magnific Popup trigger
+      $.magnificPopup.open({
+        items: {
+          src: "#portfolio-popup",
+          type: "inline"
+        }
+      });
+    });
+  });
+
 });
+
+
+
+
 
 
 
