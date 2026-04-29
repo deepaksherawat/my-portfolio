@@ -1403,54 +1403,36 @@ Description: Gerold - Personal Portfolio HTML5 Template
 
 
 
-window.addEventListener("load", function () {
+document.addEventListener("DOMContentLoaded", function () {
 
+  // ===== PORTFOLIO =====
   const cards = document.querySelectorAll(".portfolio_card");
   const portfolioBtn = document.getElementById("loadMorePortfolio");
 
-  console.log("Cards:", cards.length);
-
-  let portfolioCount = 5;
+  let portfolioCount = 3;
 
   function showPortfolio() {
-
-    cards.forEach((card) => {
-      card.style.display = "none";
-      card.style.opacity = "0";
-      card.classList.remove("animate");
-    });
-
     cards.forEach((card, i) => {
       if (i < portfolioCount) {
         card.style.display = "block";
-
-        setTimeout(() => {
-          card.style.opacity = "1";
-          card.classList.add("animate");
-        }, 150 * i);
+        setTimeout(() => card.classList.add("animate"), 150 * i);
       }
     });
 
-    if (portfolioBtn) {
-      portfolioBtn.style.display =
-        (portfolioCount >= cards.length) ? "none" : "inline-block";
-    }
+    portfolioBtn.style.display = (portfolioCount >= cards.length) ? "none" : "inline-block";
   }
 
   showPortfolio();
 
-  if (portfolioBtn) {
-    portfolioBtn.addEventListener("click", function () {
-      let start = portfolioCount;
-      portfolioCount += 3;
+  portfolioBtn.addEventListener("click", function () {
+    let start = portfolioCount;
+    portfolioCount += 3;
+    showPortfolio();
 
-      showPortfolio();
-
-      if (cards[start]) {
-        cards[start].scrollIntoView({ behavior: "smooth" });
-      }
-    });
-  }
+    if (cards[start]) {
+      cards[start].scrollIntoView({ behavior: "smooth" });
+    }
+  });
 
 });
 
