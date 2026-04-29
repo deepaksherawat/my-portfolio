@@ -102,3 +102,4 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 </div>
 </section>
 <!-- end: Portfolio Area -->
+</main>
