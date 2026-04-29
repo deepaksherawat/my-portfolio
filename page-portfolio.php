@@ -33,8 +33,8 @@ get_template_part('template-parts/marquee');
 $args = array(
 'post_type' => 'project', // ya custom post type
 'posts_per_page' => -1,
-'meta_key' => 'launch_date',
-'orderby' => 'meta_value',
+//'meta_key' => 'launch_date',
+//'orderby' => 'meta_value',
 'order' => 'DESC', // ASC = upcoming, DESC = latest
 );
 $query = new WP_Query($args);
