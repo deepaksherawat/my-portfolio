@@ -89,13 +89,12 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 <!-- start: Portfolio Popup -->
 <?php get_template_part('template-parts/popup-project-detail'); ?>
 <!-- end: Portfolio Popup -->
-<?php endwhile; wp_reset_postdata();  ?>
+<?php endwhile; wp_reset_postdata(); endif;  ?>
 
   <!-- Load More Button -->
   <div class="text-center mt-4" id="loadMoreWrapper">
     <button id="loadMorePortfolio" class="btn tj-btn-primary">Load More<i class="fa-solid fa-arrow-right"></i></button>
   </div>
-  <?php endif; ?>
 </div>
 </div>
 </div>
