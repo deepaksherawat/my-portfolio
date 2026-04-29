@@ -1405,9 +1405,10 @@ Description: Gerold - Personal Portfolio HTML5 Template
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  // ===== PORTFOLIO =====
   const cards = document.querySelectorAll(".portfolio_card");
   const portfolioBtn = document.getElementById("loadMorePortfolio");
+
+  if (!cards.length) return;
 
   let portfolioCount = 3;
 
@@ -1419,21 +1420,63 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    portfolioBtn.style.display = (portfolioCount >= cards.length) ? "none" : "inline-block";
+    if (portfolioBtn) {
+      portfolioBtn.style.display =
+        (portfolioCount >= cards.length) ? "none" : "inline-block";
+    }
   }
 
   showPortfolio();
 
-  portfolioBtn.addEventListener("click", function () {
-    let start = portfolioCount;
-    portfolioCount += 3;
-    showPortfolio();
+  if (portfolioBtn) {
+    portfolioBtn.addEventListener("click", function () {
+      let start = portfolioCount;
+      portfolioCount += 3;
+      showPortfolio();
 
-    if (cards[start]) {
-      cards[start].scrollIntoView({ behavior: "smooth" });
+      if (cards[start]) {
+        cards[start].scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  }
+
+});
+
+
+
+document.querySelectorAll(".open-popup").forEach(btn => {
+  btn.addEventListener("click", function () {
+
+    const card = this.closest(".portfolio_card");
+
+    // Basic Data
+    document.getElementById("popupTitle").innerText = card.dataset.title;
+    document.getElementById("popupShortDesc").innerText = card.dataset.desc;
+    document.getElementById("popupFullDesc").innerText = card.dataset.desc;
+    document.getElementById("popupLink").href = card.dataset.url;
+
+    // META (optional - agar add karna ho)
+    document.getElementById("popupMeta").innerHTML = "";
+
+    // Gallery
+    let gallery = JSON.parse(card.dataset.gallery || "[]");
+    let galleryHTML = "";
+
+    gallery.forEach(img => {
+      galleryHTML += `<div class="gallery_item">
+        <img src="${img.sizes.project_image_size}" alt="">
+      </div>`;
+    });
+
+    document.getElementById("popupGallery").innerHTML = galleryHTML;
+
+    // Owl re-init (important)
+    if ($(".popup_content_area .owl-carousel").length) {
+      $(".popup_content_area .owl-carousel").owlCarousel("destroy");
+      $(".popup_content_area .owl-carousel").owlCarousel();
     }
-  });
 
+  });
 });
 
 

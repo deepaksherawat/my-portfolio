@@ -42,11 +42,21 @@ if($query->have_posts()) :
 while($query->have_posts()) : $query->the_post();
 ?> 
 <!-- cards -->
-<div class="portfolio_card">
+<div class="portfolio_card"
+     data-id="<?php the_ID(); ?>"
+     data-title="<?php the_title(); ?>"
+     data-desc="<?php echo esc_attr(get_field('project_description')); ?>"
+     data-url="<?php the_field('website_url'); ?>"
+     data-gallery="<?php echo json_encode(get_field("project_gallery")); ?>"
+     data-project-name="<?php echo esc_attr(get_field('project_name')); ?>"
+     data-developed-in="<?php echo esc_attr(get_field('developed_in')); ?>"
+     data-technology="<?php echo esc_attr(get_field('technology')); ?>"
+     data-launch-date="<?php echo esc_attr(get_field('launch_date')); ?>"
+>
 <div class="row">
 <div class="col-lg-6 col-md-6 col-12 portfolio_card_left">
 <h3 class="tj-portfolio-5-accordion-list-title">
-<span>01.</span> <?php the_title(); ?>
+<span><?php echo str_pad($query->current_post + 1, 2, '0', STR_PAD_LEFT); ?>.</span> <?php the_title(); ?>
 </h3>
 <p class="tj-portfolio-5-accordion-list-paragraph">
 <?php
@@ -56,7 +66,7 @@ if($desc){
 echo substr(strip_tags($desc), 0, $limit);
 if(strlen($desc) > $limit){
 echo '... ';
-echo '<a href="#project-full-content" class="project_read_more">Read More</a>';
+echo '<a href="#project-full-content-<?php the_ID(); ?>" class="project_read_more">Read More</a>';
 }
 }
 ?>
@@ -68,7 +78,7 @@ echo '<a href="#project-full-content" class="project_read_more">Read More</a>';
 <?php if( get_field('launch_date') ): ?><p><span>Launch Date : </span><?php the_field('launch_date'); ?></p><?php endif; ?>
 </div>
 <div class="tj-portfolio-5-accordion-list-button">
-<a class="btn tj-btn-primary modal-popup" href="#portfolio-wrapper-<?php echo get_the_ID(); ?>">View Project Details <i class="fa-solid fa-arrow-right"></i></a>
+<a class="btn tj-btn-primary modal-popup open-popup" href="#">View Project Details <i class="fa-solid fa-arrow-right"></i></a>
 <a class="btn tj-btn-primary" href="<?php the_field('website_url'); ?>" target="_blank">View Live Website <i class="fa-solid fa-arrow-right"></i></a>
 </div>
 </div>
@@ -86,16 +96,50 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 </div>
 </div>
 </div>
-<!-- start: Portfolio Popup -->
-<?php get_template_part('template-parts/popup-project-detail'); ?>
-<!-- end: Portfolio Popup -->
+
 <?php endwhile; wp_reset_postdata(); endif;  ?>
 
-  <!-- Load More Button -->
+<!-- start: Portfolio Popup (STATIC) -->
+<div id="portfolioPopup" class="popup_content_area zoom-anim-dialog mfp-hide" data-lenis-prevent>
+  <div class="popup_modal_content">
+
+    <div class="portfolio_info">
+      <div class="portfolio_info_text">
+        <h2 class="title" id="popupTitle"></h2>
+
+        <div class="desc" id="popupShortDesc"></div>
+
+        <a href="#" target="_blank" id="popupLink" class="btn tj-btn-primary">
+          live preview <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="portfolio_info_items" id="popupMeta"></div>
+    </div>
+
+    <!-- Gallery -->
+    <div class="portfolio_gallery owl-carousel" id="popupGallery"></div>
+
+    <!-- Full Description -->
+    <div id="popupFullContent" class="portfolio_description">
+      <h2 class="title">Project Description</h2>
+      <div class="desc" id="popupFullDesc"></div>
+    </div>
+
+    <!-- Case Study -->
+    <div class="portfolio_story_approach" id="popupCaseStudy"></div>
+
+  </div>
+</div>
+<!-- end -->
+
+
+  
+</div>
+<!-- Load More Button -->
   <div class="text-center mt-4" id="loadMoreWrapper">
     <button id="loadMorePortfolio" class="btn tj-btn-primary">Load More<i class="fa-solid fa-arrow-right"></i></button>
   </div>
-</div>
 </div>
 </div>
 </div>
