@@ -39,11 +39,33 @@ $args = array(
 $query = new WP_Query($args);
 if($query->have_posts()) :
 while($query->have_posts()) : $query->the_post();
+
+$stories = get_field('project_case_study');
+$stories_json = '';
+if($stories){
+  $stories_json = htmlspecialchars(json_encode($stories), ENT_QUOTES, 'UTF-8');
+}
+
+$gallery = get_field('project_gallery');
+
+$gallery_json = '';
+if($gallery){
+  $gallery_json = htmlspecialchars(json_encode($gallery), ENT_QUOTES, 'UTF-8');
+}
+
+
+$date = get_field('launch_date');
+
+if($date){
+    $clean_date = str_replace(' | ', '-', $date);
+    $formatted_date = date("d F Y", strtotime($clean_date));
+}
+
 ?>                               
 <div class="swiper-slide">
-<div class="portfolio-item style-5 wow fadeInUp" data-wow-delay=".9s">
+<div class="portfolio-item style-5 wow fadeInUp" data-wow-delay=".9s" data-title="<?php the_title(); ?>" data-desc="<?php echo esc_attr(wp_strip_all_tags(get_field('project_description'))); ?>" data-url="<?php the_field('website_url'); ?>" data-project-name="<?php echo esc_attr(get_field('project_name')); ?>" data-developed-by="<?php echo esc_attr(get_field('developed_in')); ?>" data-technology="<?php echo esc_attr(get_field('technology')); ?>" data-launch-date="<?php echo esc_attr($formatted_date); ?>" data-stories="<?php echo $stories_json; ?>" data-gallery="<?php echo $gallery_json; ?>">
 <div class="image-box">
-<a class="modal-popup" href="#portfolio-wrapper-<?php echo get_the_ID(); ?>">
+<a class="modal-popup open-popup" href="#portfolio-wrapper">
 <?php 
 if ( has_post_thumbnail() ) {
 $img = get_the_post_thumbnail_url(get_the_ID(), 'project_thumbnail');
@@ -58,7 +80,7 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 <p><?php the_category(', '); ?></p>
 </div>
 <div class="portfolio-arrow">
-<a class="modal-popup" href="#portfolio-wrapper-<?php echo get_the_ID(); ?>">
+<a class="modal-popup open-popup" href="#portfolio-wrapper">
 <span class="icon_box">
 <i class="icon_first fa-solid fa-arrow-right"></i>
 <i class="icon_second fa-solid fa-arrow-right"></i>
@@ -68,10 +90,6 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 </div>
 </div>
 </div>
-
-<!-- start: Portfolio Popup -->
-<?php get_template_part('template-parts/popup-project-detail'); ?>
-<!-- end: Portfolio Popup -->
 
 <?php endwhile; wp_reset_postdata(); endif; ?>
 </div>
@@ -91,3 +109,7 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 </div>
 </section>
 <!-- end: Portfolio Area -->
+<!-- start: Portfolio Popup -->
+<?php get_template_part('template-parts/popup-portfolio'); ?>
+<!-- end: Portfolio Popup -->
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/portfolio-popup.js"></script>

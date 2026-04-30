@@ -1,4 +1,15 @@
 <!-- start: Maquee Area -->
+<style>
+.maquee-slider-one .swiper-wrapper {
+    transition-timing-function: linear !important;
+}
+
+.marquee-item {
+    width: auto;
+    display: flex;
+    align-items: center;
+}
+</style>
         <section class="tj-maquee-section maquee-style-bottom-8">
             <div class="swiper maquee-slider-one">
                 <div class="swiper-wrapper maquee-wrapper">

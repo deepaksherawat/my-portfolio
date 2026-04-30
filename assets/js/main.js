@@ -785,32 +785,26 @@ Description: Gerold - Personal Portfolio HTML5 Template
 
 		// Marquee slider Js
 		if ($(".maquee-slider-one").length > 0) {
-			var swiper = new Swiper(".maquee-slider-one", {
-				slidesPerView: "auto",
-				spaceBetween: 80,
-				loop: true,
-				speed: 5000,
-				breakpoints: {
-					320: {
-						spaceBetween: 40,
-					},
-					768: {
-						spaceBetween: 40,
-					},
-					992: {
-						spaceBetween: 40,
-					},
-					1024: {
-						spaceBetween: 80,
-					},
-				},
-				allowTouchMove: false,
-				autoplay: {
-					delay: 1,
-					disableOnInteraction: true,
-				},
-			});
-		}
+    var swiper = new Swiper(".maquee-slider-one", {
+        slidesPerView: "auto",
+        spaceBetween: 80,
+        loop: true,
+        speed: 8000,
+        freeMode: true,
+        freeModeMomentum: false,
+        allowTouchMove: false,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            320: { spaceBetween: 40 },
+            768: { spaceBetween: 40 },
+            992: { spaceBetween: 40 },
+            1024: { spaceBetween: 80 },
+        },
+    });
+}
 
 		if ($(".maquee-slider-two").length > 0) {
 			var swiper = new Swiper(".maquee-slider-two", {
@@ -1300,16 +1294,65 @@ Description: Gerold - Personal Portfolio HTML5 Template
 	/*
 	============================== Title Animation =====================================
 	*/
+if (typeof SplitText !== "undefined") {
+		// splitText
+		if ($(".tj-char-animation").length > 0) {
+			let char_come = gsap.utils.toArray(".tj-char-animation");
+			char_come.forEach(splitTextLine => {
+				const tl = gsap.timeline({
+					scrollTrigger: {
+						trigger: splitTextLine,
+						start: "top 90%",
+						end: "bottom 60%",
+						scrub: false,
+						markers: false,
+						toggleActions: "play none none none",
+					},
+				});
 
-	// splitText
-	if ($(".tj-char-animation").length > 0) {
-		let char_come = gsap.utils.toArray(".tj-char-animation");
-		char_come.forEach(splitTextLine => {
+				const itemSplitted = new SplitText(splitTextLine, {
+					type: "chars, words",
+				});
+				gsap.set(splitTextLine, { perspective: 300 });
+				itemSplitted.split({ type: "chars, words" });
+				tl.from(itemSplitted.chars, {
+					duration: 1,
+					delay: 0.5,
+					x: 100,
+					autoAlpha: 0,
+					stagger: 0.05,
+				});
+			});
+		}
+
+		// Text Invert
+		const split = new SplitText(".tj-text-invert", { type: "lines" });
+		split.lines.forEach(target => {
+			gsap.to(target, {
+				backgroundPositionX: 0,
+				ease: "none",
+				scrollTrigger: {
+					trigger: target,
+					scrub: 1,
+					start: "top 85%",
+					end: "bottom center",
+				},
+			});
+		});
+	}
+
+		// line 3d
+		let tj_title_anim = gsap.utils.toArray(".tj_title_anim");
+		tj_title_anim.forEach(splitTextLine => {
+			var delay_value = 0.5;
+			if (splitTextLine.getAttribute("data-delay")) {
+				delay_value = splitTextLine.getAttribute("data-delay");
+			}
 			const tl = gsap.timeline({
 				scrollTrigger: {
 					trigger: splitTextLine,
 					start: "top 90%",
-					end: "bottom 60%",
+					duration: 1.5,
 					scrub: false,
 					markers: false,
 					toggleActions: "play none none none",
@@ -1317,72 +1360,24 @@ Description: Gerold - Personal Portfolio HTML5 Template
 			});
 
 			const itemSplitted = new SplitText(splitTextLine, {
-				type: "chars, words",
+				type: "lines",
 			});
-			gsap.set(splitTextLine, { perspective: 300 });
-			itemSplitted.split({ type: "chars, words" });
-			tl.from(itemSplitted.chars, {
+			gsap.set(splitTextLine, {
+				perspective: 400,
+			});
+			itemSplitted.split({
+				type: "lines",
+			});
+			tl.from(itemSplitted.lines, {
 				duration: 1,
-				delay: 0.5,
-				x: 100,
-				autoAlpha: 0,
-				stagger: 0.05,
+				delay: delay_value,
+				opacity: 0,
+				rotationX: -80,
+				force3D: true,
+				transformOrigin: "top center -50",
+				stagger: 0.1,
 			});
 		});
-	}
-
-	// Text Invert
-	const split = new SplitText(".tj-text-invert", { type: "lines" });
-	split.lines.forEach(target => {
-		gsap.to(target, {
-			backgroundPositionX: 0,
-			ease: "none",
-			scrollTrigger: {
-				trigger: target,
-				scrub: 1,
-				start: "top 85%",
-				end: "bottom center",
-			},
-		});
-	});
-
-	// line 3d
-	let tj_title_anim = gsap.utils.toArray(".tj_title_anim");
-	tj_title_anim.forEach(splitTextLine => {
-		var delay_value = 0.5;
-		if (splitTextLine.getAttribute("data-delay")) {
-			delay_value = splitTextLine.getAttribute("data-delay");
-		}
-		const tl = gsap.timeline({
-			scrollTrigger: {
-				trigger: splitTextLine,
-				start: "top 90%",
-				duration: 1.5,
-				scrub: false,
-				markers: false,
-				toggleActions: "play none none none",
-			},
-		});
-
-		const itemSplitted = new SplitText(splitTextLine, {
-			type: "lines",
-		});
-		gsap.set(splitTextLine, {
-			perspective: 400,
-		});
-		itemSplitted.split({
-			type: "lines",
-		});
-		tl.from(itemSplitted.lines, {
-			duration: 1,
-			delay: delay_value,
-			opacity: 0,
-			rotationX: -80,
-			force3D: true,
-			transformOrigin: "top center -50",
-			stagger: 0.1,
-		});
-	});
 
 	/*---------------------------------------------------------
 	 copyright year
@@ -1403,80 +1398,62 @@ Description: Gerold - Personal Portfolio HTML5 Template
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
+// ================= PORTFOLIO =================
+window.addEventListener("load", function () {
 
   const cards = document.querySelectorAll(".portfolio_card");
-  const btn = document.getElementById("loadMorePortfolio");
+  const portfolioBtn = document.getElementById("loadMorePortfolio");
 
-  let count = 3;
+  let portfolioCount = 3;
 
-  function showCards() {
+  function showPortfolio() {
     cards.forEach((card, i) => {
-      if (i < count) {
-        card.style.display = "block";
+      if (i < portfolioCount) {
+        card.classList.add("show");
+
+        setTimeout(() => {
+          card.classList.add("animate");
+        }, 150 * i);
       }
     });
-
-    if (btn) {
-      btn.style.display = count >= cards.length ? "none" : "inline-block";
-    }
   }
 
-  showCards();
+  // Run only if cards exist
+  if (cards.length > 0) {
+    showPortfolio();
+  }
 
-  btn?.addEventListener("click", () => {
-    count += 3;
-    showCards();
-  });
+  if (portfolioBtn) {
+    portfolioBtn.addEventListener("click", function () {
 
-  // 🔥 Popup Logic
-  const popup = document.getElementById("portfolio-popup");
+      let start = portfolioCount;
+      portfolioCount += 3;
 
-  document.querySelectorAll(".open-popup").forEach(btn => {
-    btn.addEventListener("click", function (e) {
-      e.preventDefault();
+      showPortfolio();
 
-      const card = this.closest(".portfolio_card");
+      if (cards[start]) {
+        cards[start].scrollIntoView({ behavior: "smooth" });
+      }
 
-      document.getElementById("popup-title").innerText = card.dataset.title;
-      document.getElementById("popup-desc").innerText = card.dataset.desc;
-      document.getElementById("popup-img").src = card.dataset.img;
-
-      document.getElementById("popup-project").innerText = card.dataset.project;
-      document.getElementById("popup-developed").innerText = card.dataset.developed;
-      document.getElementById("popup-tech").innerText = card.dataset.tech;
-      document.getElementById("popup-date").innerText = card.dataset.date;
-
-      document.getElementById("popup-url").href = card.dataset.url;
-
-      // Magnific Popup trigger
-      $.magnificPopup.open({
-        items: {
-          src: "#portfolio-popup",
-          type: "inline"
-        }
-      });
+      if (portfolioCount >= cards.length) {
+        portfolioBtn.style.display = "none";
+      }
     });
-  });
+  }
 
 });
 
 
-
-
-
-
-
-
+// ================= BLOG =================
 document.addEventListener("DOMContentLoaded", function () {
 
-  // ===== BLOGS =====
   const blogs = document.querySelectorAll(".blog-col");
   const blogBtn = document.getElementById("loadMoreBlog");
 
-  let blogCount = 6;
+  let blogCount = 3;
 
   function showBlogs() {
+
     blogs.forEach((blog, i) => {
       if (i < blogCount) {
         blog.style.display = "block";
@@ -1484,25 +1461,34 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    if (blogCount >= blogs.length) {
-      blogBtn.style.display = "none";
-    } else {
-      blogBtn.style.display = "flex";
+    // ✅ SAFE CHECK
+    if (blogBtn) {
+      if (blogCount >= blogs.length) {
+        blogBtn.style.display = "none";
+      } else {
+        blogBtn.style.display = "flex";
+      }
     }
   }
 
-  // FORCE RESET (important)
-  blogs.forEach(blog => {
-    blog.style.display = "none";
-    blog.classList.remove("show");
-  });
+  // Run only if blogs exist
+  if (blogs.length > 0) {
 
-  showBlogs();
+    blogs.forEach(blog => {
+      blog.style.display = "none";
+      blog.classList.remove("show");
+    });
 
-  blogBtn.addEventListener("click", function () {
-    blogCount += 3;
     showBlogs();
-  });
+  }
+
+  // ✅ SAFE CLICK EVENT
+  if (blogBtn) {
+    blogBtn.addEventListener("click", function () {
+      blogCount += 3;
+      showBlogs();
+    });
+  }
 
 });
 

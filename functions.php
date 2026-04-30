@@ -19,6 +19,7 @@ wp_enqueue_style('odometer-theme-default-css', get_template_directory_uri() . '/
 wp_enqueue_style('owl-carousel-min-css', get_template_directory_uri() . '/assets/css/owl.carousel.min.css');
 wp_enqueue_style('responsive-css', get_template_directory_uri() . '/assets/css/responsive.css');
 wp_enqueue_style('swiper-min-css', get_template_directory_uri() . '/assets/css/swiper.min.css');
+wp_enqueue_style('swiper-bundle-css', 'https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css');
 wp_enqueue_style('splitting-css', 'https://unpkg.com/splitting/dist/splitting.css', array(), null);
 
 // JS
@@ -41,6 +42,7 @@ wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/assets/js/owl
 
 // 4. Non-jQuery libraries
 wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/js/swiper.min.js', array(), null, true);
+wp_enqueue_script('swiper-bundle-js', 'https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js', array(), null, true);
 wp_enqueue_script('lenis', get_template_directory_uri() . '/assets/js/lenis.min.js', array(), null, true);
 wp_enqueue_script('gsap', get_template_directory_uri() . '/assets/js/gsap.min.js', array(), null, true);
 wp_enqueue_script('splitting-js', 'https://unpkg.com/splitting/dist/splitting.min.js', array(), null, true);
@@ -84,6 +86,7 @@ function my_theme_setup() {
     add_theme_support('post-thumbnails');
     add_image_size('project_image_size', 937, 429, true); // true = crop (no stretch)
     add_image_size('project_thumbnail', 584, 500, true);
+    add_image_size('project_thumbnail_page', 636, 480, true);
     add_theme_support('automatic-feed-links');
     add_theme_support('customize-selective-refresh-widgets');
     add_theme_support('html5', array('search-form', 'comment-form', 'gallery', 'caption'));

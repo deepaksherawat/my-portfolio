@@ -2231,7 +2231,7 @@ body.loaded {
 }
 .portfolio_card {
     border: 1px solid var(--golden-yellow-1);
-    padding: 30px 30px 30px 50px;
+    padding: 0px;
     border-radius: 15px;
     position: relative;
     z-index: 9;
@@ -2267,8 +2267,11 @@ button#loadMorePortfolio:hover{
 .tj-portfolio-5-accordion-list-button a.btn:last-child:hover{
 	background: linear-gradient(to right, var(--golden-yellow-1), var(--golden-yellow-2), var(--golden-yellow-3)) !important;
 }
-.service_card_left, .portfolio_card_left {
+.service_card_left {
     padding: 50px 50px 50px 0;
+}
+.portfolio_card_left {
+    padding: 50px;
 }
 .tj-service-5-accordion-list-item, .tj-portfolio-5-accordion-list-item {
     margin-bottom: 22px;
@@ -2294,7 +2297,6 @@ button#loadMorePortfolio:hover{
 }
 
 .tj-service-5-accordion-list-title, .tj-portfolio-5-accordion-list-title{
-    padding-bottom: 30px;
     transform: translateY(22px);
     margin-bottom: -115px;
     color: var(--tj-white);
@@ -2306,15 +2308,30 @@ button#loadMorePortfolio:hover{
     position: relative;
     transition: 0.3s ease-in;
 }
+.tj-service-5-accordion-list-title{padding-bottom: 30px}
+.tj-portfolio-5-accordion-list-title{padding-bottom: 10px;}
 .tj-service-5-accordion-list-title span, .tj-portfolio-5-accordion-list-title span{
 	color: var(--tj-theme-primary);
   margin-right: 4px;
 }
-img.service-image, img.portfolio-image {
+img.service-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 15px;
+}
+.tj-portfolio-5-accordion-thumb {
+    width: 636px;
+    height: 480px;
+    overflow: hidden;
+    display: block;
+}
+img.portfolio-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    transform: scale(1);
+    object-fit: fill;
 }
 .tj-service-section.style-8 .service-pagination {
     text-align: center;
@@ -2347,11 +2364,42 @@ img.service-image, img.portfolio-image {
 .tj-service-section.style-8 .service-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active, .tj-progress-7-area .progress-pagination .swiper-pagination-bullet-active{
 	opacity: 1;
 }
+/* protfoio meta box css */
+.project-metabox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 30px 0px;
+}
+.project-metabox .pro-meta {
+    width: 49%;
+    border: none;
+    padding: 20px 10px 20px;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.1)), to(rgba(255, 255, 255, 0.01)));
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border-radius: 10px;
+    text-align: center;
+}
+.project-metabox .pro-meta p.p-meta-title {
+    color: var(--golden-yellow-1);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+/* protfoio meta box css end */
 .portfolio_card:nth-child(even) .row {
   flex-direction: row-reverse;
 }
 .portfolio_card:nth-child(even) .row .portfolio_card_left{
-  padding: 50px 0px 50px 50px;
+  padding: 50px;
+}
+.portfolio_card:nth-child(even) .row .portfolio_card_right .tj-portfolio-5-accordion-thumb img.tj-portfolio-5-accordion-thumb{
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
 }
 .portfolio_card, .service_card {
     margin-bottom: 30px;
@@ -2361,18 +2409,14 @@ img.service-image, img.portfolio-image {
 }
 
 .portfolio_card {
-  display: none;
   opacity: 0;
-  transform: translateY(30px);
-  transition: 0.4s ease;
-}
-.portfolio_card.animate {
-  opacity: 1;
-  transform: translateY(0);
+  transition: 0.5s ease;;
+  display: none;
 }
 
 .portfolio_card.show {
   display: block;
+  opacity: 1;
 }
 
 .portfolio_card.animate, .service_card.service_page.animate {
@@ -5124,7 +5168,11 @@ blockquote cite::before {
 		var(--tj-theme-secondary) 100%) !important;}
 .tj-portfolio-5-accordion-list-button {
     display: flex;
-    gap: 20px;
+    gap: 10px;
+    justify-content: space-between;
+}
+.tj-portfolio-5-accordion-list-button a {
+    width: 50%;
 }
 .tj-single__post h1,
 .tj-single__post h2,
@@ -6992,6 +7040,9 @@ body.absolute_header .breadcrumb_area {
 
 
 /* Maquee Area */
+.swiper-wrapper.maquee-wrapper{
+	transition-timing-function: linear !important;
+}
 .tj-maquee-section.maquee-style-bottom-8 {
     position: relative;
     /*background: -webkit-gradient(linear-gradient(to right, var(--dark-blue-2) 0%, var(--dark-blue-3) 51%, var(--dark-blue-1) 100%));
@@ -7018,6 +7069,7 @@ body.absolute_header .breadcrumb_area {
     -webkit-transition-timing-function: linear;
     transition-timing-function: linear;
 }
+
 .marquee-item {
     width: auto;
     display: inline-block;
