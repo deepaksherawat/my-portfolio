@@ -1944,11 +1944,24 @@ body.loaded {
     animation: up-down-move-2 3s forwards infinite alternate;
 }
 .tj-service-5-accordion-list-image {
-    height: 300px;
-    padding: 20px;
+    height: 500px;
+    padding: 0px;
+    border-radius: 15px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
 }
 .tj-service-5-accordion-thumb {
-    height: 300px;
+	  width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+}
+.tj-service-5-accordion-thumb img{
+	  width: 100%;
+    height: 100%;
+    object-fit: contain !important;
+    border-radius: 15px;
+    transform: scale(1);
 }
 .tj-service-section.style-8{
     padding-top: 120px;
@@ -1979,7 +1992,7 @@ body.loaded {
     position: relative;
     z-index: 9;
     border: 1px solid var(--dark-blue-2);
-    padding: 30px 30px 30px 50px;
+    padding: 0px;
     border-radius: 15px;
 }
 .service_card .bg-shape {
@@ -2268,13 +2281,24 @@ button#loadMorePortfolio:hover{
 	background: linear-gradient(to right, var(--golden-yellow-1), var(--golden-yellow-2), var(--golden-yellow-3)) !important;
 }
 .service_card_left {
-    padding: 50px 50px 50px 0;
+    padding: 30px 50px;
 }
 .portfolio_card_left {
     padding: 50px;
 }
 .tj-service-5-accordion-list-item, .tj-portfolio-5-accordion-list-item {
     margin-bottom: 22px;
+}
+.tj-service-5-accordion-list-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+.tj-service-5-accordion-list-item span {
+    width: 50%;
 }
 .tj-service-5-accordion-list-item span, .tj-portfolio-5-accordion-list-item span {
     font-weight: var(--tj-fw-sbold);
