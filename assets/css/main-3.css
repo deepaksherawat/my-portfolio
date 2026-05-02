@@ -228,22 +228,130 @@
 	display: inline-flex;
 	line-height: 1;
 }
+span.present-text{color: var(--golden-yellow-1);}
 .check-list {
 	margin-top: 20px;
 }
+.resume_wrapper_5 .resume_inner_5 .icon_box.mobile_version{display: flex; align-items: center;
+    justify-content: center;}
+.resume_wrapper_5 .resume_inner_5 .icon_box.mobile_version p{margin-bottom: 0px !important; color: #000;}
 .check-list ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
+.resume-list {
+    max-height: 300px; /* approx 5 items height */
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+.resume-list.expanded {
+    max-height: 2000px; /* enough for all items */
+}
 .check-list ul li {
 	display: flex;
-	align-items: center;
-	gap: 20px;
+	align-items: flex-start;
+	gap: 10px;
 	margin-bottom: 15px;
 }
-.check-list ul li:last-child {
+.resume-list li:nth-child(n+6) {
+    display: none;
+}
+/*.check-list ul li:last-child {
 	margin-bottom: 0;
+}*/
+.resume-list.expanded li {
+    display: list-item;
+}
+.resume-list li {
+    transition: all 0.3s ease;
+}
+.check-list button.toggle-btn {
+    background: transparent;
+    border: 0px;
+    padding: 0;
+    color: var(--golden-yellow-1);
+}
+.check-list button.toggle-btn:hover{color: var(--white-1);}
+.check-list button.toggle-btn i {
+     transition: transform 0.3s ease;
+     transform: rotate(-45deg);
+}
+.resume-list.expanded + .toggle-btn i{
+	transform: rotate(0deg);
+}
+.key-btn {
+    margin-top: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #0073e6;
+    font-weight: 600;
+}
+.skill-set {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.skill-set ul.key-skills:before{
+	content: "Skills In Used : ";
+}
+.skill-set ul.key-skills {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-left: 0;
+    gap: 10px 10px;
+}
+.skill-set ul.key-skills li {
+    list-style-type: none;
+    background: transparent;
+    border: 1px solid var(--white-1);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.skill-set ul.key-skills li.toggle-li {
+    display: block;
+    background: linear-gradient(90deg, var(--golden-yellow-1), var(--golden-yellow-2), var(--golden-yellow-3));
+    color: var(--full-black);
+    border-color: transparent;
+}
+.skill-set ul.key-skills li.toggle-li:hover{
+	background: linear-gradient(90deg, var(--golden-yellow-2), var(--golden-yellow-3), var(--golden-yellow-1));
+}
+.key-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.key-skills li:nth-child(n+6) {
+    display: none;
+}
+
+.key-skills.expanded li {
+    display: inline-block; /* ya block, jo tum use kar rahe ho */
+    margin: 0px;
+    padding: 6px 12px;
+    background: #f1f1f1;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.key-skills li.extra-item {
+    display: none;
+}
+.key-skills.expanded li.extra-item {
+    display: inline-block; /* ya flex/block as per design */
+}
+
+.key-skills li.toggle-li {
+    cursor: pointer;
+    background: #fff;
+    color: #000;
+    font-weight: 600;
 }
 
 /* Services CSS */

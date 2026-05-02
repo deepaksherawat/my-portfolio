@@ -145,4 +145,60 @@ if( function_exists('acf_add_options_page') ) {
 
 }
 
+
+
+require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+
+add_action('tgmpa_register', 'my_theme_register_required_plugins');
+
+function my_theme_register_required_plugins() {
+
+    $plugins = array(
+        array(
+            'name'      => 'Contact Form 7',
+            'slug'      => 'contact-form-7',
+            'required'  => true,
+        ),
+        array(
+            'name'      => 'Advanced Custom Fields',
+            'slug'      => 'advanced-custom-fields',
+            'required'  => true,
+        ),
+        array(
+            'name'      => 'Custom Post Type UI',
+            'slug'      => 'custom-post-type-ui',
+            'required'  => true,
+        ),
+        array(
+            'name'      => 'Elementor',
+            'slug'      => 'elementor',
+            'required'  => true,
+        ),
+        array(
+            'name'      => 'Happy Addons for Elementor',
+            'slug'      => 'happy-elementor-addons',
+            'required'  => true,
+        ),
+        array(
+            'name'      => 'WordPress Importer',
+            'slug'      => 'wordpress-importer',
+            'required'  => true,
+        ),
+        array(
+            'name'      => 'Yoast SEO',
+            'slug'      => 'wordpress-seo',
+            'required'  => false,
+        ),
+    );
+
+    $config = array(
+        'id'           => 'my-theme',
+        'menu'         => 'tgmpa-install-plugins',
+        'has_notices'  => true,
+        'dismissable'  => false,
+        'is_automatic' => true, // 👈 auto activate
+    );
+
+    tgmpa($plugins, $config);
+}
 ?>

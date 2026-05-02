@@ -3804,6 +3804,10 @@ img.portfolio-image {
 .resume_wrapper_5 .resume_inner_5 .icon_box {
     max-width: 100px;
     width: 100%;
+    background: #fff;
+    height: fit-content;
+    padding: 5px;
+    border-radius: 5px;
 }
 .resume_wrapper_5 .resume_inner_5 .icon_box img {
     width: 100%;
