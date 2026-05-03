@@ -3861,7 +3861,20 @@ img.portfolio-image {
     letter-spacing: 0.02em;
     margin-bottom: 22px;
 }
-
+.resume_item.style-5.education{justify-content: space-between;}
+.resume_content.eductaion_content {
+    max-width: 100%;
+    width: 100%;
+}
+.resume_content.eductaion_content .resume_text.education_text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.resume_content.eductaion_content .resume_text.education_text h5.title {
+    margin-bottom: 0;
+}
+.resume_item.style-5.eductaion{align-items: center;}
 /* END: Resume Section style 5 */
 
 

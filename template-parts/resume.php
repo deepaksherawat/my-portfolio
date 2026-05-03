@@ -25,25 +25,22 @@
 <div class="bg-shape">
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
 </div>
-
 <div class="resume_wrapper_5">
 <?php
 $args = array(
-    'post_type'      => 'resume',
-    'posts_per_page' => -1,
-    'tax_query'      => array(
-        array(
-            'taxonomy' => 'resume_type',
-            'field'    => 'slug',
-            'terms'    => 'work',
-        ),
-    ),
+'post_type'      => 'resume',
+'posts_per_page' => -1,
+'tax_query'      => array(
+array(
+'taxonomy' => 'resume_type',
+'field'    => 'slug',
+'terms'    => 'work',
+),
+),
 );
-
 $query = new WP_Query($args);
-
 if ($query->have_posts()) :
-    while ($query->have_posts()) : $query->the_post();
+while ($query->have_posts()) : $query->the_post();
 ?>
 <div class="resume_inner_5">
 <div class="resume_item style-5">
@@ -121,57 +118,55 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
 </div>
 <div class="resume_wrapper_5">
-<div class="resume_inner_5">
+<?php
+$args = array(
+'post_type'      => 'resume',
+'posts_per_page' => -1,
+'tax_query'      => array(
+array(
+'taxonomy' => 'resume_type',
+'field'    => 'slug',
+'terms'    => 'education',
+),
+),
+);
+$query = new WP_Query($args);
+if ($query->have_posts()) :
+while ($query->have_posts()) : $query->the_post();
+?>
+<div class="resume_inner_5 education_inner">
 <div class="resume_item style-5 eductaion">
-<div class="icon_box">
-<img src="https://deepakwebdeveloper.com/wp-content/uploads/2026/02/logo-arena.webp" />
+<div class="icon_box eductaion_box">
+<?php 
+if ( has_post_thumbnail() ) {
+$img = get_the_post_thumbnail_url(get_the_ID(), 'full');
+echo '<img src="'.$img.'" alt="'.get_the_title().'">';
+}else{
+?><p class="company_name"><?php the_title(); ?></p><?php
+}
+?>
 </div>
-<div class="resume_content">
-<div class="resume_text">
-<h5 class="title">Graphic Web Design & Development</h5>
+<div class="resume_content eductaion_content">
+<div class="resume_text education_text">
+<h5 class="title"><?php the_title(); ?></h5>
 <div class="exp_box">
-<span class="subtitle"><i class="fa-regular fa-calendar"></i>Arena Animation</span>
-<span class="date mobile"><i class="fa-solid fa-location-arrow"></i>South Ex, Delhi</span>
-<span class="date mobile"><i class="fa-regular fa-calendar"></i>2022 -2023</span>
+<?php if( get_field('school__university_name') ): ?><span class="subtitle"><i class="fa-solid fa-tag"></i><?php the_field('school__university_name'); ?></span><?php endif; ?>
+<?php if( get_field('education_location') ): ?><span class="date mobile"><i class="fa-solid fa-location-arrow"></i><?php the_field('education_location'); ?></span><?php endif; ?>
+<?php if( get_field('year_of_start') ): ?><span class="date mobile"><i class="fa-regular fa-calendar"></i><?php the_field('year_of_start'); ?> -
+<?php 
+$is_current = get_field('currently_pursuing');
+if( $is_current ): ?>
+<span class="present-text">Currently Pursuing</span>
+<?php else: ?>
+<?php the_field('year_of_complete'); ?>
+<?php endif; ?>
+</span><?php endif; ?>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="resume_inner_5">
-<div class="resume_item style-5 eductaion">
-<div class="icon_box">
-<img src="https://deepakwebdeveloper.com/wp-content/uploads/2026/02/logo-arena.webp" />
-</div>
-<div class="resume_content">
-<div class="resume_text">
-<h5 class="title">Graphic Web Design & Development</h5>
-<div class="exp_box">
-<span class="subtitle"><i class="fa-regular fa-calendar"></i>Arena Animation</span>
-<span class="date mobile"><i class="fa-solid fa-location-arrow"></i>South Ex, Delhi</span>
-<span class="date mobile"><i class="fa-regular fa-calendar"></i>2022 -2023</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="resume_inner_5">
-<div class="resume_item style-5 eductaion">
-<div class="icon_box">
-<img src="https://deepakwebdeveloper.com/wp-content/uploads/2026/02/logo-arena.webp" />
-</div>
-<div class="resume_content">
-<div class="resume_text">
-<h5 class="title">Graphic Web Design & Development</h5>
-<div class="exp_box">
-<span class="subtitle"><i class="fa-regular fa-calendar"></i>Arena Animation</span>
-<span class="date mobile"><i class="fa-solid fa-location-arrow"></i>South Ex, Delhi</span>
-<span class="date mobile"><i class="fa-regular fa-calendar"></i>2022 -2023</span>
-</div>
-</div>
-</div>
-</div>
-</div>
+<?php endwhile; wp_reset_postdata(); endif; ?>
 </div>
 </div>
 </div>
