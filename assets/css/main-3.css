@@ -578,6 +578,12 @@ span.present-text{color: var(--golden-yellow-1);}
 }
 
 /* Testimonial CSS */
+.tj-testimonial-slider {
+    width: 100%;
+}
+.tj-testimonial-slider {
+    width: 100%;
+}
 .testimonial-section.style-3 {
 	background: var(--tj-h3-black);
 }

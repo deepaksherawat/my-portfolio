@@ -753,34 +753,25 @@ Description: Gerold - Personal Portfolio HTML5 Template
 
 		// Testimonial Slider Js
 		if ($(".tj-testimonial-slider8").length > 0) {
-			var brand = new Swiper(".tj-testimonial-slider8", {
-				slidesPerView: 3,
-				spaceBetween: 30,
-				active: true,
-				loop: true,
-				autoplay: {
-					delay: 6000,
-				},
-				speed: 3000,
-				pagination: {
-					el: ".testimonial-pagination",
-					clickable: true,
-				},
-				breakpoints: {
-					320: {
-						slidesPerView: 1,
-					},
-					576: {
-						slidesPerView: 1.5,
-					},
-					768: {
-						slidesPerView: 2,
-					},
-					1024: {
-						slidesPerView: 3,
-					},
-				},
-			});
+			var swiper = new Swiper(".tj-testimonial-slider", {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                loop: true,
+                autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+             },
+                speed: 1000,
+                pagination: {
+                el: ".testimonial-pagination",
+                clickable: true,
+             },
+                breakpoints: {
+                320: { slidesPerView: 1 },
+                640: { slidesPerView: 2 },
+                992: { slidesPerView: 3 },
+             },
+             });
 		}
 
 		// Marquee slider Js

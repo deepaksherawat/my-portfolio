@@ -13,7 +13,7 @@
 	.service_nav_mobile, .portfolio_nav_mobile, .icon_box.desktop_version, ul.mobile_social_icon {display: none;}
 	.resume_item.style-5{gap:20px;}
 	.testimonial-section.style-4 .section-header.style-5 .sec-text {display: flex;}
-	.testimonial-section.style-4 .section-header.style-5 .sec-text .test-_content{width:60%;}
+	.testimonial-section.style-4 .section-header.style-5 .sec-text .test-_content{width:100%;}
 	.blog_nav_mobile {
     display: none;
 }
