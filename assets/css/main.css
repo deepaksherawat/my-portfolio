@@ -1995,6 +1995,25 @@ body.loaded {
     padding: 0px;
     border-radius: 15px;
 }
+.service_card.service-page:nth-child(even) .row{flex-direction:row-reverse;}
+.service_card.service-page:nth-child(even) .row .tj-service-5-accordion-list-image{
+	  background: #dcb86cb5;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+.service_card.service-page:nth-child(odd) .row .tj-service-5-accordion-list-image{
+	background: #dcb86cb5;
+}
+.service_card.service-page:nth-child(odd) .row .service_card_right{
+	  padding-left: 0px;
+    padding-right: 11px;
+}
+.service_card.service-page:nth-child(even) .row .service_card_right{
+	  padding-left: 11px;
+    padding-right: 0px;
+}
 .service_card .bg-shape {
     position: absolute;
     left: 0;
@@ -5268,6 +5287,14 @@ blockquote cite::before {
 .other_pro_box .tj-post__meta.entry-meta {
     margin-bottom: 0px !important;
     margin-top: 10px;
+}
+.portfolio-item.style-5 .content-box .portfolio-text p {
+    display: flex;
+    gap: 10px;
+}
+.portfolio-item.style-5 .content-box .portfolio-text p a.post-category {
+    color: var(--golden-yellow-1);
+    text-decoration: none;
 }
 .tj-portfolio-5-accordion-list-button .tj-btn-primary:last-child{
 	background-image: linear-gradient(to right, var(--tj-theme-secondary) 0%, var(--tj-theme-primary) 51%,

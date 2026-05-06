@@ -77,7 +77,21 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 <div class="content-box">
 <div class="portfolio-text">
 <h5 class="portfolio-title"><a class="modal-popup" href="#portfolio-wrapper-<?php echo get_the_ID(); ?>"><?php the_title(); ?></a></h5>
-<p><?php the_category(', '); ?></p>
+<?php
+$terms = get_the_terms(get_the_ID(), 'project-type');
+if (!empty($terms) && !is_wp_error($terms)) {
+echo '<p>';
+foreach ($terms as $term) {
+$term_link = get_term_link($term);
+if (!is_wp_error($term_link)) {
+echo '<a href="' . esc_url($term_link) . '" class="post-category">';
+echo esc_html($term->name);
+echo '</a>';
+}
+}
+echo '</p>';
+}
+?>
 </div>
 <div class="portfolio-arrow">
 <a class="modal-popup open-popup" href="#portfolio-wrapper">
