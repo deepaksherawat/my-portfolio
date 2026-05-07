@@ -35,7 +35,7 @@ Description: Gerold - Personal Portfolio HTML5 Template
 *  START: Theme Default CSS
 * ===============================
 */
-
+p:empty{display: none;}
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&family=Sora:wght@100..800&display=swap");
 
 :root {
@@ -3571,38 +3571,52 @@ img.portfolio-image {
 .popup_modal_content .portfolio_story_approach,
 .popup_modal_content .portfolio_description {
 	padding: 0 40px;
-	margin-top: 50px;
+	margin-top: 25px;
 }
 
 .portfolio_story_approach .portfolio_approach,
 .portfolio_story_approach .portfolio_story {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
+	display: grid;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 	gap: 10px;
-	margin-bottom: 50px;
+	margin-bottom: 25px;
 }
 .portfolio_approach .approach_title,
 .portfolio_story .story_title {
-	max-width: 20%;
+	max-width: 100%;
 	width: 100%;
 }
 .portfolio_approach .approach_title .title,
 .portfolio_story .story_title .title {
-	font-size: 20px;
+	font-size: 30px;
 	text-transform: uppercase;
 	color: var(--white-1);
 	margin-bottom: 0;
 }
 .portfolio_approach .approach_content,
 .portfolio_story .story_content {
-	max-width: 79%;
+	max-width: 100%;
 	width: 100%;
 	letter-spacing: 0.02em;
 	color: var(--white-1);
 	font-size: 16px;
+}
+.portfolio_approach .approach_content ul, .portfolio_story .story_content ul {
+    padding-left: 15px;
+}
+.portfolio_story_approach .portfolio_approach h5, .portfolio_story_approach .portfolio_story h5{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.portfolio_story_approach .portfolio_approach a, .portfolio_story_approach .portfolio_story a{
+	color: var(--golden-yellow-1);
+	font-weight: 600;
+	text-decoration: none;
+}
+.portfolio_story_approach .portfolio_approach a:hover, .portfolio_story_approach .portfolio_story a:hover{
+	color: var(--white-1);
+	text-decoration: underline;
 }
 .portfolio_approach .approach_content p:last-child,
 .portfolio_story .story_content p:last-child {
