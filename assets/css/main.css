@@ -3599,6 +3599,7 @@ img.portfolio-image {
 }
 .portfolio_story .story_content p strong {
     color: var(--golden-yellow-1);
+    font-weight: 600;
 }
 .portfolio_approach .approach_content,
 .portfolio_story .story_content {
