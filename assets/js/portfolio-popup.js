@@ -53,7 +53,7 @@ document.addEventListener("click", function (e) {
   const tagline = card.getAttribute("data-tagline");
   const title = card.getAttribute("data-title");
   const img = card.getAttribute("data-img");
-  const desc = card.getAttribute("data-desc");
+  //const desc = card.getAttribute("data-desc");
   const url = card.getAttribute("data-url");
   const projectName = card.getAttribute("data-project-name");
   const developedBy = card.getAttribute("data-developed-by");
@@ -66,7 +66,7 @@ document.addEventListener("click", function (e) {
   if (popupImg) popupImg.src = img || "";
 
   document.getElementById("popup-title").innerText = `${title} - ${tagline}`;
-  document.getElementById("popup-desc").innerText = desc || "";
+  //document.getElementById("popup-desc").innerText = desc || "";
   document.getElementById("popup-link").href = url || "#";
   document.getElementById("popup-project-name").innerText = projectName || "";
   document.getElementById("popup-developed-by").innerText = developedBy || "";
@@ -161,7 +161,7 @@ document.addEventListener("click", function (e) {
         html += `
           <div class="portfolio_story">
             <div class="story_title">
-              <h4 class="title">${item.case_study_heading}</h4>
+              <h2 class="title">${item.case_study_heading}</h2>
             </div>
             <div class="story_content">
               <p>${item.case_study_content}</p>

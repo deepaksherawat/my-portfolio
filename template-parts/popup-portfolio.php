@@ -31,12 +31,12 @@
             </div>
             <div class="portfolio_gallery owl-carousel" id="popup-gallery"></div>
 
-            <div class="portfolio_description">
+            <!-- <div class="portfolio_description">
                <h2 class="title">Project Description</h2>
                <div class="desc" id="popup-desc">
                   
                </div>
-            </div>
+            </div> -->
             <div class="portfolio_story_approach">
                <div id="popup-story-wrapper"></div>
                
