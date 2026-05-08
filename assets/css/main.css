@@ -3597,6 +3597,9 @@ img.portfolio-image {
 	color: var(--white-1);
 	margin-bottom: 0;
 }
+.portfolio_story .story_content p strong {
+    color: var(--golden-yellow-1);
+}
 .portfolio_approach .approach_content,
 .portfolio_story .story_content {
 	max-width: 100%;
