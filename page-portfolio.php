@@ -69,7 +69,7 @@ if($date){
 
 ?>
 <!-- cards -->
-<div class="portfolio_card" data-title="<?php the_title(); ?>" <?php if (get_field('project_tagline')): ?>data-tagline="<?php the_field('project_tagline'); ?>"<?php endif; ?> data-desc="<?php echo esc_attr(wp_strip_all_tags(get_field('project_description'))); ?>" data-url="<?php the_field('website_url'); ?>" data-project-name="<?php echo esc_attr(get_field('project_name')); ?>" data-developed-by="<?php echo esc_attr(get_field('developed_in')); ?>" data-technology="<?php echo esc_attr(get_field('technology')); ?>" data-launch-date="<?php echo esc_attr($formatted_date); ?>" data-stories="<?php echo $stories_json; ?>" data-gallery='<?php echo json_encode($gallery_data); ?>'>
+<div class="portfolio_card" data-title="<?php the_title(); ?>" <?php if (get_field('project_tagline')): ?>data-tagline="<?php the_field('project_tagline'); ?>"<?php endif; ?> data-desc="<?php echo esc_attr(get_field('project_description')); ?>" data-url="<?php the_field('website_url'); ?>" data-project-name="<?php echo esc_attr(get_field('project_name')); ?>" data-developed-by="<?php echo esc_attr(get_field('developed_in')); ?>" data-technology="<?php echo esc_attr(get_field('technology')); ?>" data-launch-date="<?php echo esc_attr($formatted_date); ?>" data-stories="<?php echo $stories_json; ?>" data-gallery='<?php echo json_encode($gallery_data); ?>'>
 <div class="row">
 <div class="bg-shape">
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
