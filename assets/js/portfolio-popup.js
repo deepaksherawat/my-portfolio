@@ -50,6 +50,7 @@ document.addEventListener("click", function (e) {
   if (!card) return;
 
   // ===== DATA =====
+  const tagline = card.getAttribute("data-tagline");
   const title = card.getAttribute("data-title");
   const img = card.getAttribute("data-img");
   const desc = card.getAttribute("data-desc");
@@ -64,7 +65,9 @@ document.addEventListener("click", function (e) {
   const popupImg = document.getElementById("popup-img");
   if (popupImg) popupImg.src = img || "";
 
-  document.getElementById("popup-title").innerText = title || "";
+  document.getElementById("popup-title").innerText = tagline
+  ? `${title} - ${tagline}`
+  : title;
   document.getElementById("popup-desc").innerText = desc || "";
   document.getElementById("popup-link").href = url || "#";
   document.getElementById("popup-project-name").innerText = projectName || "";

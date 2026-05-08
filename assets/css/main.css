@@ -2352,7 +2352,7 @@ button#loadMorePortfolio:hover{
     transition: 0.3s ease-in;
 }
 .tj-service-5-accordion-list-title{padding-bottom: 30px}
-.tj-portfolio-5-accordion-list-title{padding-bottom: 10px;}
+.tj-portfolio-5-accordion-list-title{display:flex; padding-bottom: 10px;}
 .tj-service-5-accordion-list-title span, .tj-portfolio-5-accordion-list-title span{
 	color: var(--tj-theme-primary);
   margin-right: 4px;
@@ -2365,7 +2365,7 @@ img.service-image {
 }
 .tj-portfolio-5-accordion-thumb {
     width: 636px;
-    height: 480px;
+    height: 515px;
     overflow: hidden;
     display: block;
 }
@@ -3425,6 +3425,9 @@ img.portfolio-image {
 .popup_modal_content .portfolio_info .portfolio_info_text{
 	max-width: calc(50% - 25px);
 	width: 100%;
+}
+.portfolio_info .portfolio_info_text .title {
+    font-size: 36px;
 }
 .portfolio_description .title,
 .portfolio_info .portfolio_info_text .title {
