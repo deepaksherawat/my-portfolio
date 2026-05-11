@@ -1441,7 +1441,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const blogs = document.querySelectorAll(".blog-col");
   const blogBtn = document.getElementById("loadMoreBlog");
 
-  let blogCount = 3;
+  let blogCount = 12;
 
   function showBlogs() {
 
@@ -1496,3 +1496,39 @@ document.querySelectorAll('.project_read_more').forEach(link => {
         });
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const extraItems = document.querySelectorAll(".skills-list li.extra-item");
+    const toggleBtn = document.getElementById("toggleSkills");
+
+    let expanded = false;
+
+    // Default button text
+    toggleBtn.innerHTML = 'View More Skills <i class="fa-solid fa-arrow-right"></i>';
+
+    toggleBtn.addEventListener("click", function () {
+
+        expanded = !expanded;
+
+        extraItems.forEach(item => {
+
+            if (expanded) {
+                item.style.setProperty("display", "list-item", "important");
+            } else {
+                item.style.setProperty("display", "none", "important");
+            }
+
+        });
+
+        // Button text + icon change
+        toggleBtn.innerHTML = expanded
+            ? 'Hide Skills <i class="fa-solid fa-arrow-right"></i>'
+            : 'View More Skills <i class="fa-solid fa-arrow-right"></i>';
+
+    });
+
+});
+
+

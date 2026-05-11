@@ -1,5 +1,9 @@
 <?php get_header(); ?>
-<!-- Start Main Section -->
+<style>
+ul.skills-list > li.extra-item{
+    display: none;
+}
+</style>
 <main class="site-content" id="content">
 <!-- START: Breadcrumb and Skill Marquee Section -->
 <?php
@@ -7,7 +11,7 @@ get_template_part('template-parts/breadcrumb');
 get_template_part('template-parts/marquee');
 ?>
 <!-- END: Breadcrumb and Skill Marquee Section -->
- <!-- START: Expertise Section -->
+<!-- START: Blog Section -->
 <section class="full-width tj-post-details__area">
 <div class="container">
 <div class="row justify-content-center">
@@ -17,15 +21,18 @@ get_template_part('template-parts/marquee');
 <?php 
 if ( has_post_thumbnail() ) {
  ?>
-<div class="tj-post__thumb single_expertise_image">
-<?php $img = get_the_post_thumbnail_url(get_the_ID(), 'service-thumbnails-page');
+<div class="tj-post__thumb">
+<?php $img = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
 echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 ?>
 </div>
 <?php } ?>
 <div class="tj-post__content">
-<h3 class="tj-post__title entry-title"><span>My Expertise:</span> <?php the_title(); ?>
-</h3>
+<div class="tj-post__meta entry-meta">
+<span><i class="fa-solid fa-user"></i> <?php echo get_the_author(); ?></span>
+<span><i class="fa-solid fa-calendar"></i> <?php the_date(); ?></span>
+</div>
+<h3 class="tj-post__title entry-title"><?php the_title(); ?></h3>
 <div class="tj-post__content">
 <?php the_content(); ?>
 </div>
@@ -101,7 +108,6 @@ echo get_the_post_thumbnail($next_post->ID, 'thumbnail');
 <?php endif; ?>
 </div>
 </div>
-<?php get_template_part('template-parts/single-faq'); ?>
 </div>
 <div class="col-lg-4">
 <div class="tj_main_sidebar">
@@ -109,65 +115,68 @@ echo get_the_post_thumbnail($next_post->ID, 'thumbnail');
 <div class="bg-shape">
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
 </div>
-<!-- search Form -->
-<?php get_template_part('template-parts/search-form');  ?>
-<!-- end search Form -->
+<div class="tj-widget__search form_group">
+<form class="search-form" action="#" method="get">
+<input type="search" id="search" name="search" placeholder="Search..." />
+<button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+</form>
 </div>
-<div class="sidebar_widget services_list wow fadeInUp" data-wow-delay=".3s">
+</div>
+<div class="sidebar_widget widget_categories wow fadeInUp" data-wow-delay=".3s">
 <div class="bg-shape">
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
 </div>
 <div class="widget_title">
-<h3 class="title">My Other Expertise</h3>
+<h3 class="title">My Other Skills</h3>
 </div>
+<ul class="skills-list">
 <?php
-$current_id = get_the_ID();
-$args = array(
-'post_type'      => 'my-expertise',
-'posts_per_page' => -1,
-'post__not_in'   => array($current_id), // current post exclude
-);
-$expertise_query = new WP_Query($args);
-if ($expertise_query->have_posts()) : ?>
-<ul>
-<?php while ($expertise_query->have_posts()) : $expertise_query->the_post(); ?>
-<li><a href="<?php the_permalink(); ?>"><button fdprocessedid="3a30ld"><?php the_title(); ?></button></a></li>
-<?php endwhile; ?>
-</ul>
-<?php endif; wp_reset_postdata(); ?>
-</div>
+$current_post_id = get_the_ID();
 
-<!-- get in touch sidebar -->
-<div class="sidebar_widget contact_form wow fadeInUp" data-wow-delay=".3s">
-<div class="bg-shape">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
+$args = array(
+    'post_type'      => 'skills',
+    'posts_per_page' => -1,
+    'post__not_in'   => array($current_post_id),
+);
+
+$query = new WP_Query($args);
+
+if ($query->have_posts()) :
+
+    $count = 0;
+
+    while ($query->have_posts()) : $query->the_post();
+
+        // 10 ke baad hidden class add hogi
+        $hidden_class = ($count >= 10) ? 'extra-item' : '';
+?>
+        <li class="<?php echo $hidden_class; ?>">
+            <a href="<?php the_permalink(); ?>">
+                <?php the_title(); ?>
+            </a>
+        </li>
+
+<?php
+        $count++;
+    endwhile;
+
+    wp_reset_postdata();
+
+endif;
+?>
+
+<!-- Toggle Button -->
+<li class="toggle-btn">
+    <button id="toggleSkills">View More Skills <i class="fa-solid fa-arrow-right"></i></button>
+</li>
+
+</ul>
 </div>
-<div class="sidebar_getintouch">
-<div class="getintouch_logo">
-<a href="<?php echo site_url(); ?>">
-<?php 
-$logo = get_field('main_logo', 'option');
-if( !empty( $logo ) ): ?>
-    <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" />
-<?php endif; ?>
-<p class="logo_tagline"><?php echo get_field('main_logo_tagline', 'option'); ?></p>
-</a>
-</div>
-<div class="getintouch_text">
-<p>Don't Hesitate to Contact Me</p>
-<a class="call_me" href="tel:+918595746074"><i class="fa-solid fa-phone"></i> +91-8595746074</a>
-<div class="hire-btn"><a href="#contact-wrapper" class="tj-primary-btn modal-popup">Get Free Quote Now<i class="fa-solid fa-arrow-right"></i></a></div>
-</div>
-</div>
-</div>
-<!-- end get in touch sidebar -->
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- END: Expertise Section -->
+<!-- END: Skills Section -->
 </main>
-<!-- End Main Section -->
-
 <?php get_footer(); ?>

@@ -41,12 +41,22 @@ if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?
 <a href="<?php the_permalink(); ?>">
 <?php the_post_thumbnail('blog-card'); ?>
 </a>
+<div class="blog_cat">
 <?php
 $categories = get_the_category();
-foreach ($categories as $cat) {
-echo '<a class="category" href="' . get_category_link($cat->term_id) . '">' . $cat->name . '</a> ';
+
+if (!empty($categories)) {
+
+    $output = [];
+
+    foreach ($categories as $cat) {
+        $output[] = '<a class="category" href="' . esc_url(get_category_link($cat->term_id)) . '">' . esc_html($cat->name) . '</a>';
+    }
+
+    echo implode('', $output); // comma ke sath show hoga
 }
 ?>
+</div>
 </div>
 <div class="blog-content">
 <div class="blog-meta">

@@ -634,6 +634,17 @@ span.present-text{color: var(--golden-yellow-1);}
     width: 100%;
     height: 100%;
 }*/
+.faq-section.single_faq {
+    background: transparent;
+    padding-top: 40px;
+    padding-bottom: 0px;
+}
+.faq-section.single_faq .section-header.text-center {
+    margin-bottom: 30px;
+}
+.faq-section.single_faq .section-header.text-center h2 {
+    font-size: 40px;
+}
 .faq-section .section-header {
 	max-width: 100%;
 }

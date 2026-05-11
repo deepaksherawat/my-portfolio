@@ -43,16 +43,33 @@ echo '<img class="portfolio-image" src="'.$img.'" alt="'.get_the_title().'">';
 }
 ?>
 </a>
-<a href="#" class="category">Tutorial</a>
+<div class="blog_cat">
+<?php
+$categories = get_the_category();
+
+if (!empty($categories)) {
+
+    $output = [];
+
+    foreach ($categories as $cat) {
+        $output[] = '<a class="category" href="' . esc_url(get_category_link($cat->term_id)) . '">' . esc_html($cat->name) . '</a>';
+    }
+
+    echo implode('', $output); // comma ke sath show hoga
+}
+?>
+</div>
 </div>
 <div class="blog-content">
 <div class="blog-meta">
 <ul class="ul-reset">
-<li><i class="fa-solid fa-calendar"></i> Oct 01, 2022</li>
-<li><i class="fa-solid fa-comment"></i> <a href="#">Comment (0)</a></li>
+<li><i class="fa-solid fa-calendar"></i><?php the_date(); ?></li>
+<li><i class="fa-solid fa-comment"></i> <a href="<?php comments_link(); ?>">
+    <?php comments_number('0 Comments', '1 Comment', '% Comments'); ?>
+</a></li>
 </ul>
 </div>
-<h3 class="blog-title"><a href="blog-details.html"><?php the_title(); ?></a></h3>
+<h3 class="blog-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 </div>
 </div>
 </div>
