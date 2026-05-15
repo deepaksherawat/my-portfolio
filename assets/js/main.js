@@ -179,10 +179,10 @@ Description: Gerold - Personal Portfolio HTML5 Template
 
 		// Portfolio Carousel Js
 		$(".portfolio_gallery.owl-carousel").owlCarousel({
-			items: 2,
+			items: 1,
 			loop: true,
 			lazyLoad: true,
-			center: true,
+			center: false,
 			// autoWidth: true,
 			autoplayHoverPause: false,
 			autoplay: true,
@@ -197,15 +197,45 @@ Description: Gerold - Personal Portfolio HTML5 Template
 					margin: 0,
 				},
 				768: {
-					items: 2,
+					items: 1,
 					margin: 20,
 				},
 				992: {
-					items: 2,
+					items: 1,
 					margin: 30,
 				},
 			},
 		});
+
+		$('.portfolio_page').owlCarousel({
+            items: 1,
+			loop: true,
+			lazyLoad: true,
+			center: false,
+			// autoWidth: true,
+			autoplayHoverPause: false,
+			autoplay: true,
+			autoplayTimeout: 5000,
+			smartSpeed: 800,
+			margin: 30,
+			nav: true,
+			dots: true,
+			responsive: {
+				0: {
+					items: 1,
+					margin: 0,
+				},
+				768: {
+					items: 1,
+					margin: 20,
+				},
+				992: {
+					items: 1,
+					margin: 30,
+				},
+			},
+    });
+
 
 		// Testimonial Carousel Js
 		$(".testimonial-carousel.owl-carousel").owlCarousel({
@@ -318,46 +348,40 @@ Description: Gerold - Personal Portfolio HTML5 Template
 		});
 
 		// Services Slider Js
-		if ($(".service-slider-8").length > 0) {
-			var service = new Swiper(".service-slider-8", {
+if ($(".service-slider-8").length > 0) {
+	var service = new Swiper(".service-slider-8", {
+		slidesPerView: 3,
+		spaceBetween: 30,
+		loop: true,
+		centeredSlides: true,
+		speed: 1000,
+		autoplay: {
+			delay: 3000,
+		},
+		navigation: {
+			prevEl: ".service-prev",
+			nextEl: ".service-next",
+		},
+		pagination: {
+			el: ".service-pagination",
+			clickable: true,
+		},
+		breakpoints: {
+			320: {
 				slidesPerView: 1,
-				spaceBetween: 30,
-				loop: true,
-				centeredSlides: false,
-				speed: 10000,
-				autoplay: {
-					delay: 10000,
-				},
-				navigation: {
-					prevEl: ".service-prev",
-					nextEl: ".service-next",
-				},
-				pagination: {
-					el: ".service-pagination",
-					clickable: true,
-				},
-				breakpoints: {
-					320: {
-						slidesPerView: 1,
-					},
-					430: {
-						slidesPerView: 1.2,
-					},
-					768: {
-						slidesPerView: 2,
-					},
-					992: {
-						slidesPerView: 2,
-					},
-					1200: {
-						slidesPerView: 1,
-					},
-					1400: {
-						slidesPerView: 1,
-					},
-				},
-			});
-		}
+			},
+			576: {
+				slidesPerView: 2,
+			},
+			992: {
+				slidesPerView: 2,
+			},
+			1200: {
+				slidesPerView: 3,
+			},
+		},
+	});
+}
 
 
 // progress skill Slider Js

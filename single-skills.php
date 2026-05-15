@@ -172,6 +172,30 @@ endif;
 
 </ul>
 </div>
+<!-- get in touch sidebar -->
+<div class="sidebar_widget contact_form wow fadeInUp" data-wow-delay=".3s">
+<div class="bg-shape">
+<img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
+</div>
+<div class="sidebar_getintouch">
+<div class="getintouch_logo">
+<a href="<?php echo site_url(); ?>">
+<?php 
+$logo = get_field('main_logo', 'option');
+if( !empty( $logo ) ): ?>
+    <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" />
+<?php endif; ?>
+<p class="logo_tagline"><?php echo get_field('main_logo_tagline', 'option'); ?></p>
+</a>
+</div>
+<div class="getintouch_text">
+<p>Don't Hesitate to Contact Me</p>
+<a class="call_me" href="tel:+918595746074"><i class="fa-solid fa-phone"></i> +91-8595746074</a>
+<div class="hire-btn"><a href="#contact-wrapper" class="tj-primary-btn modal-popup">Get Free Quote Now<i class="fa-solid fa-arrow-right"></i></a></div>
+</div>
+</div>
+</div>
+<!-- end get in touch sidebar -->
 </div>
 </div>
 </div>

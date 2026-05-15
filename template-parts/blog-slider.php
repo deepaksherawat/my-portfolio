@@ -17,7 +17,7 @@
 <div class="blog-next"><i class="fa-solid fa-arrow-right"></i></div>
 </div>
 <div class="blog-button wow fadeInRight" data-wow-delay=".5s">
-<a class="btn tj-btn-primary" href="#">View All Blogs <i class="fa-solid fa-arrow-right"></i></a>
+<a class="btn tj-btn-primary" href="#">View All Blogs <i class="fa-solid fa-eye"></i></a>
 </div>
 
 </div>
@@ -80,7 +80,7 @@ if (!empty($categories)) {
 <div class="blog-next"><i class="fa-solid fa-arrow-right"></i></div>
 </div>
 <div class="blog-button wow fadeInRight" data-wow-delay=".5s">
-<a class="btn tj-btn-primary" href="#">View All Blogs <i class="fa-solid fa-arrow-right"></i></a>
+<a class="btn tj-btn-primary" href="#">View All Blogs <i class="fa-solid fa-eye"></i></a>
 </div>
 </div>
 </div>

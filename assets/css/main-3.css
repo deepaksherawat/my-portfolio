@@ -662,7 +662,7 @@ span.present-text{color: var(--golden-yellow-1);}
 	background: linear-gradient(to right, var(--dark-blue-2) 0%, var(--dark-blue-3) 51%, var(--dark-blue-1) 100%);
 	border-color: var(--dark-blue-1);
 	border: 1px solid;
-	border-radius: 15px;
+	border-radius: 10px;
 	position: relative;
     z-index: 9;
 }
@@ -692,8 +692,8 @@ span.present-text{color: var(--golden-yellow-1);}
 	border-color: var(--dark-blue-1);
 }
 .accordion-item:first-of-type {
-	border-top-left-radius: 15px;
-	border-top-right-radius: 15px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 }
 .accordion-item:last-of-type {
 	border-bottom-left-radius: 15px;

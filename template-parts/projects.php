@@ -16,7 +16,7 @@
 <div class="portfolio-next"><i class="fa-solid fa-arrow-right"></i></div>
 </div>
 <div class="portfolio-button wow fadeInRight" data-wow-delay=".5s">
-<a class="btn tj-btn-primary" href="#">View All Project <i class="fa-solid fa-arrow-right"></i></a>
+<a class="btn tj-btn-primary" href="#">View All Project <i class="fa-solid fa-eye"></i></a>
 </div>
 
 </div>
@@ -115,7 +115,7 @@ echo '</p>';
 <div class="portfolio-next"><i class="fa-solid fa-arrow-right"></i></div>
 </div>
 <div class="portfolio-button wow fadeInRight" data-wow-delay=".5s">
-<a class="btn tj-btn-primary" href="#">View All Project <i class="fa-solid fa-arrow-right"></i></a>
+<a class="btn tj-btn-primary" href="#">View All Project <i class="fa-solid fa-eye"></i></a>
 </div>
 </div>
 </div>

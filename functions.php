@@ -86,6 +86,7 @@ function my_theme_setup() {
     add_theme_support('post-thumbnails');
     add_theme_support('service-thumbnails', 409, 368, true);
     add_theme_support('service-thumbnails-page', 450, 300, true);
+    add_image_size('service_2_image_size', 300, 250, true); // true = crop (no stretch)
     add_image_size('project_image_size', 937, 429, true); // true = crop (no stretch)
     add_image_size('project_thumbnail', 584, 500, true);
     add_image_size('project_thumbnail_page', 636, 480, true);
