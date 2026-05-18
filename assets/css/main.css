@@ -1180,9 +1180,9 @@ body.loaded {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
-.mean-container .mean-bar {
+/*.mean-container .mean-bar {
 	background-color: var(--tj-theme-secondary);
-}
+}*/
 .mean-nav ul li a.mean-expand i.fa-plus {
 	display: block;
 }
@@ -1214,11 +1214,12 @@ body.loaded {
 	overflow: hidden;
 	position: fixed;
 	left: 0;
-	top: 80px;
+	top: 75px;
+	padding-top: 0px;
 	width: 100%;
 	min-height: 90vh;
 	overflow-y: auto;
-	background-color: var(--tj-theme-secondary);
+	background: linear-gradient(135deg, var(--dark-blue-2), var(--dark-blue-3), var(--dark-blue-1));
 	-webkit-transform-origin: top;
 	-ms-transform-origin: top;
 	transform-origin: top;
@@ -1370,7 +1371,7 @@ body.loaded {
 .hero-content-box.style-10 .desc {
     max-width: 420px;
     width: 100%;
-    color: var(--tj-grey-1);
+    color: var(--white-1);
 }
 .hero-content-box.style-10 .desc p:last-child {
     margin-bottom: 0;
@@ -3766,6 +3767,9 @@ img.portfolio-image {
 *  START: Resume Section style 5
 * ===============================
 */
+.resume_thumb {
+    display: none;
+}
 .resume-section.style-5 {
     padding-bottom: 120px;
     background: linear-gradient(to right, var(--white-1) 0%, var(--white-2) 51%, var(--white-3) 100%);
@@ -7399,6 +7403,7 @@ body.absolute_header .breadcrumb_area {
     justify-content: center;
     width: 43px;
     height: 43px;
+    position: 10px;
     line-height: 1;
     font-size: 20px;
     border: 1px solid var(--tj-white);

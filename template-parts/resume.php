@@ -56,7 +56,20 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 </div>
 <div class="resume_content">
 <div class="resume_text">
+<div class="resume_image_text">
+<div class="resume_thumb">
+<?php 
+if ( has_post_thumbnail() ) {
+$img = get_the_post_thumbnail_url(get_the_ID(), 'full');
+echo '<img src="'.$img.'" alt="'.get_the_title().'">';
+}else{
+?><p class="company_name"><?php the_title(); ?></p><?php
+}
+?>
+</div>
 <h5 class="title"><?php the_field('role'); ?></h5>
+</div>
+
 <div class="exp_box">
 <span class="subtitle"><i class="fa-regular fa-calendar"></i><?php the_title(); ?></span>
 <span class="date mobile"><i class="fa-solid fa-location-arrow"></i><?php the_field('location'); ?> (<?php the_field('work_mode'); ?>)</span>

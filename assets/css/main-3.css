@@ -737,7 +737,7 @@ span.present-text{color: var(--golden-yellow-1);}
 .accordion-item .faq-title:not(.collapsed) {
 	box-shadow: none;
 }
-.accordion-item .faq-title:not(.collapsed):before {
+.accordion-item.active .faq-title:not(.collapsed):before {
 	content: "\f068";
 	color: var(--white-1);
 }
@@ -748,9 +748,13 @@ span.present-text{color: var(--golden-yellow-1);}
 	display: none;
 }
 .accordion-item .faq-text {
-	padding: 5px 10px 30px 30px;
-	max-width: 985px;
+	padding: 5px 20px 30px 30px;
+	max-width: 100%;
 	width: 100%;
+}
+span.faq_index {
+    color: var(--golden-yellow-1);
+    font-weight: 600;
 }
 .accordion-item .faq-text p {
 	color: var(--white-1);
@@ -820,6 +824,7 @@ span.present-text{color: var(--golden-yellow-1);}
 	justify-content: center;
 	width: 43px;
 	height: 43px;
+	padding: 10px;
 	line-height: 1;
 	font-size: 20px;
 	border: 1px solid var(--tj-white);

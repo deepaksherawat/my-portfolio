@@ -487,7 +487,7 @@ if ($(".service-slider-8").length > 0) {
 				slidesPerView: 3,
 				spaceBetween: 30,
 				loop: true,
-				centeredSlides: true,
+				centeredSlides: false,
 				speed: 2000,
 				autoplay: true,
 				navigation: {
@@ -503,7 +503,7 @@ if ($(".service-slider-8").length > 0) {
 						slidesPerView: 1,
 					},
 					430: {
-						slidesPerView: 1.2,
+						slidesPerView: 1,
 					},
 					768: {
 						slidesPerView: 2,
