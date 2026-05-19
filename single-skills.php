@@ -22,7 +22,7 @@ get_template_part('template-parts/marquee');
 if ( has_post_thumbnail() ) {
  ?>
 <div class="tj-post__thumb">
-<?php $img = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+<?php $img = get_the_post_thumbnail_url(get_the_ID(), 'full');
 echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 ?>
 </div>
