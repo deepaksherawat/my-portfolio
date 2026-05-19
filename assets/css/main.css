@@ -5299,6 +5299,7 @@ h2.archive-blog span.blog_text {
 .tj-single__post h4{font-size: 24px}
 .tj-single__post h5{font-size: 20px}
 .tj-single__post h6{font-size: 18px}
+.tj-single__post h2 span.text_color, .tj-single__post h3 span.text_color, .tj-single__post h4 span.text_color, .tj-single__post h5 span.text_color, .tj-single__post h6 span.text_color{color: var(--golden-yellow-1)}
 .tj-post__content .tj-post__btn {
 	margin-top: 30px;
 }
