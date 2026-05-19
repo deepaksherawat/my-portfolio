@@ -5253,7 +5253,7 @@ h2.archive-blog span.blog_text {
 	font-size: 40px;
 	line-height: 1.3;
 	color: var(--dark-blue-1);
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 .tj-post__content .tj-post__title a {
 	display: inline;
