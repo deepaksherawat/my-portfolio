@@ -5405,7 +5405,7 @@ blockquote cite::before {
 	margin-bottom: 50px;
 }
 .tj-single__post .tj-post__thumb.single_expertise_image{
-	height: 500px;
+	height: auto;
 }
 .tj-single__post .tj-post__thumb.single_expertise_image img{
 	height: 100%;
