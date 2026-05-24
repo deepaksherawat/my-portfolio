@@ -1,5 +1,9 @@
 <!-- START: Breadcrumb Area -->
-<section class="breadcrumb_area" data-bg-image="<?php echo get_template_directory_uri(); ?>/assets/images/breadcrumb-bg.jpg"data-bg-color="#140C1C">
+<section class="breadcrumb_area">
+<div class="bg-shape">
+<img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
+</div>
+<div id="particles-js"></div>
 <div class="container">
 <div class="row">
 <div class="col">
@@ -133,3 +137,7 @@ echo '</span>';
 </div>
 </section>
 <!-- END: Breadcrumb Area -->
+
+<script>
+
+</script>

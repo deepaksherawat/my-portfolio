@@ -1,5 +1,6 @@
 <!-- start: Hero Area -->
 <section class="hero-section style-10">
+<div id="hero-particles"></div>
 <div class="bg-shape">
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
 </div>
@@ -108,3 +109,49 @@
 </div>
 </section>
 <!-- end: Hero Area -->
+<script>
+window.addEventListener("load", function () {
+  const heroParticles = document.getElementById("hero-particles");
+
+  if (typeof particlesJS !== "undefined" && heroParticles) {
+    particlesJS("hero-particles", {
+      particles: {
+        number: { value: 70, density: { enable: true, value_area: 900 } },
+        color: { value: "#dcb86c" },
+        shape: { type: "circle" },
+        opacity: { value: 0.45 },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 140,
+          color: "#dcb86c",
+          opacity: 0.25,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1.5,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out"
+        }
+      },
+      interactivity: {
+        detect_on: "window",
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          resize: true
+        },
+        modes: {
+          grab: {
+            distance: 220,
+            line_linked: { opacity: 0.7 }
+          }
+        }
+      },
+      retina_detect: true
+    });
+  }
+});
+</script>

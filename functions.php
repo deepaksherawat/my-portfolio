@@ -55,11 +55,19 @@ wp_enqueue_script('wow', get_template_directory_uri() . '/assets/js/wow.min.js',
 wp_enqueue_script('validate', get_template_directory_uri() . '/assets/js/validate.min.js', array('jquery'), null, true);
 wp_enqueue_script('backToTop', get_template_directory_uri() . '/assets/js/backToTop.js', array('jquery'), null, true);
 
+wp_enqueue_script(
+    'particles-js',
+    'https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js',
+    array(),
+    '2.0.0',
+    true
+);
+
 // 6. MAIN JS (Always last)
 wp_enqueue_script(
     'main-js',
     get_template_directory_uri() . '/assets/js/main.js',
-    array('jquery','splitting-js','imagesloaded','isotope','appear'),
+    array('jquery', 'particles-js', 'splitting-js','imagesloaded','isotope','appear'),
     '1.0',
     true
 );

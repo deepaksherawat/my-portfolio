@@ -1556,3 +1556,72 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 100 },
+    color: { value: "#dcb86c" },
+    shape: { type: "circle" },
+    opacity: { value: 0.7 },
+    size: { value: 3 },
+    line_linked: {
+      enable: true,
+      distance: 140,
+      color: "#dcb86c",
+      opacity: 0.35,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 2,
+      direction: "none",
+      out_mode: "out"
+    }
+  },
+  interactivity: {
+    events: {
+      onhover: { enable: true, mode: "grab" }
+    }
+  }
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof particlesJS !== "undefined" && document.getElementById("hero-particles")) {
+    particlesJS("hero-particles", {
+      particles: {
+        number: { value: 90 },
+        color: { value: "#dcb86c" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 140,
+          color: "#dcb86c",
+          opacity: 0.2,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1.8,
+          out_mode: "out"
+        }
+      },
+      interactivity: {
+        detect_on: "window",
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          resize: true
+        },
+        modes: {
+          grab: {
+            distance: 220,
+            line_linked: { opacity: 0.7 }
+          }
+        }
+      },
+      retina_detect: true
+    });
+  }
+});

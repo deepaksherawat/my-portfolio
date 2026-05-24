@@ -14,16 +14,25 @@ get_template_part('template-parts/marquee');
 <div class="col-lg-8">
 <div class="portfolio_title"><h2><span>Project: </span><?php the_title(); ?></h2></div>
 <!-- portfolio gallery -->
-<?php 
-$images = get_field('project_gallery');
-if( $images ): ?>
-<div class="portfolio_gallery portfolio_page owl-carousel">
-<?php foreach( $images as $image ): ?>
-<div class="gallery_item">
-<img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-</div>
-<?php endforeach; ?>
-</div>
+<?php
+$gallery = get_field('project_gallery'); // apna ACF field name check karo
+
+if ($gallery): ?>
+  <div class="portfolio_gallery portfolio_page owl-carousel">
+    <?php foreach ($gallery as $image): ?>
+      <div class="gallery_item">
+        <?php
+        if (is_array($image)) {
+          echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '">';
+        } elseif (is_numeric($image)) {
+          echo wp_get_attachment_image($image, 'full');
+        } else {
+          echo '<img src="' . esc_url($image) . '" alt="">';
+        }
+        ?>
+      </div>
+    <?php endforeach; ?>
+  </div>
 <?php endif; ?>
 <!-- end portfolio gallery -->
 <div class="portfolio_metas">
