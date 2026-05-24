@@ -39,7 +39,7 @@ window.addEventListener("load", function () {
 
 });
 
-
+//
 // ================= POPUP + GALLERY =================
 document.addEventListener("click", function (e) {
 
@@ -65,7 +65,8 @@ document.addEventListener("click", function (e) {
   const popupImg = document.getElementById("popup-img");
   if (popupImg) popupImg.src = img || "";
 
-  document.getElementById("popup-title").innerText = `${title} - ${tagline}`;
+  document.getElementById("popup-title").innerText = `${title}`;
+  //document.getElementById("popup-title").innerText = `${title} - ${tagline}`;
   //document.getElementById("popup-desc").innerText = desc || "";
   document.getElementById("popup-link").href = url || "#";
   document.getElementById("popup-project-name").innerText = projectName || "";

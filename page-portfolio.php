@@ -69,15 +69,14 @@ if($date){
 
 ?>
 <!-- cards -->
-<div class="portfolio_card" data-title="<?php the_title(); ?>" <?php if (get_field('project_tagline')): ?>data-tagline="<?php the_field('project_tagline'); ?>"<?php endif; ?> data-url="<?php the_field('website_url'); ?>" data-project-name="<?php echo esc_attr(get_field('project_name')); ?>" data-developed-by="<?php echo esc_attr(get_field('developed_in')); ?>" data-technology="<?php echo esc_attr(get_field('technology')); ?>" data-launch-date="<?php echo esc_attr($formatted_date); ?>" data-stories="<?php echo $stories_json; ?>" data-gallery='<?php echo json_encode($gallery_data); ?>'>
+<div class="portfolio_card" data-title="<?php the_title(); ?>" data-url="<?php the_field('website_url'); ?>" data-project-name="<?php echo esc_attr(get_field('project_name')); ?>" data-developed-by="<?php echo esc_attr(get_field('developed_in')); ?>" data-technology="<?php echo esc_attr(get_field('technology')); ?>" data-launch-date="<?php echo esc_attr($formatted_date); ?>" data-stories="<?php echo $stories_json; ?>" data-gallery='<?php echo json_encode($gallery_data); ?>'>
 <div class="row">
 <div class="bg-shape">
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
 </div>
 <div class="col-lg-6 col-md-6 col-12 portfolio_card_left">
 <h3 class="tj-portfolio-5-accordion-list-title">
-<span><?php echo str_pad($query->current_post + 1, 2, '0', STR_PAD_LEFT); ?>.</span> <?php the_title(); if (get_field('project_tagline')): ?>- <?php the_field('project_tagline'); endif; ?>
-</h3>
+<span><?php echo str_pad($query->current_post + 1, 2, '0', STR_PAD_LEFT); ?>.</span> <?php the_title(); ?></h3>
 <div class="project-metabox">
   <div class="pro-meta">
     <p class="p-meta-title">project name</p>
