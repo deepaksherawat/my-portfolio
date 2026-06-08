@@ -1210,9 +1210,9 @@ body.loaded {
 	top: 75px;
 	padding-top: 0px;
 	width: 100%;
-	min-height: 90vh;
+	min-height: 100%;
 	overflow-y: auto;
-	background: linear-gradient(135deg, var(--dark-blue-2), var(--dark-blue-3), var(--dark-blue-1));
+	background: var(--dark-blue-3);
 	-webkit-transform-origin: top;
 	-ms-transform-origin: top;
 	transform-origin: top;
