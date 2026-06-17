@@ -5672,6 +5672,9 @@ blockquote cite::before {
 	max-width: 85px;
 	width: 100%;
 	height: 85px;
+	border: 2px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, #ffffff, #dfbb6f) border-box;
+  border-radius: 5px;
 }
 .single-post__navigation
 	.tj-navigation_post
@@ -5692,6 +5695,7 @@ blockquote cite::before {
 	height: 100%;
 	-o-object-fit: cover;
 	object-fit: cover;
+	border-radius: 5px;
 }
 .single-post__navigation
 	.tj-navigation_post
