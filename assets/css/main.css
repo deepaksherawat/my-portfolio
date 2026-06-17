@@ -6728,6 +6728,9 @@ body.absolute_header .breadcrumb_area {
     justify-content: center;
     background: linear-gradient(to right, var(--dark-blue-2), var(--dark-blue-3), var(--dark-blue-1));
 }
+.breadcrumb_area .container {
+    z-index: 99;
+}
 #particles-js {
     position: absolute;
     inset: 0px;
@@ -8179,3 +8182,25 @@ ul.port_meta li.port_meta_text:last-child a i {
     color: var(--white-1);
 }
 /* end service box css */
+/* Sticky Sidebar Contact Widget - Desktop All Sizes */
+@media only screen and (min-width: 992px) {
+html, body {
+    overflow-x: clip !important;
+}
+.site-content, main, .tj-post-details__area, .tj_main_sidebar, .col-lg-4, .row, .container {
+    overflow: visible !important;
+    transform: none !important;
+}
+.tj_main_sidebar {
+   position: relative;
+   height: 100%;
+}
+.tj_main_sidebar .sidebar_widget.contact_form {
+   position: -webkit-sticky !important;
+   position: sticky !important;
+   top: 120px !important;
+   z-index: 99 !important;
+   transform: none !important;
+   animation: none !important;
+}
+}
