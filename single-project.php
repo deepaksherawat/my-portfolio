@@ -128,6 +128,7 @@ echo get_the_post_thumbnail($next_post->ID, 'thumbnail');
 </div>
 <?php endif; ?>
 </div>
+<?php get_template_part('template-parts/single-faq'); ?>
 </div>
 <div class="col-lg-4">
 <div class="tj_main_sidebar">

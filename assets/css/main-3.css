@@ -751,6 +751,14 @@ span.present-text{color: var(--golden-yellow-1);}
 	padding: 5px 20px 30px 30px;
 	max-width: 100%;
 	width: 100%;
+	display: flex;
+	color: var(--white-1);
+}
+.accordion-item .faq-text::before {
+    content: "Ans: ";
+    font-weight: 700;
+    color: #DCB86C;
+    margin-right: 5px;
 }
 span.faq_index {
     color: var(--golden-yellow-1);
@@ -759,11 +767,18 @@ span.faq_index {
 .accordion-item .faq-text p {
 	color: var(--white-1);
 	letter-spacing: 0.32px;
+	margin-bottom: 5px;
 }
 .accordion-item .faq-text p:last-child {
 	margin-bottom: 0;
 }
-
+.accordion-item .faq-text ul{
+	color: var(--white-1);
+    letter-spacing: 0.32px;
+    padding-left: 15px;
+    margin-bottom: 5px;
+	width: 100%;
+}
 /* Text CSS */
 .text-section .section-header .heading-left p a {
     color: #fff;

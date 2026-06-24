@@ -25,7 +25,7 @@ $faq_answer = get_sub_field('faq_answer'); ?>
 <button class="faq-title" type="button" data-bs-toggle="collapse" data-bs-target="#faq-<?php echo get_row_index(); ?>" aria-expanded="false"><span class="faq_index">Q<?php echo get_row_index(); ?>. </span><?php echo $faq_question; ?></button>
 <div id="faq-<?php echo get_row_index(); ?>" class="collapse <?php echo ( get_row_index() == 1 ) ? 'show' : ''; ?>" data-bs-parent="#faqOne">
 <div class="accordion-body faq-text">
-<p><span class="faq_index">Ans. </span><?php echo $faq_answer; ?></p>
+<div class="faq_ans"><?php echo $faq_answer; ?></div>
 </div>
 </div>
 </div>
