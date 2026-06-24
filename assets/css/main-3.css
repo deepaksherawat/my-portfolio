@@ -704,6 +704,7 @@ span.present-text{color: var(--golden-yellow-1);}
 }
 .accordion-item.active button.faq-title {
     color: var(--white-1);
+    display: flex;
 }
 .accordion-item .faq-title {
 	font-size: 20px;
@@ -758,11 +759,12 @@ span.present-text{color: var(--golden-yellow-1);}
     content: "Ans: ";
     font-weight: 700;
     color: #DCB86C;
-    margin-right: 5px;
+    margin-right: 15px;
 }
 span.faq_index {
     color: var(--golden-yellow-1);
     font-weight: 600;
+    margin-right: 10px;
 }
 .accordion-item .faq-text p {
 	color: var(--white-1);
