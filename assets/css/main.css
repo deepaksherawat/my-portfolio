@@ -7993,7 +7993,7 @@ ul.port_meta li.port_meta_text:last-child a i {
 .portfolio_story_approach.single_project .story_content h1, .portfolio_story_approach.single_project .story_content h2, .portfolio_story_approach.single_project .story_content h3, .portfolio_story_approach.single_project .story_content h4, .portfolio_story_approach.single_project .story_content h5, .portfolio_story_approach.single_project .story_content h6{
 	margin-bottom: 10px;
 }
-.portfolio_story_approach.single_project .story_content p{margin-bottom: 5px;}
+/*.portfolio_story_approach.single_project .story_content p{margin-bottom: 5px;}*/
 .portfolio_story_approach.single_project .story_content p a:hover {
     color: #000;
 }
