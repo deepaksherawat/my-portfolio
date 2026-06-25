@@ -196,7 +196,7 @@ h6 {
 	font-family: var(--tj-ff-heading);
 	font-weight: var(--tj-fw-bold);
 	line-height: 1.2;
-	color: var(--dark-blue-1);
+	color: var(--tj-white);
 	margin-bottom: 15px;
 }
 
@@ -3704,7 +3704,7 @@ img.portfolio-image {
 	color: var(--white-1);
 	font-size: 16px;
 }
-.portfolio_story .story_content h1, .portfolio_story .story_content h2, .portfolio_story .story_content h3, .portfolio_story .story_content h4, .portfolio_story .story_content h5, .portfolio_story .story_content h6{color: var(--white-1) !important;}
+
 .portfolio_approach .approach_content ul, .portfolio_story .story_content ul {
     padding-left: 15px;
 }
