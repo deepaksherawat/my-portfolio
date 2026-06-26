@@ -707,6 +707,7 @@ span.present-text{color: var(--golden-yellow-1);}
     display: flex;
 }
 .accordion-item .faq-title {
+	display: flex;
 	font-size: 20px;
 	font-family: var(--tj-ff-heading);
 	font-weight: var(--tj-fw-medium);
