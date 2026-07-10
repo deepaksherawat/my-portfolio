@@ -119,7 +119,7 @@ Next <i class="fa-solid fa-arrow-right"></i>
 <a href="<?php echo get_permalink($next_post->ID); ?>">
 <?php
 if (has_post_thumbnail($next_post->ID)) {
-echo get_the_post_thumbnail($next_post->ID, 'thumbnail');
+echo get_the_post_thumbnail($next_post->ID, 'full');
 }
 ?>
 </a>
