@@ -68,7 +68,7 @@ if($date){
 <a class="modal-popup open-popup" href="#portfolio-wrapper">
 <?php 
 if ( has_post_thumbnail() ) {
-$img = get_the_post_thumbnail_url(get_the_ID(), 'project_thumbnail');
+$img = get_the_post_thumbnail_url(get_the_ID(), 'full');
 echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 }
 ?>
