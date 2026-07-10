@@ -47,6 +47,8 @@ get_template_part('template-parts/marquee');
 // Pull everything from the "About Page - Personal Info" ACF field group
 // (Theme Settings options page). Falls back to sensible defaults if a
 // field hasn't been filled in yet, so the page never looks broken.
+$sub_heading      = get_field('about_sub_heading', 'option') ?: 'Get To Know Me';
+$main_heading      = get_field('about_main_heading', 'option') ?: 'A Freelance WordPress Shopify Developer Who Ships Working Stores Sites.';
 $full_name      = get_field('about_full_name', 'option') ?: 'Deepak Sherawat';
 $email          = get_field('about_email', 'option') ?: 'hello@deepaksherawat.com';
 $experience     = get_field('about_experience_years', 'option') ?: '4+ Years';
@@ -83,8 +85,8 @@ $specializations = have_rows('about_specializations', 'option') ? true : false;
 <div class="col-lg-7">
 <div class="about-8-content">
 <div class="section-header style-3">
-<span class="subtitle wow fadeInRight" data-wow-delay=".3s">Get To Know Me</span>
-<h2 class="section-title wow fadeInUp" data-wow-delay=".3s">A Freelance WordPress &amp; Shopify Developer Who Ships Working Stores &amp; Sites.</h2>
+<span class="subtitle wow fadeInRight" data-wow-delay=".3s"><?php echo esc_html( $sub_heading ); ?></span>
+<h2 class="section-title wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $main_heading ); ?></h2>
 </div>
 <div class="desc">
 <p class="wow fadeInUp" data-wow-delay=".4s"><?php echo esc_html( $bio_1 ); ?></p>
