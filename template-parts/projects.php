@@ -1,4 +1,11 @@
 <!-- start: Portfolio Area -->
+<?php
+$project_sub_heading      = get_field('project_sub_heading', 'option') ?: 'Behind the Pixels';
+$project_main_heading      = get_field('project_main_heading', 'option') ?: 'My Latest Projects';
+$project_content_text      = get_field('service_content_text', 'option') ?: 'I break down complex user the experience problems the create integrity focused to solutions that’s connect. I break down complex user the experience problems the create integrity focused to solutions thats connect.';
+$project_button_text      = get_field('project_button_text', 'option') ?: 'view all my case studies';
+$project_button_link      = get_field('service_button_link', 'option') ?: 'http://localhost/deepak/';
+?>
 <section class="portfolio-section style-5">
 <div class="bg-shape">
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
@@ -8,15 +15,15 @@
 <div class="col-12">
 <div class="section-header style-3 portfolio_nav_desktop">
 <div class="sec-text">
-<span class="subtitle wow fadeInLeft" data-wow-delay=".3s">Behind the Pixels</span>
-<h2 class="title">My Latest Projects</h2>
+<span class="subtitle wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $project_sub_heading ); ?></span>
+<h2 class="title"><?php echo esc_html( $project_main_heading ); ?></h2>
 </div>
-<div class="portfolio-navigation d-none d-lg-inline-flex wow fadeInRight" data-wow-delay=".4s">
+<div class="portfolio-navigation d-none d-lg-inline-flex wow fadeInUp" data-wow-delay=".4s">
 <div class="portfolio-prev"><i class="fa-solid fa-arrow-left"></i></div>
 <div class="portfolio-next"><i class="fa-solid fa-arrow-right"></i></div>
 </div>
-<div class="portfolio-button wow fadeInRight" data-wow-delay=".5s">
-<a class="btn tj-btn-primary" href="#">View All Project <i class="fa-solid fa-eye"></i></a>
+<div class="portfolio-button wow fadeInUp" data-wow-delay=".5s">
+<a class="btn tj-btn-primary" href="<?php echo esc_html( $service_button_link ); ?>"><?php echo esc_html( $project_button_text ); ?> <i class="fa-solid fa-eye"></i></a>
 </div>
 
 </div>
@@ -110,12 +117,12 @@ echo '</p>';
 <div class="portfolio-pagination"></div>
 </div>
 <div class="portfolio_nav_mobile">
-<div class="portfolio-navigation wow fadeInRight" data-wow-delay=".4s">
+<div class="portfolio-navigation wow fadeInUp" data-wow-delay=".4s">
 <div class="portfolio-prev"><i class="fa-solid fa-arrow-left"></i></div>
 <div class="portfolio-next"><i class="fa-solid fa-arrow-right"></i></div>
 </div>
-<div class="portfolio-button wow fadeInRight" data-wow-delay=".5s">
-<a class="btn tj-btn-primary" href="#">View All Project <i class="fa-solid fa-eye"></i></a>
+<div class="portfolio-button wow fadeInUp" data-wow-delay=".5s">
+<a class="btn tj-btn-primary" href="<?php echo esc_html( $service_button_link ); ?>"><?php echo esc_html( $project_button_text ); ?> <i class="fa-solid fa-eye"></i></a>
 </div>
 </div>
 </div>

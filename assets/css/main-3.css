@@ -327,7 +327,7 @@ span.present-text{color: var(--golden-yellow-1);}
     flex-wrap: wrap;
     gap: 8px;
 }
-.key-skills li:nth-child(n+6) {
+.key-skills li:nth-child(n+11) {
     display: none;
 }
 

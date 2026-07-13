@@ -1,4 +1,8 @@
 <!-- start: Faq Area -->
+<?php
+$faq_sub_heading      = get_field('faq_sub_heading') ?: 'FAQ';
+$faq_main_heading      = get_field('faq_heading') ?: 'Your Questions and Answers';
+?>
 <?php if( have_rows('faq_content') ): ?>
 <section class="faq-section">
 <div class="container">
@@ -6,7 +10,8 @@
 <div class="row">
 <div class="col-md-12">
 <div class="section-header text-center">
-<h2 class="section-title wow fadeInUp" data-wow-delay=".3s"><?php the_field('faq_heading') ?></h2>
+<span class="subtitle wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $faq_sub_heading ); ?></span>
+<h2 class="section-title wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $faq_main_heading ); ?></h2>
 </div>
 </div>
 </div>

@@ -57,7 +57,7 @@ $location       = get_field('about_location', 'option') ?: 'India (Remote — Wo
 $response_time  = get_field('about_response_time', 'option') ?: 'Within 24 Hours';
 $bio_1          = get_field('about_bio_paragraph_1', 'option') ?: "I'm Deepak Sherawat, an independent WordPress and Shopify developer helping founders, agencies, and small businesses launch fast, reliable, and easy-to-manage websites and online stores.";
 $bio_2          = get_field('about_bio_paragraph_2', 'option') ?: "Every project starts with your business goals, not just the design — clean code, SEO-friendly markup, and a backend that's simple for you to update yourself once I hand it over.";
-$profile_image  = get_field('about_profile_image', 'option') ?: get_template_directory_uri() . '/assets/images/ab-8-images.png';
+$profile_image  = get_field('about_profile_image', 'option') ?: get_template_directory_uri() . '/assets/images/me.png';
 $cv_file        = get_field('about_cv_file', 'option');
 
 // Specialization tags: pulled from the repeater if filled in, otherwise

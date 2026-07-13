@@ -1,4 +1,9 @@
 <!-- start: Testimonial Area -->
+<?php
+$Client_sub_heading      = get_field('testimonial_sub_heading', 'option') ?: 'Clients feedback';
+$Client_main_heading      = get_field('testimonial_main_heading', 'option') ?: 'Let’s Hear From Dear Clients.';
+$Client_content      = get_field('testimonial_content', 'option') ?: 'I break down complex user the experience problems the create integrity focused to solutions that’s connect. I break down complex user the experience problems the create integrity focused to solutions that’s connect.';
+?>
 <section class="testimonial-section style-4">
 <div class="container">
 <div class="row">
@@ -6,9 +11,9 @@
 <div class="section-header style-5">
 <div class="sec-text">
 <div class="test-_content">
-<span class="subtitle" data-wow-delay=".3s">Clients feedback</span>
-<h2 class="section-title wow fadeInUp" data-wow-delay=".3s">Let’s Hear From Dear Clients.</h2>
-<p>I break down complex user the experience problems the create integrity focused to solutions that’s connect. I break down complex user the experience problems the create integrity focused to solutions that’s connect.</p>
+<span class="subtitle wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $Client_sub_heading ); ?></span>
+<h2 class="section-title wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $Client_main_heading ); ?></h2>
+<p class="testimonial-para wow fadeInUp"><?php echo esc_html( $Client_content ); ?></p>
 </div>
 <!-- <div class="tj-about-9-button">
 <a href="#" class="btn tj-btn-primary">Write Review <i class="fa-solid fa-arrow-right"></i></a>

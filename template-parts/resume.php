@@ -1,11 +1,17 @@
 <!-- start: Resume Area -->
+<?php
+$resume_sub_heading      = get_field('resume_sub_heading', 'option') ?: 'Behind the Pixels';
+$resume_main_heading      = get_field('resume_main_heading', 'option') ?: 'My Education & Experience';
+$resume_content_text      = get_field('resume_content_text', 'option') ?: 'I break down complex user the experience problems the create integrity focused to solutions that’s connect. I break down complex user the experience problems the create integrity focused to solutions thats connect.';
+?>
 <section class="resume-section style-5">
-<div class="container">
+<div class="container-fluid">
 <div class="row">
 <div class="col-12">
 <div class="section-header style-3 text-center">
-<span class="subtitle wow fadeInRight" data-wow-delay=".3s">Behind the Pixels</span>
-<h2 class="section-title wow fadeInUp" data-wow-delay=".3s">My Experience & Education</h2>
+<span class="subtitle wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $resume_sub_heading ); ?></span>
+<h2 class="section-title wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $resume_main_heading ); ?></h2>
+<p class="resume_para"><?php echo esc_html( $resume_content_text ); ?></p>
 </div>
 </div>
 </div>
@@ -25,7 +31,7 @@
 <div class="bg-shape">
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
 </div>
-<div class="resume_wrapper_5">
+<div class="resume_wrapper_5 wow fadeInUp">
 <?php
 $args = array(
 'post_type'      => 'resume',
@@ -42,7 +48,7 @@ $query = new WP_Query($args);
 if ($query->have_posts()) :
 while ($query->have_posts()) : $query->the_post();
 ?>
-<div class="resume_inner_5">
+<div class="resume_inner_5 wow fadeInUp">
 <div class="resume_item style-5">
 <div class="icon_box mobile_version">
 <?php 
@@ -203,7 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const items = list.querySelectorAll("li");
 
         // Hide button if <= 5 items
-        if (items.length <= 5) {
+        if (items.length <= 10) {
             btn.style.display = "none";
             return;
         }
@@ -247,7 +253,7 @@ function initSkillsList() {
         list.classList.add("processed");
 
         const items = list.querySelectorAll("li");
-        const visible = 5;
+        const visible = 10;
 
         if (items.length <= visible) return;
 
