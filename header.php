@@ -15,15 +15,15 @@
 <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
 </svg>
 <div class="preloader-heading">
+<?php
+$loading_text = get_field('loading_text', 'option') ?: 'LOADING';
+if ( ! empty( $loading_text ) ) : ?>
 <div class="load-text">
-<span>L</span>
-<span>o</span>
-<span>a</span>
-<span>d</span>
-<span>i</span>
-<span>n</span>
-<span>g</span>
+<?php foreach ( preg_split('//u', $loading_text, -1, PREG_SPLIT_NO_EMPTY) as $char ) : ?>
+<span><?php echo $char === ' ' ? '&nbsp;' : esc_html( $char ); ?></span>
+<?php endforeach; ?>
 </div>
+<?php endif; ?>
 </div>
 </div>
 <!-- Preloader Area End -->
@@ -60,7 +60,15 @@ wp_nav_menu(array(
 </div>
 <div class="mobile-menu d-lg-none"></div>
 <div class="header-button d-none d-lg-inline-flex">
-<a href="#contact-wrapper" class="btn tj-btn-primary link modal-popup">Hire Me <i class="fa-solid fa-arrow-right"></i></a>
+<?php
+$head_right_button_text = get_field('head_right_button_text', 'option') ?: 'Hire Me';
+$head_right_button_link = get_field('head_right_button_link', 'option') ?: '#contact-wrapper';
+$target_url = '#contact-wrapper';
+?>
+<!-- <a href="#contact-wrapper" class="btn tj-btn-primary link modal-popup">Hire Me <i class="fa-solid fa-arrow-right"></i></a> -->
+
+<a href="<?php echo ! empty( $head_right_button_link ) ? esc_url( $head_right_button_link ) : '#'; ?>" class="btn tj-btn-primary <?php if( $head_right_button_link === $target_url ) : ?>link modal-popup<?php endif; ?>"><?php echo esc_html( $head_right_button_text ); ?> <i class="fa-solid fa-arrow-right"></i></a>
+
 </div>
 <div class="menu-bar d-lg-none">
 <button>

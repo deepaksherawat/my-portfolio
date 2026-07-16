@@ -1558,16 +1558,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 particlesJS("particles-js", {
   particles: {
-    number: { value: 100 },
+    number: { value: 60 },
     color: { value: "#dcb86c" },
     shape: { type: "circle" },
     opacity: { value: 0.7 },
-    size: { value: 3 },
+    size: { value: 2 },
     line_linked: {
       enable: true,
       distance: 140,
       color: "#dcb86c",
-      opacity: 0.35,
+      opacity: 0.15,
       width: 1
     },
     move: {

@@ -15,7 +15,7 @@ $blog_button_link      = get_field('blog_listing_page_link', 'option') ?: 'http:
 <div class="section-header style-3 blog_nav_desktop">
 <div class="sec-text">
 <span class="subtitle wow fadeInLeft" data-wow-delay=".3s"><?php echo esc_html( $blog_sub_heading ); ?></span>
-<h2 class="title"><?php echo esc_html( $blog_main_heading ); ?></h2>
+<h2 class="title wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $blog_main_heading ); ?></h2>
 </div>
 <div class="blog-navigation wow fadeInRight" data-wow-delay=".4s">
 <div class="blog-prev"><i class="fa-solid fa-arrow-left"></i></div>

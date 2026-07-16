@@ -18,9 +18,10 @@ get_template_part('template-parts/marquee');
 
 <style>
 .about-intro-freelancer.tj-about-section {background: linear-gradient(to right, var(--dark-blue-2) 0%, var(--dark-blue-3) 51%, var(--dark-blue-1) 100%); position: relative; z-index: 9; padding: 70px 0px;}
-.about-intro-freelancer.tj-about-section .section-header.style-3 span.subtitle.wow.fadeInRight{background: linear-gradient(90deg, var(--golden-yellow-1), var(--golden-yellow-2), var(--golden-yellow-3)); color: var(--full-black); font-weight: 600;}
+.about-intro-freelancer.tj-about-section .section-header.style-3 span.subtitle.wow.fadeInUp{background: linear-gradient(90deg, var(--golden-yellow-1), var(--golden-yellow-2), var(--golden-yellow-3)); color: var(--full-black); font-weight: 600;}
 .about-intro-freelancer.tj-about-section .section-header .section-title{color: var(--white-1);}
 .about-intro-freelancer.tj-about-section .desc p{color: var(--white-1);}
+.about-intro-freelancer.tj-about-section .desc p a, .about-intro-freelancer.tj-about-section .desc p strong{color: var(--golden-yellow-1); text-decoration: none;}
 .about-intro-freelancer.tj-about-section .bg-shape {position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: -1;}
 .about-intro-freelancer.tj-about-section .bg-shape img {width: 100%; height: 100%;}
 .about-intro-freelancer .personal-info-list{list-style:none;margin:24px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 24px;}
@@ -56,9 +57,8 @@ $availability   = get_field('about_availability', 'option') ?: 'Open For Freelan
 $location       = get_field('about_location', 'option') ?: 'India (Remote — Worldwide)';
 $response_time  = get_field('about_response_time', 'option') ?: 'Within 24 Hours';
 $bio_1          = get_field('about_bio_paragraph_1', 'option') ?: "I'm Deepak Sherawat, an independent WordPress and Shopify developer helping founders, agencies, and small businesses launch fast, reliable, and easy-to-manage websites and online stores.";
-$bio_2          = get_field('about_bio_paragraph_2', 'option') ?: "Every project starts with your business goals, not just the design — clean code, SEO-friendly markup, and a backend that's simple for you to update yourself once I hand it over.";
 $profile_image  = get_field('about_profile_image', 'option') ?: get_template_directory_uri() . '/assets/images/me.png';
-$cv_file        = get_field('about_cv_file', 'option');
+$cv_file        = get_field('about_cv_file', 'option') ?: '#contact-wrapper';
 
 // Specialization tags: pulled from the repeater if filled in, otherwise
 // falls back to this default WordPress/Shopify set.
@@ -71,10 +71,18 @@ $default_specs = array(
     array('icon_class' => 'fa-solid fa-gauge-high', 'label' => 'Speed & SEO Optimization'),
 );
 $specializations = have_rows('about_specializations', 'option') ? true : false;
+$number_of_experience = get_field('number_of_experience', 'option') ?: '8';
+$project_completed = get_field('project_completed', 'option') ?: '50';
+$happy_clients = get_field('happy_clients', 'option') ?: '50';
+$client_rating = get_field('client_rating', 'option') ?: '50';
+$hero_button_1_text        = get_field('hero_button_1_url', 'option') ?: 'Download CV';
+$hero_button_2_text       = get_field('hero_button_2_text', 'option') ?: 'Hire me';
+$hero_button_2_url        = get_field('hero_button_2_url', 'option') ?: '#contact-wrapper';
+$target_url = '#contact-wrapper';
 ?>
 
 <div class="col-lg-5">
-<div class="about-8-images wow fadeInLeft" data-wow-delay=".3s">
+<div class="about-8-images wow fadeInUp" data-wow-delay=".3s">
 <img src="<?php echo esc_url( $profile_image ); ?>" alt="<?php echo esc_attr( $full_name ); ?> - WordPress & Shopify Developer">
 <div class="about_shapes">
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ab-8-shapes.png" alt="shape">
@@ -85,12 +93,11 @@ $specializations = have_rows('about_specializations', 'option') ? true : false;
 <div class="col-lg-7">
 <div class="about-8-content">
 <div class="section-header style-3">
-<span class="subtitle wow fadeInRight" data-wow-delay=".3s"><?php echo esc_html( $sub_heading ); ?></span>
+<span class="subtitle wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $sub_heading ); ?></span>
 <h2 class="section-title wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $main_heading ); ?></h2>
 </div>
 <div class="desc">
-<p class="wow fadeInUp" data-wow-delay=".4s"><?php echo esc_html( $bio_1 ); ?></p>
-<p class="wow fadeInUp" data-wow-delay=".5s"><?php echo esc_html( $bio_2 ); ?></p>
+<p class="wow fadeInUp" data-wow-delay=".4s"><?php echo wpautop( wp_kses_post( $bio_1 ) ); ?></p>
 </div>
 
 <ul class="personal-info-list wow fadeInUp" data-wow-delay=".6s">
@@ -118,8 +125,11 @@ $specializations = have_rows('about_specializations', 'option') ? true : false;
 </ul>
 
 <div class="about-button wow fadeInUp" data-wow-delay=".8s">
-<a href="<?php echo esc_url( $cv_file ? $cv_file : '#' ); ?>" class="btn tj-btn-primary" target="_blank" rel="noopener">Download CV <i class="fa-solid fa-download"></i></a>
-<a href="#contact-wrapper" class="btn tj-btn-secondary modal-popup">Hire Me <i class="fa-solid fa-arrow-right"></i></a>
+
+
+<a href="<?php echo esc_url( $cv_file ); ?>" class="btn tj-btn-primary <?php if( $cv_file === $target_url ) : ?>link modal-popup<?php endif; ?>" <?php if( !empty($cv_file) ): ?>target="_blank"<?php endif; ?>><?php echo esc_html( $hero_button_1_text ); ?> <i class="fa-solid fa-arrow-right"></i></a>
+
+<a href="<?php echo esc_url( $hero_button_2_url ); ?>" class="btn tj-btn-secondary <?php if( $hero_button_2_url === $target_url ) : ?>link modal-popup<?php endif; ?>" <?php if( !empty($hero_button_2_url) ): ?>target="_blank"<?php endif; ?>><?php echo esc_html( $hero_button_2_text ); ?> <i class="fa-solid fa-arrow-right"></i></a>
 </div>
 
 </div>
@@ -133,26 +143,26 @@ $specializations = have_rows('about_specializations', 'option') ? true : false;
 <div class="row">
 <div class="col-6 col-lg-3">
 <div class="funfact-item wow fadeInUp" data-wow-delay=".2s">
-<div class="number">4+</div>
-<div class="text">Years Freelancing</div>
+<div class="number"><?php echo esc_html( $number_of_experience ); ?>+</div>
+<div class="text">Years of Experience</div>
 </div>
 </div>
 <div class="col-6 col-lg-3">
 <div class="funfact-item wow fadeInUp" data-wow-delay=".3s">
-<div class="number">80+</div>
+<div class="number"><?php echo esc_html( $project_completed ); ?>+</div>
 <div class="text">Projects Delivered</div>
 </div>
 </div>
 <div class="col-6 col-lg-3">
 <div class="funfact-item wow fadeInUp" data-wow-delay=".4s">
-<div class="number">50+</div>
+<div class="number"><?php echo esc_html( $happy_clients ); ?>K</div>
 <div class="text">Happy Clients</div>
 </div>
 </div>
 <div class="col-6 col-lg-3">
 <div class="funfact-item wow fadeInUp" data-wow-delay=".5s">
-<div class="number">100%</div>
-<div class="text">WordPress &amp; Shopify Focus</div>
+<div class="number"><?php echo esc_html( $client_rating ); ?>%</div>
+<div class="text">Client Rating</div>
 </div>
 </div>
 </div>

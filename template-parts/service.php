@@ -14,7 +14,7 @@ $service_popup_button_text      = get_field('service_popup_button_text', 'option
 <div class="section-header style-3 service_nav_desktop">
 <div class="sec-text">
 <span class="subtitle wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $service_sub_heading ); ?></span>
-<h2 class="title wow fadeInUp"><?php echo esc_html( $service_main_heading ); ?></h2>
+<h2 class="title wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $service_main_heading ); ?></h2>
 </div>
 <div class="service-navigation wow fadeInUp" data-wow-delay=".4s">
 <div class="service-prev"><i class="fa-solid fa-arrow-left"></i></div>

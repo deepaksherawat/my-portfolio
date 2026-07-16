@@ -13,7 +13,7 @@ get_template_part('template-parts/marquee');
 <div class="row justify-content-center">
 <div class="col-lg-8">
 <div class="tj-post-details__container">
-<article class="tj-single__post">
+<article class="tj-single__post wow fadeInUp" data-wow-delay=".3s">
 <?php 
 if ( has_post_thumbnail() ) {
  ?>
@@ -36,7 +36,7 @@ echo '<img src="'.$img.'" alt="'.get_the_title().'">';
 $prev_post = get_previous_post();
 $next_post = get_next_post();
 ?>
-<div class="single-post__navigation">
+<div class="single-post__navigation wow fadeInUp" data-wow-delay=".3s">
 <!-- Previous Post -->
 <?php if (!empty($prev_post)) : ?>
 <div class="tj-navigation_post previous">
@@ -155,7 +155,8 @@ if( !empty( $logo ) ): ?>
 </div>
 <div class="getintouch_text">
 <p>Don't Hesitate to Contact Me</p>
-<a class="call_me" href="tel:+918595746074"><i class="fa-solid fa-phone"></i> +91-8595746074</a>
+<?php $about_phone  =  get_field('about_phone_number', 'option') ?: '9999999999'; ?>
+<a class="call_me" href="tel:+<?php echo esc_html( $about_phone ); ?>"><i class="fa-solid fa-phone"></i> +<?php echo esc_html( $about_phone ); ?></a>
 <div class="hire-btn"><a href="#contact-wrapper" class="tj-primary-btn modal-popup">Get Free Quote Now<i class="fa-solid fa-arrow-right"></i></a></div>
 </div>
 </div>

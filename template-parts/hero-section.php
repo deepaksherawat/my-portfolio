@@ -5,8 +5,21 @@ $hero_main_heading    = get_field('hero_main_heading', 'option') ?: 'Building fa
 $hero_freelencer_name              = get_field('hero_freelencer_name', 'option') ?: 'Deepak Sherawat';
 $freelencer_experience_years             = get_field('freelencer_experience_years', 'option') ?: '8';
 $new_hero_content_prefix    = get_field('new_hero_content_prefix', 'option') ?: 'a Senior WordPress & Shopify Developer with %years%+ years turning ambitious briefs into';
-$new_hero_button_text       = get_field('new_hero_button_text', 'option') ?: 'Hire Me';
-$new_hero_button_url        = get_field('new_hero_button_url', 'option') ?: '#contact';
+$cv_file        = get_field('about_cv_file', 'option') ?: '#contact-wrapper';
+$hero_button_1_text       = get_field('hero_button_1_text', 'option') ?: 'Donwload CV';
+$hero_button_1_url        = get_field('hero_button_1_url', 'option') ?: '#contact-wrapper';
+$hero_button_2_text       = get_field('hero_button_2_text', 'option') ?: 'Hire me';
+$hero_button_2_url        = get_field('hero_button_2_url', 'option') ?: '#contact-wrapper';
+$target_url = '#contact-wrapper';
+$facebook_link = get_field('facebook_link', 'option') ?: 'https://www.facebook.com/';
+$linkedin_link = get_field('linkedin_link', 'option') ?: 'https://www.linkedin.com/';
+$whatsapp_link = get_field('whatsapp_link', 'option') ?: 'https://web.whatsapp.com/';
+$instagram_link = get_field('instagram_link', 'option') ?: 'https://www.instagram.com/';
+$number_of_experience = get_field('number_of_experience', 'option') ?: '8';
+$project_completed = get_field('project_completed', 'option') ?: '50';
+$happy_clients = get_field('happy_clients', 'option') ?: '50';
+$client_rating = get_field('client_rating', 'option') ?: '50';
+
 
 // Words that rotate with a typing animation at the end of the paragraph
 // ACF Repeater field: new_hero_rotating_words (option)
@@ -44,6 +57,9 @@ $new_hero_content_prefix_html = str_replace( '%years%', '<b>' . esc_html( $freel
 ?>
 <section class="hero-section style-11">
 <div id="new-hero-particles"></div>
+<div class="bg-shape">
+<img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
+</div>
 <div class="container hero-container">
 <div class="row align-items-center">
 
@@ -51,36 +67,36 @@ $new_hero_content_prefix_html = str_replace( '%years%', '<b>' . esc_html( $freel
 <div class="col-lg-6">
 <div class="hero-content-box style-11">
 
-<div class="hero-availability-badge">
+<div class="hero-availability-badge wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
 <span class="dot"></span>
 <?php echo esc_html( $hero_badge_text ); ?>
 </div>
 
-<h1 class="hero-title"><?php echo esc_html( $hero_main_heading ); ?></h1>
+<h1 class="hero-title wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;"><?php echo esc_html( $hero_main_heading ); ?></h1>
 
-<div class="desc">
+<div class="desc wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
 <p>I'm <b><?php echo esc_html( $hero_freelencer_name ); ?></b> — <?php echo wp_kses_post( $new_hero_content_prefix_html ); ?> <span class="text-highlight typing-wrap"><span id="new-hero-typed-text"></span><span class="typing-cursor">|</span></span>.</p>
 </div>
 
-<div class="hero-button">
-<a href="<?php echo esc_url( $new_hero_button_url ); ?>" class="btn tj-btn-primary"><?php echo esc_html( $new_hero_button_text ); ?> <i class="fa-solid fa-arrow-right"></i></a>
-<a href="<?php echo esc_url( $new_hero_button_url ); ?>" class="btn tj-btn-secondary"><?php echo esc_html( $new_hero_button_text ); ?> <i class="fa-solid fa-arrow-right"></i></a>
+<div class="hero-button wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+<a href="<?php echo esc_url( $cv_file ); ?>" class="btn tj-btn-primary <?php if( $cv_file === $target_url ) : ?>link modal-popup<?php endif; ?>" <?php if( !empty($cv_file) ): ?>target="_blank"<?php endif; ?>><?php echo esc_html( $hero_button_1_text ); ?> <i class="fa-solid fa-arrow-right"></i></a>
+<a href="<?php echo esc_url( $hero_button_2_url ); ?>" class="btn tj-btn-secondary <?php if( $hero_button_2_url === $target_url ) : ?>link modal-popup<?php endif; ?>" <?php if( !empty($hero_button_2_url) ): ?>target="_blank"<?php endif; ?>><?php echo esc_html( $hero_button_2_text ); ?> <i class="fa-solid fa-arrow-right"></i></a>
 </div>
 
 <!-- start: social icons (reused from hero.php) -->
-<div class="hero-11-socials">
+<div class="hero-11-socials wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
 <ul class="ul-reset social-icons">
 <li>
-<a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+<a href="<?php echo esc_html( $whatsapp_link ); ?>" target= "_blank"><i class="fa-brands fa-whatsapp"></i></a>
 </li>
 <li>
-<a href="#"><i class="fa-brands fa-linkedin"></i></a>
+<a href="<?php echo esc_html( $linkedin_link ); ?>" target= "_blank"><i class="fa-brands fa-linkedin"></i></a>
 </li>
 <li>
-<a href="#"><i class="fa-brands fa-facebook"></i></a>
+<a href="<?php echo esc_html( $facebook_link ); ?>" target= "_blank"><i class="fa-brands fa-facebook"></i></a>
 </li>
 <li>
-<a href="#"><i class="fa-brands fa-instagram"></i></a>
+<a href="<?php echo esc_html( $instagram_link ); ?>" target= "_blank"><i class="fa-brands fa-instagram"></i></a>
 </li>
 </ul>
 </div>
@@ -93,15 +109,15 @@ $new_hero_content_prefix_html = str_replace( '%years%', '<b>' . esc_html( $freel
 <div class="col-lg-6">
 <div class="hero-11-code-mockup-wrap">
 
-<div class="hero-11-platform-badge wordpress-badge">
+<div class="hero-11-platform-badge wordpress-badge wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
 <i class="fa-brands fa-wordpress"></i>
 </div>
 
-<div class="hero-11-platform-badge cart-badge">
+<div class="hero-11-platform-badge cart-badge wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
 <i class="fa-solid fa-cart-shopping"></i>
 </div>
 
-<div class="hero-11-platform-badge speed-badge">
+<div class="hero-11-platform-badge speed-badge wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
 <i class="fa-solid fa-gauge-high"></i>
 </div>
 
@@ -133,15 +149,15 @@ $new_hero_content_prefix_html = str_replace( '%years%', '<b>' . esc_html( $freel
 </div>
 </div>
 
-<div class="hero-11-platform-badge shopify-badge">
+<div class="hero-11-platform-badge shopify-badge wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
 <i class="fa-brands fa-shopify"></i>
 </div>
 
-<div class="hero-11-platform-badge seo-badge">
+<div class="hero-11-platform-badge seo-badge wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
 <i class="fa-solid fa-magnifying-glass-chart"></i>
 </div>
 
-<div class="hero-11-platform-badge plug-badge">
+<div class="hero-11-platform-badge plug-badge wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
 <i class="fa-solid fa-plug"></i>
 </div>
 
@@ -157,26 +173,26 @@ $new_hero_content_prefix_html = str_replace( '%years%', '<b>' . esc_html( $freel
 <div class="row">
 <div class="col-6 col-lg-3">
 <div class="funfact-item d-flex flex-column flex-wrap align-items-center">
-<div class="number"><span class="odometer odometer-auto-theme" data-count="14"></span></div>
+<div class="number"><span class="odometer odometer-auto-theme" data-count="<?php echo esc_html( $number_of_experience ); ?>"></span>+</div>
 <div class="text">Years of Experience</div>
 </div>
 </div>
 <div class="col-6 col-lg-3">
 <div class="funfact-item d-flex flex-column flex-wrap align-items-center">
-<div class="number"><span class="odometer odometer-auto-theme" data-count="50"></span>+</div>
-<div class="text">Project Completed</div>
+<div class="number"><span class="odometer odometer-auto-theme" data-count="<?php echo esc_html( $project_completed ); ?>"></span>+</div>
+<div class="text">Project Delivered</div>
 </div>
 </div>
 <div class="col-6 col-lg-3">
 <div class="funfact-item d-flex flex-column flex-wrap align-items-center">
-<div class="number"><span class="odometer odometer-auto-theme" data-count="1.5"></span>K</div>
+<div class="number"><span class="odometer odometer-auto-theme" data-count="<?php echo esc_html( $happy_clients ); ?>"></span>K</div>
 <div class="text">Happy Clients</div>
 </div>
 </div>
 <div class="col-6 col-lg-3">
 <div class="funfact-item d-flex flex-column flex-wrap align-items-center">
-<div class="number"><span class="odometer odometer-auto-theme" data-count="14"></span></div>
-<div class="text">Years of Experience</div>
+<div class="number"><span class="odometer odometer-auto-theme" data-count="<?php echo esc_html( $client_rating ); ?>"></span>%</div>
+<div class="text">Client Rating</div>
 </div>
 </div>
 </div>
@@ -244,12 +260,16 @@ $new_hero_content_prefix_html = str_replace( '%years%', '<b>' . esc_html( $freel
   font-size: 18px;
   line-height: 1.7;
 }
+.hero-content-box.style-11 .desc p b {
+    color: #dcb86c;
+    text-transform: uppercase;
+}
 .hero-content-box.style-11 .desc .text-highlight { color: #e1be72; font-weight: 600; }
 .hero-content-box.style-11 .desc .typing-wrap { white-space: nowrap; }
 .hero-content-box.style-11 .desc .typing-cursor {
   display: inline-block;
   margin-left: 2px;
-  color: #4db8ff;
+  color: #dcb86c;
   animation: hero-cursor-blink 0.8s steps(1) infinite;
 }
 @keyframes hero-cursor-blink {
@@ -269,6 +289,7 @@ $new_hero_content_prefix_html = str_replace( '%years%', '<b>' . esc_html( $freel
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  text-transform: uppercase;
 }
 .hero-content-box.style-11 .hero-button .btn.tj-btn-primary{
   background: linear-gradient(90deg, var(--golden-yellow-1), var(--golden-yellow-2), var(--golden-yellow-3));
@@ -347,7 +368,7 @@ $new_hero_content_prefix_html = str_replace( '%years%', '<b>' . esc_html( $freel
     color: #000000;
 }
 .hero-11-platform-badge.seo-badge {
-    bottom: -90px;
+    bottom: -75px;
     right: 230px;
     background: #ffffff;
     color: #000000;
@@ -498,14 +519,14 @@ window.addEventListener("load", function () {
     particlesJS("new-hero-particles", {
       particles: {
         number: { value: 150, density: { enable: true, value_area: 900 } },
-        color: { value: "#4db8ff" },
+        color: { value: "#dcb86c" },
         shape: { type: "circle" },
         opacity: { value: 0.35 },
         size: { value: 2, random: true },
         line_linked: {
           enable: true,
           distance: 140,
-          color: "#4db8ff",
+          color: "#dcb86c",
           opacity: 0.15,
           width: 1
         },

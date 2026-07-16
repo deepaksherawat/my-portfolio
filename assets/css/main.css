@@ -2534,6 +2534,7 @@ img.portfolio-image {
 }
 #portfolioContainer {
   scroll-behavior: smooth;
+  margin-top: 30px;
 }
 .service_card.service_page .service_card_left, .service_card.service_page .service_card_right {
     width: 100%;
@@ -2815,8 +2816,20 @@ img.portfolio-image {
     z-index: 1;
 }
 .portfolio-section.style-5 .section-header .sec-text, .tj-service-section.style-8 .section-header .sec-text {
-    max-width: 560px;
+    max-width: 100%;
     margin-left: 0;
+}
+.section-header.style-3.page_expertise .sec-text {
+    display: grid;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+}
+.section-header.style-3.page_expertise .sec-text p.service_para, .portfolio-page .section-header.style-5 p.port_para, p.blog_para {
+    color: var(--full-black);
+    text-align: center;
 }
 .portfolio-section.style-5 .section-header .portfolio-shapes, .tj-service-section.style-8 .section-header .service-shapes {
     position: absolute;
@@ -3303,6 +3316,9 @@ img.portfolio-image {
 	max-width: 100%;
 	margin-bottom: 25px;
 	visibility: visible !important;
+}
+.tj-contact-form.style-2 {
+    text-align: center;
 }
 .popup_contact_area .section-header .section-title{
 	font-size: 45px;
@@ -4188,6 +4204,7 @@ img.portfolio-image {
 .skills-button a.btn.tj-btn-primary, .about-8-content .about-button a.btn.tj-btn-primary {
     background: linear-gradient(90deg, var(--golden-yellow-1), var(--golden-yellow-2), var(--golden-yellow-3));
     color: var(--full-black);
+    text-transform: uppercase;
 }
 .skills-button a.btn.tj-btn-primary:hover, .about-8-content .about-button a.btn.tj-btn-primary:hover{
 	background: linear-gradient(90deg, var(--white-1), var(--white-2), var(--white-3));
@@ -4198,6 +4215,7 @@ img.portfolio-image {
     color: var(--full-black);
     border-color: transparent;
     font-weight: 600;
+    text-transform: uppercase;
 }
 .skills-button a.btn.tj-btn-secondary:hover, .about-8-content .about-button a.btn.tj-btn-secondary:hover{
 	background: linear-gradient(90deg, var(--golden-yellow-1), var(--golden-yellow-2), var(--golden-yellow-3));
@@ -7606,6 +7624,7 @@ body.absolute_header .breadcrumb_area {
     margin-left: 0px;
     margin-right: 0px;
 }
+.marquee-item .marquee-box .marquee-title a{text-decoration: none;}
 .marquee-item .marquee-box .marquee-title .title {
     font-size: 20px;
     font-weight: var(--tj-fw-ebold);
@@ -8108,7 +8127,7 @@ ul.port_meta li.port_meta_text:last-child a i {
     padding-right: 10px;
 }
 .tj-service-7-paragraph {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--white-1);
     margin-bottom: 12px;
 }
 .tj-service-7-paragraph p:last-child {

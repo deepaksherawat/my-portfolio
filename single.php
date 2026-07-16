@@ -13,7 +13,7 @@ get_template_part('template-parts/marquee');
 <div class="row justify-content-center">
 <div class="col-lg-8">
 <div class="tj-post-details__container">
-<article class="tj-single__post">
+<article class="tj-single__post wow fadeInUp" data-wow-delay=".3s">
 <?php 
 if ( has_post_thumbnail() ) {
  ?>
@@ -74,9 +74,11 @@ echo '<div class="hire-btn"><a href="#hire_me_wrapper" class="tj-primary-btn mod
 <?php get_template_part('template-parts/hire-me-popup-form'); ?>
 <!-- end: Footer Contact Popup -->
 </div>
+<?php get_template_part('template-parts/single-faq'); ?>
 </article>
+
 <!-- post tags & social share -->
-<div class="single-post_tag_share">
+<div class="single-post_tag_share wow fadeInUp" data-wow-delay=".3s">
 <!-- post tags -->
 <div class="tj_tag">
 <h4 class="tag__title">Tags:</h4>
@@ -105,7 +107,7 @@ echo '</div>';
 $prev_post = get_previous_post();
 $next_post = get_next_post();
 ?>
-<div class="single-post__navigation">
+<div class="single-post__navigation wow fadeInUp" data-wow-delay=".3s">
 <!-- Previous Post -->
 <?php if (!empty($prev_post)) : ?>
 <div class="tj-navigation_post previous">
@@ -170,7 +172,7 @@ echo get_the_post_thumbnail($next_post->ID, 'thumbnail');
 <?php endif; ?>
 </div>
 <!-- comments area -->
-<div class="tj-comments__container">
+<div class="tj-comments__container wow fadeInUp" data-wow-delay=".3s">
 <div class="tj-comments__wrap">
 <div class="tj-comment__title">
 <h3>
@@ -234,6 +236,7 @@ if (comments_open()) {
 </div>
 </div>
 </div>
+
 </div>
 <div class="col-lg-4">
 <div class="tj_main_sidebar">
@@ -246,7 +249,7 @@ if (comments_open()) {
 <!-- end search Form -->
 </div>
 
-<div class="sidebar_widget widget_categories wow fadeInUp" data-wow-delay=".3s">
+<div class="sidebar_widget widget_categories wow fadeInUp" data-wow-delay=".4s">
 <div class="bg-shape">
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
 </div>
@@ -425,7 +428,8 @@ if( !empty( $logo ) ): ?>
 </div>
 <div class="getintouch_text">
 <p>Don't Hesitate to Contact Me</p>
-<a class="call_me" href="tel:+918595746074"><i class="fa-solid fa-phone"></i> +91-8595746074</a>
+<?php $about_phone  =  get_field('about_phone_number', 'option') ?: '9999999999'; ?>
+<a class="call_me" href="tel:+<?php echo esc_html( $about_phone ); ?>"><i class="fa-solid fa-phone"></i> +<?php echo esc_html( $about_phone ); ?></a>
 <div class="hire-btn"><a href="#contact-wrapper" class="tj-primary-btn modal-popup">Get Free Quote Now<i class="fa-solid fa-arrow-right"></i></a></div>
 </div>
 </div>

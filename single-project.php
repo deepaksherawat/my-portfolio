@@ -12,13 +12,13 @@ get_template_part('template-parts/marquee');
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-lg-8">
-<div class="portfolio_title"><h2><span>Project: </span><?php the_title(); ?></h2></div>
+<div class="portfolio_title wow fadeInUp" data-wow-delay=".3s"><h2><span>Project: </span><?php the_title(); ?></h2></div>
 <!-- portfolio gallery -->
 <?php
 $gallery = get_field('project_gallery'); // apna ACF field name check karo
 
 if ($gallery): ?>
-  <div class="portfolio_gallery portfolio_page owl-carousel">
+  <div class="portfolio_gallery portfolio_page owl-carousel wow fadeInUp" data-wow-delay=".3s">
     <?php foreach ($gallery as $image): ?>
       <div class="gallery_item">
         <?php
@@ -35,7 +35,7 @@ if ($gallery): ?>
   </div>
 <?php endif; ?>
 <!-- end portfolio gallery -->
-<div class="portfolio_metas">
+<div class="portfolio_metas wow fadeInUp" data-wow-delay=".3s">
 <ul class="port_meta">
 <li class="port_meta_text"><i class="fa-solid fa-p"></i><span> Project Name:</span> <?php the_field('project_name'); ?></li>
 <li class="port_meta_text"><i class="fa-solid fa-d"></i><span> Developed In:</span> <?php the_field('developed_in'); ?></li>
@@ -45,7 +45,7 @@ if ($gallery): ?>
 </ul>
 </div>
 <?php if( have_rows('project_case_study') ): ?>
-<div class="portfolio_story_approach single_project">
+<div class="portfolio_story_approach single_project wow fadeInUp" data-wow-delay=".3s">
 <?php while( have_rows('project_case_study') ) : the_row();
 $project_title = get_sub_field('case_study_heading');
 $project_content = get_sub_field('case_study_content'); ?>
@@ -64,7 +64,7 @@ $project_content = get_sub_field('case_study_content'); ?>
 $prev_post = get_previous_post();
 $next_post = get_next_post();
 ?>
-<div class="single-post__navigation">
+<div class="single-post__navigation wow fadeInUp" data-wow-delay=".3s">
 <!-- Previous Post -->
 <?php if (!empty($prev_post)) : ?>
 <div class="tj-navigation_post previous">
@@ -321,7 +321,8 @@ if( !empty( $logo ) ): ?>
 </div>
 <div class="getintouch_text">
 <p>Don't Hesitate to Contact Me</p>
-<a class="call_me" href="tel:+918595746074"><i class="fa-solid fa-phone"></i> +91-8595746074</a>
+<?php $about_phone  =  get_field('about_phone_number', 'option') ?: '9999999999'; ?>
+<a class="call_me" href="tel:+<?php echo esc_html( $about_phone ); ?>"><i class="fa-solid fa-phone"></i> +<?php echo esc_html( $about_phone ); ?></a>
 <div class="hire-btn"><a href="#contact-wrapper" class="tj-primary-btn modal-popup">Get Free Quote Now<i class="fa-solid fa-arrow-right"></i></a></div>
 </div>
 </div>

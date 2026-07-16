@@ -12,14 +12,20 @@ get_template_part('template-parts/marquee');
 ?>
 <!-- END: Breadcrumb and Skill Marquee Section -->
 <!-- start: Service Area -->
+<?php
+$service_sub_heading      = get_field('service_sub_heading', 'option') ?: 'my services';
+$service_main_heading      = get_field('service_main_heading', 'option') ?: 'Here is How I can Help!';
+$service_content_text      = get_field('service_content_text', 'option') ?: 'I break down complex user the experience problems the create integrity focused to solutions that’s connect. I break down complex user the experience problems the create integrity focused to solutions thats connect.';
+?>
 <section class="tj-service-section style-8 service-page">
 <div class="container">
 <div class="row">
 <div class="col-12">
 <div class="section-header style-3 service_nav_desktop page_expertise">
 <div class="sec-text">
-<span class="subtitle wow fadeInLeft" data-wow-delay=".3s">My services</span>
-<h2 class="title">Here's How I can Help!</h2>
+<span class="subtitle wow fadeInLeft" data-wow-delay=".3s"><?php echo esc_html( $service_sub_heading ); ?></span>
+<h2 class="title wow fadeInLeft" data-wow-delay=".3s"><?php echo esc_html( $service_main_heading ); ?></h2>
+<p class="service_para wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( wp_strip_all_tags( $service_content_text ) ); ?></p>
 </div>
 </div>
 </div>
@@ -35,8 +41,8 @@ $query = new WP_Query($args);
 if($query->have_posts()) :
 while($query->have_posts()) : $query->the_post();
 ?>
-<div class="col-lg-4 col-md-4 col-12">
-<div class="tj-service-7-wrapper wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+<div class="col-lg-4 col-md-4 col-12 wow fadeInLeft" data-wow-delay=".3s">
+<div class="tj-service-7-wrapper wow fadeInUp" data-wow-delay=".3s">
 <div class="bg-shape">
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
 </div>
@@ -65,6 +71,7 @@ while($query->have_posts()) : $query->the_post();
 </div>
 </section>
 <!-- end: Service Area -->
+<?php get_template_part('template-parts/faqs'); ?>
 </main>
 <!-- End Main Section -->
 <?php get_footer(); ?>

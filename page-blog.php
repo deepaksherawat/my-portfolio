@@ -12,14 +12,20 @@ get_template_part('template-parts/marquee');
 ?>
 <!-- END: Breadcrumb and Skill Marquee Section -->
 <!-- BLOG SECTION STAR -->
+<?php
+$blog_sub_heading      = get_field('blog_sub_heading', 'option') ?: 'Articles';
+$blog_main_heading      = get_field('blog_main_heading', 'option') ?: 'Recent Blogs';
+$blog_content      = get_field('blog_content', 'option') ?: 'I break down complex user the experience problems the create integrity focused to solutions that’s connect. I break down complex user the experience problems the create integrity focused to solutions that’s connect.';
+?>
 <section class="blog-section blog_page">
 <div class="container">
 <div class="row">
 <div class="col-12">
 <div class="section-header style-5 center">
 <div class="sec-text center">
-<span class="subtitle" data-wow-delay=".3s">Articles</span>
-<h2 class="section-title wow fadeInUp" data-wow-delay=".3s">Recent Blogs</h2>
+<span class="subtitle wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $blog_sub_heading ); ?></span>
+<h2 class="section-title wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $blog_main_heading ); ?></h2>
+<p class="blog_para"><?php echo esc_html( wp_strip_all_tags( $blog_content ) ); ?></p>
 </div>
 </div>
 </div>
@@ -35,7 +41,7 @@ if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?
 <div class="col-lg-4 col-md-4 col-12 blog-col">
 <div class="blog-item wow fadeInUp" data-wow-delay=".5s">
 <div class="blog-thumb">
-<a href="blog-details.html">
+<a href="<?php the_permalink(); ?>">
 <?php 
 if ( has_post_thumbnail() ) {
 $img = get_the_post_thumbnail_url(get_the_ID(), 'post-thumbnails');

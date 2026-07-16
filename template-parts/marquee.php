@@ -28,7 +28,7 @@ while ($query->have_posts()) : $query->the_post();
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/star.svg" alt="Icon" />
 </div>
 <div class="marquee-title">
-<h5 class="title"><?php the_title(); ?></h5>
+<a href="<?php the_permalink(); ?>"><h5 class="title"><?php the_title(); ?></h5></a>
 </div>
 </div>
 </div>
