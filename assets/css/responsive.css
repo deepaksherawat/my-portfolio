@@ -1000,6 +1000,7 @@ ul.port_meta li.port_meta_text:last-child{justify-content: center; padding: 5px 
 }
 /* Mobile Devices */
 @media only screen and (max-width: 767px) {
+article.tj-post .tj-post__content .tj-post__btn a{width: 100% !important;}
 	.portfolio_gallery .gallery_item{height: 150px !important;}
 	.hero-section.style-11{
 		padding: 100px 20px 80px !important;
@@ -1754,6 +1755,7 @@ ul.mobile_social_icon {
 	}
 	.tj__pagination ul {
 		gap: 10px;
+		justify-content: center;
 	}
 	.tj-posts__area .tj_main_sidebar {
 		border-color: var(--tj-grey-4);

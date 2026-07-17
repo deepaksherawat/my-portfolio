@@ -54,6 +54,14 @@ $new_hero_lighthouse_score  = get_field('new_hero_lighthouse_score', 'option') ?
 // Build the descriptive paragraph prefix with dynamic bits swapped in
 $new_hero_content_prefix_html = esc_html( $new_hero_content_prefix );
 $new_hero_content_prefix_html = str_replace( '%years%', '<b>' . esc_html( $freelencer_experience_years ) . '</b>', $new_hero_content_prefix_html );
+$work_status = get_field('work_status', 'option');
+$messages = array(
+    'available'     => 'Available For Freelance',
+    'busy'          => 'Currently working on client projects.',
+    'not_available' => 'Not Available For Freelance.',
+    'vacation'      => 'Currently on vacation.',
+);
+$work_message = isset($messages[$work_status]) ? $messages[$work_status] : 'Want to start a project?';
 ?>
 <section class="hero-section style-11">
 <div id="new-hero-particles"></div>
@@ -68,8 +76,8 @@ $new_hero_content_prefix_html = str_replace( '%years%', '<b>' . esc_html( $freel
 <div class="hero-content-box style-11">
 
 <div class="hero-availability-badge wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-<span class="dot"></span>
-<?php echo esc_html( $hero_badge_text ); ?>
+<span class="dot <?php echo esc_attr($work_status); ?>"></span>
+<?php echo esc_html($work_message); ?>
 </div>
 
 <h1 class="hero-title wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;"><?php echo esc_html( $hero_main_heading ); ?></h1>
@@ -204,265 +212,7 @@ $new_hero_content_prefix_html = str_replace( '%years%', '<b>' . esc_html( $freel
 <!-- end: New Hero Area -->
 
 <style>
-.hero-section.style-11 {
-  position: relative;
-  background: linear-gradient(135deg, var(--dark-blue-2), var(--dark-blue-3), var(--dark-blue-1));
-  padding: 180px 0 60px;
-  overflow: hidden;
-  position: relative;
-  z-index: 9;
-}
-.hero-section.style-11 .bg-shape{
-  position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-}
-.hero-section.style-11 .bg-shape img{
-  width: 100%;
-  height: 100%;
-}
-.hero-section.style-11 .hero-container{
-  margin-top: -50%;
-}
-.hero-content-box.style-11 .hero-availability-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  color: #cfd3da;
-  font-size: 13px;
-  padding: 8px 16px;
-  border-radius: 30px;
-  margin-bottom: 28px;
-}
-.hero-content-box.style-11 .hero-availability-badge .dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #ebc97c;
-  display: inline-block;
-}
-.hero-content-box.style-11 .hero-title {
-  color: #fff;
-  font-weight: 800;
-  font-size: 46px;
-  line-height: 1.15;
-  margin-bottom: 26px;
-}
-.hero-content-box.style-11 .hero-title .text-gold { color: #e8c07d; }
-.hero-content-box.style-11 .hero-title .text-blue { color: #4db8ff; }
-.hero-content-box.style-11 .desc p {
-  color: #ffffff;
-  font-size: 18px;
-  line-height: 1.7;
-}
-.hero-content-box.style-11 .desc p b {
-    color: #dcb86c;
-    text-transform: uppercase;
-}
-.hero-content-box.style-11 .desc .text-highlight { color: #e1be72; font-weight: 600; }
-.hero-content-box.style-11 .desc .typing-wrap { white-space: nowrap; }
-.hero-content-box.style-11 .desc .typing-cursor {
-  display: inline-block;
-  margin-left: 2px;
-  color: #dcb86c;
-  animation: hero-cursor-blink 0.8s steps(1) infinite;
-}
-@keyframes hero-cursor-blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
-}
-.hero-content-box.style-11 .hero-button {
-  margin-top: 32px;
-  margin-bottom: 0px;
-  display: flex;
-  gap: 15px;
-}
-.hero-content-box.style-11 .hero-button .btn.tj-btn-primary, .hero-content-box.style-11 .hero-button .btn.tj-btn-secondary {
-  border-radius: 10px;
-  padding: 14px 30px;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  text-transform: uppercase;
-}
-.hero-content-box.style-11 .hero-button .btn.tj-btn-primary{
-  background: linear-gradient(90deg, var(--golden-yellow-1), var(--golden-yellow-2), var(--golden-yellow-3));
-  color: var(--full-black) !important;
-}
-.hero-content-box.style-11 .hero-button .btn.tj-btn-secondary{
-  background: linear-gradient(90deg, var(--white-1), var(--white-2), var(--white-3));
-  color: var(--full-black) !important;
-}
-.hero-11-socials .social-icons {
-  position: absolute;
-  top: 35%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  left: 50px;
-}
-.hero-11-socials ul.ul-reset.social-icons {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-}
-.hero-11-socials .social-icons {
-  display: flex;
-  gap: 14px;
-}
-.hero-11-socials .social-icons li a {
-  width: 35px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--white-1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
 
-.hero-11-code-mockup-wrap {
-  position: relative;
-}
-.hero-11-platform-badge {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  z-index: 2;
-}
-.hero-11-platform-badge.wordpress-badge {
-  top: -20px;
-  left: -70px;
-  background: #ffffff;
-  color: #000000;
-}
-.hero-11-platform-badge.cart-badge {
-    top: -70px;
-    left: 250px;
-    background: #ffffff;
-    color: #000000;
-}
-.hero-11-platform-badge.shopify-badge {
-  bottom: -20px;
-  right: -70px;
-  background: #ffffff;
-  color: #000000;
-}
-.hero-11-platform-badge.speed-badge {
-    top: -56px;
-    right: -25px;
-    background: #ffffff;
-    color: #000000;
-}
-.hero-11-platform-badge.seo-badge {
-    bottom: -75px;
-    right: 230px;
-    background: #ffffff;
-    color: #000000;
-}
-.hero-11-platform-badge.plug-badge {
-    bottom: -40px;
-    left: -50px;
-    background: #ffffff;
-    color: #000000;
-}
-.hero-11-code-window {
-  background: #10141d;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
-  overflow: hidden;
-}
-.code-window-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 18px;
-  background: #171c26;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-.window-dots { display: flex; gap: 6px; }
-.window-dots .dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
-.window-dots .dot-red { background: #ff5f57; }
-.window-dots .dot-yellow { background: #febc2e; }
-.window-dots .dot-green { background: #28c840; }
-.window-filename { color: #8b93a1; font-size: 13px; margin-left: 6px; }
-.code-window-body {
-  padding: 18px 20px;
-  overflow-x: auto;
-}
-.code-window-body pre { margin: 0; }
-.code-window-body code {
-  font-family: 'Fira Code', 'Courier New', monospace;
-  font-size: 13.5px;
-  line-height: 1.9;
-  color: #d5dae3;
-}
-.code-window-body .ln { color: #4a5060; margin-right: 14px; }
-.code-window-body .fn { color: #7fb4ff; }
-.code-window-body .str { color: #e8c07d; }
-.code-window-body .kw { color: #d38bff; }
-.code-window-body .cmt { color: #5f6674; font-style: italic; }
-.code-window-body .liquid { color: #d38bff; }
-.code-window-body .var { color: #7fdbca; }
-.code-window-body .attr { color: #7fb4ff; }
-.code-window-body .cursor { color: #4db8ff; }
-.code-window-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 20px;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  font-size: 13px;
-  color: #8b93a1;
-}
-.code-window-footer .lighthouse-score { color: #3ecf6a; }
-
-@media (max-width: 991px) {
-  .hero-content-box.style-11 .hero-title { font-size: 28px; }
-  .hero-11-code-mockup-wrap { margin-top: 100px; }
-  .hero-11-platform-badge{
-    width: 35px;
-    height: 35px;
-    font-size: 20px;
-  }
-  .hero-11-platform-badge.wordpress-badge{
-    top: 107%;
-    left: 0;
-  }
-  .hero-11-platform-badge.shopify-badge{
-    bottom: -16.5%;
-    right: 71%;
-  }
-  .hero-11-platform-badge.cart-badge{
-    top: 107%;
-    left: 36%;
-  }
-  .hero-11-platform-badge.speed-badge{
-    top: 107%;
-    right: 0%;
-  }
-  .hero-11-platform-badge.seo-badge{
-    bottom: -16.5%;
-    right: 35%;
-  }
-  .hero-11-platform-badge.plug-badge {
-    bottom: -16.5%;
-    left: 71%;
-  }
-}
 </style>
 
 <script>

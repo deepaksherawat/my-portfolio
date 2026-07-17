@@ -27,7 +27,7 @@ single_tag_title();
 echo '</span>';
 // SEARCH
 } elseif (is_search()) {
-echo 'Search Results';
+echo 'Search Results: <span class="search_word">' . esc_html( get_search_query() ) . '</span>';
 // AUTHOR
 } elseif (is_author()) {
 the_author();

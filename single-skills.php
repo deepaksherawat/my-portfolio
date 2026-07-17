@@ -116,12 +116,9 @@ echo get_the_post_thumbnail($next_post->ID, 'thumbnail');
 <div class="bg-shape">
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
 </div>
-<div class="tj-widget__search form_group">
-<form class="search-form" action="#" method="get">
-<input type="search" id="search" name="search" placeholder="Search..." />
-<button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-</form>
-</div>
+<!-- search Form -->
+<?php get_template_part('template-parts/search-form');  ?>
+<!-- end search Form -->
 </div>
 <div class="sidebar_widget widget_categories wow fadeInUp" data-wow-delay=".3s">
 <div class="bg-shape">
