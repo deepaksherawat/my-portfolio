@@ -27,7 +27,7 @@ $html_css_form_shortcode        = get_field('html_&_css_form_shortcode', 'option
 <div class="col-12">
 
 <div class="popup_contact_area">
-<div class="popup_contact_form order-2 order-md-1 wow fadeInLeft" data-wow-delay=".3s">
+<div class="popup_contact_form order-2 order-md-1 wow fadeInUp" data-wow-delay=".3s">
 <div class="section-header">
 <?php
 $categories = get_the_category();
@@ -111,7 +111,7 @@ if (!empty($html_css_form_shortcode)) {
     </div>
     <div class="pop_cont_box my_social_icons">
         <p>Follow Us:</p>
-        <ul class="ul-reset social-icons style-3 wow fadeInRight" data-wow-delay=".6s">
+        <ul class="ul-reset social-icons style-3 wow fadeInUp" data-wow-delay=".6s">
 <li>
 <a href="<?php echo esc_html( $whatsapp_link ); ?>" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
 </li>

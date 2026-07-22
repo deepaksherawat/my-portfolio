@@ -1,4 +1,7 @@
 <!-- START: Breadcrumb Area -->
+<?php
+$all_projects_link      = get_field('all_projects_link', 'option') ?: '#';
+?>
 <section class="breadcrumb_area">
 <div class="bg-shape">
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
@@ -40,7 +43,7 @@ $term = get_queried_object();
 echo '<span class="page_span_title">Project Type: </span>' . $term->name;
 // SINGLE PROJECT
 } elseif (is_singular('project')) {
-echo get_the_title();
+echo '<span class="page_span_title">Case Study: </span>' .  get_the_title();
 // SINGLE MY EXPERTISE
 } elseif (is_singular('my-expertise')) {
 echo get_the_title();
@@ -94,11 +97,11 @@ echo '<span>' . get_the_date('F Y') . '</span>';
 // PROJECT TAX
 } elseif (is_tax('project-type')) {
 $term = get_queried_object();
-echo '<span><a href="' . get_post_type_archive_link('project') . '">Projects</a></span><i class="fa-solid fa-arrow-right"></i>';
+echo '<span><a href="' . get_post_type_archive_link('project') . '">All Projects</a></span><i class="fa-solid fa-arrow-right"></i>';
 echo '<span>' . $term->name . '</span>';
 // SINGLE PROJECT
 } elseif (is_singular('project')) {
-echo '<span><a href="' . get_post_type_archive_link('project') . '">Projects</a></span><i class="fa-solid fa-arrow-right"></i>';
+echo '<span><a href="' . esc_html( $all_projects_link ) . '">All Projects</a></span><i class="fa-solid fa-arrow-right"></i>';
 $terms = get_the_terms(get_the_ID(), 'project-type');
 if ($terms && !is_wp_error($terms)) {
 $term = $terms[0];

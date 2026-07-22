@@ -21,7 +21,7 @@ $service_popup_button_text      = get_field('service_popup_button_text', 'option
 <div class="service-next"><i class="fa-solid fa-arrow-right"></i></div>
 </div>
 <div class="service-button wow fadeInUp" data-wow-delay=".5s">
-<a class="btn tj-btn-primary" href="<?php echo esc_html( $service_button_link ); ?>"><?php echo esc_html( $service_button_text ); ?> <i class="fa-solid fa-eye"></i></a>
+<a class="btn tj-btn-primary" href="<?php echo esc_html( $service_button_link ); ?>">view all my expertise <i class="fa-solid fa-eye"></i></a>
 </div>
 
 </div>
@@ -67,7 +67,8 @@ while($query->have_posts()) : $query->the_post();
 </div>
 <?php endwhile; wp_reset_postdata(); endif; ?>                  
 </div>
-<div class="service-pagination"></div>
+<div class="swiper-scrollbar"></div>
+<!-- <div class="service-pagination"></div> -->
 </div>
 <div class="service_nav_mobile">
 <div class="service-navigation wow fadeInUp" data-wow-delay=".4s">
@@ -75,7 +76,7 @@ while($query->have_posts()) : $query->the_post();
 <div class="service-next"><i class="fa-solid fa-arrow-right"></i></div>
 </div>
 <div class="service-button wow fadeInUp" data-wow-delay=".5s">
-<a class="btn tj-btn-primary" href="<?php echo esc_html( $service_button_link ); ?>"><?php echo esc_html( $service_button_text ); ?> <i class="fa-solid fa-eye"></i></a>
+<a class="btn tj-btn-primary" href="<?php echo esc_html( $service_button_link ); ?>">view all my expertise <i class="fa-solid fa-eye"></i></a>
 </div>
 </div>
 <div class="getintouch_btn full_width wow fadeInUp">

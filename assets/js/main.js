@@ -349,38 +349,72 @@ Description: Gerold - Personal Portfolio HTML5 Template
 
 		// Services Slider Js
 if ($(".service-slider-8").length > 0) {
-	var service = new Swiper(".service-slider-8", {
-		slidesPerView: 3,
-		spaceBetween: 30,
-		loop: true,
-		centeredSlides: true,
-		speed: 1000,
-		autoplay: {
-			delay: 3000,
-		},
-		navigation: {
-			prevEl: ".service-prev",
-			nextEl: ".service-next",
-		},
-		pagination: {
-			el: ".service-pagination",
-			clickable: true,
-		},
-		breakpoints: {
-			320: {
-				slidesPerView: 1,
-			},
-			576: {
-				slidesPerView: 2,
-			},
-			992: {
-				slidesPerView: 2,
-			},
-			1200: {
-				slidesPerView: 3,
-			},
-		},
-	});
+
+    var service = new Swiper(".service-slider-8", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+
+        loop: true,
+        centeredSlides: true,
+
+        speed: 1000,
+
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+
+        scrollbar: {
+            el: ".swiper-scrollbar",
+            draggable: true,
+            hide: false,
+        },
+
+        navigation: {
+            prevEl: ".service-prev",
+            nextEl: ".service-next",
+        },
+
+        pagination: {
+            el: ".service-pagination",
+            clickable: true,
+        },
+
+        observer: true,
+        observeParents: true,
+
+        breakpoints: {
+            320: {
+                slidesPerView: 1.2,
+                spaceBetween: 10,
+            },
+            576: {
+                slidesPerView: 2,
+                spaceBetween: 15,
+            },
+            992: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+            },
+            1200: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+        },
+
+        on: {
+            init: function () {
+                this.update();
+            },
+            resize: function () {
+                this.update();
+            },
+        }
+
+    });
+
+    // Correct update
+    service.update();
 }
 
 

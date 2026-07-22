@@ -25,7 +25,7 @@ $blog_content      = get_field('blog_content', 'option') ?: 'I break down comple
 <div class="sec-text center">
 <span class="subtitle wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $blog_sub_heading ); ?></span>
 <h2 class="section-title wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $blog_main_heading ); ?></h2>
-<p class="blog_para"><?php echo esc_html( wp_strip_all_tags( $blog_content ) ); ?></p>
+<p class="blog_para wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( wp_strip_all_tags( $blog_content ) ); ?></p>
 </div>
 </div>
 </div>

@@ -14,14 +14,14 @@ $blog_button_link      = get_field('blog_listing_page_link', 'option') ?: 'http:
 
 <div class="section-header style-3 blog_nav_desktop">
 <div class="sec-text">
-<span class="subtitle wow fadeInLeft" data-wow-delay=".3s"><?php echo esc_html( $blog_sub_heading ); ?></span>
+<span class="subtitle wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $blog_sub_heading ); ?></span>
 <h2 class="title wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $blog_main_heading ); ?></h2>
 </div>
-<div class="blog-navigation wow fadeInRight" data-wow-delay=".4s">
+<div class="blog-navigation wow fadeInUp" data-wow-delay=".4s">
 <div class="blog-prev"><i class="fa-solid fa-arrow-left"></i></div>
 <div class="blog-next"><i class="fa-solid fa-arrow-right"></i></div>
 </div>
-<div class="blog-button wow fadeInRight" data-wow-delay=".5s">
+<div class="blog-button wow fadeInUp" data-wow-delay=".5s">
 <a class="btn tj-btn-primary" href="<?php echo esc_html( $blog_button_link ); ?>">View All Blogs <i class="fa-solid fa-eye"></i></a>
 </div>
 
@@ -80,11 +80,11 @@ if (!empty($categories)) {
 <div class="blog-pagination"></div>
 </div>
 <div class="blog_nav_mobile">
-<div class="blog-navigation wow fadeInRight" data-wow-delay=".4s">
+<div class="blog-navigation wow fadeInUp" data-wow-delay=".4s">
 <div class="blog-prev"><i class="fa-solid fa-arrow-left"></i></div>
 <div class="blog-next"><i class="fa-solid fa-arrow-right"></i></div>
 </div>
-<div class="blog-button wow fadeInRight" data-wow-delay=".5s">
+<div class="blog-button wow fadeInUp" data-wow-delay=".5s">
 <a class="btn tj-btn-primary" href="#">View All Blogs <i class="fa-solid fa-eye"></i></a>
 </div>
 </div>

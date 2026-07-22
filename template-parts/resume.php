@@ -11,7 +11,7 @@ $resume_content_text      = get_field('resume_content_text', 'option') ?: 'I bre
 <div class="section-header style-3 text-center">
 <span class="subtitle wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $resume_sub_heading ); ?></span>
 <h2 class="section-title wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $resume_main_heading ); ?></h2>
-<p class="resume_para"><?php echo esc_html( $resume_content_text ); ?></p>
+<p class="resume_para wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $resume_content_text ); ?></p>
 </div>
 </div>
 </div>

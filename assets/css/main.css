@@ -318,7 +318,7 @@ a h6:hover {
 	);
 	border: none;
 	border-radius: 10px;
-	padding: 17px 35px;
+	padding: 18px 35px;
 	-webkit-transition: 0.4s;
 	-o-transition: 0.4s;
 	transition: 0.4s;
@@ -636,6 +636,7 @@ body.loaded {
 	letter-spacing: 15px;
 	text-transform: uppercase;
 	z-index: 20;
+	margin-left: 20px;
 }
 
 .load-text span {
@@ -2210,7 +2211,7 @@ body.loaded {
     z-index: 1;
     position: absolute;
     right: -3.9%;
-    top: 51%;
+    top: 50%;
     background: linear-gradient(90deg, var(--dark-blue-2), var(--dark-blue-3), var(--dark-blue-1));
     -webkit-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
@@ -2247,8 +2248,8 @@ body.loaded {
     transition: 0.5s;
     z-index: 1;
     position: absolute;
-    right: 17.5%;
-    top: 51%;
+    right: 19.5%;
+    top: 50%;
     background: linear-gradient(90deg, var(--dark-blue-2), var(--dark-blue-3), var(--dark-blue-1));
     -webkit-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
@@ -3514,6 +3515,27 @@ img.portfolio-image {
 }
 #portfolio-wrapper .popup_modal_content{
 	background: linear-gradient(to right, var(--dark-blue-2) 0%, var(--dark-blue-3) 51%, var(--dark-blue-1) 100%);
+}
+#portfolio-wrapper .popup_modal_content .faq-section {
+    background: transparent;
+    padding: 20px 0;
+    border-top: 1px solid #fff
+}
+#portfolio-wrapper .popup_modal_content .faq-section .section-header {
+    text-align: left !important;
+}
+#portfolio-wrapper .popup_modal_content .faq-section .section-header h2.section-title {
+    color: var(--white-1);
+    visibility: visible !important;
+}
+#portfolio-wrapper .popup_modal_content .faq-section .section-header span.subtitle {
+    background: linear-gradient(90deg, var(--golden-yellow-1), var(--golden-yellow-2), var(--golden-yellow-3));
+    color: var(--full-black);
+    font-weight: 600;
+    visibility: visible !important;
+}
+#portfolio-wrapper .popup_modal_content .faq-section .accordion.tj-faq .accordion-item {
+    visibility: visible !important;
 }
 .popup_modal_content {
 	background: linear-gradient(to right, var(--dark-blue-2) 0%, var(--dark-blue-3) 51%, var(--dark-blue-1) 100%);
@@ -8549,7 +8571,7 @@ article.tj-post .tj-post__content .tj-post__btn a:hover {
 }
 .code-window-footer .lighthouse-score { color: #3ecf6a; }
 
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   .hero-content-box.style-11 .hero-title { font-size: 28px; }
   .hero-11-code-mockup-wrap { margin-top: 100px; }
   .hero-11-platform-badge{
@@ -8563,7 +8585,7 @@ article.tj-post .tj-post__content .tj-post__btn a:hover {
   }
   .hero-11-platform-badge.shopify-badge{
     bottom: -16.5%;
-    right: 71%;
+    right: 72%;
   }
   .hero-11-platform-badge.cart-badge{
     top: 107%;
@@ -8575,11 +8597,45 @@ article.tj-post .tj-post__content .tj-post__btn a:hover {
   }
   .hero-11-platform-badge.seo-badge{
     bottom: -16.5%;
-    right: 35%;
+    right: 36%;
   }
   .hero-11-platform-badge.plug-badge {
     bottom: -16.5%;
-    left: 71%;
+    left: 72%;
   }
+  .service_nav_mobile a.btn.tj-btn-primary{
+  	width: 90% !important;
+  }
+  .tj-service-section.style-8 .container{
+  	padding: 0;
+  }
+  .tj-service-section.style-8 .service-button, .tj-service-section.style-8 .getintouch_btn.full_width {
+    padding: 0px 20px;
+}
+.tj-service-7-wrapper{
+	height: 420px;
+}
+.tj-service-7-icon {
+    display: flex;
+    justify-content: center;
+}
+.service-slider-8 {
+    overflow: hidden;
+}
+
+.service-slider-8 .swiper-scrollbar {
+    position: relative;
+    width: 100%;
+    left: 0;
+    margin-top: 40px;
+}
+
+.service-slider-8 .swiper-scrollbar-drag {
+    border-radius: 50px;
+}
+
 }
 /* end new hero section */
+.progress-wrap{box-shadow: inset 0 0 0 4px rgb(13 20 39) !important;}
+.progress-wrap svg.progress-circle path{stroke-width: 6px !important;}
+.progress-wrap svg path {fill: var(--dark-blue-1) !important;}

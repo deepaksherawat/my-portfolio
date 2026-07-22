@@ -12,7 +12,7 @@ get_template_part('template-parts/marquee');
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-lg-8">
-<div class="portfolio_title wow fadeInUp" data-wow-delay=".3s"><h2><span>Project: </span><?php the_title(); ?></h2></div>
+<div class="portfolio_title wow fadeInUp" data-wow-delay=".3s"><h2><span>Case Study: </span><?php the_title(); ?></h2></div>
 <!-- portfolio gallery -->
 <?php
 $gallery = get_field('project_gallery'); // apna ACF field name check karo

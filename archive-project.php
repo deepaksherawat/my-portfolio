@@ -7,15 +7,21 @@ get_template_part('template-parts/marquee');
 ?>
 <!-- END: Breadcrumb and Skill Marquee Section -->
 <!-- start: Portfolio Area -->
+<?php
+$project_sub_heading      = get_field('project_sub_heading', 'option') ?: 'Behind the Pixels';
+$project_main_heading      = get_field('project_main_heading', 'option') ?: 'My Latest Projects';
+$project_content_text      = get_field('service_content_text', 'option') ?: 'I break down complex user the experience problems the create integrity focused to solutions that’s connect. I break down complex user the experience problems the create integrity focused to solutions thats connect.';
+$all_projects_link      = get_field('all_projects_link', 'option') ?: '#';
+?>
 <section class="tj-portfolio-section style-8 portfolio-page">
 <div class="container">
 <div class="row">
 <div class="col-12">
 <div class="section-header style-5">
 <div class="sec-text">
-<span class="subtitle" data-wow-delay=".3s">My portfolios</span>
-<!-- <h2 class="title tj-text-invert">Here's How I can Help!</h2> -->
-<h2 class="section-title wow fadeInUp" data-wow-delay=".3s">Here's How I can Help!</h2>
+<span class="subtitle wow fadeInUp" data-wow-delay="0.3s"><?php echo esc_html( $project_sub_heading ); ?></span>
+<h2 class="section-title wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $project_main_heading ); ?></h2>
+<p class="port_para wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( wp_strip_all_tags( $project_content_text ) ); ?></p>
 </div>
 </div>
 </div>
