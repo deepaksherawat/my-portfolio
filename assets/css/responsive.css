@@ -1032,6 +1032,7 @@ ul.port_meta li.port_meta_text:last-child{justify-content: center; padding: 5px 
 	display: flex !important;
 	flex-wrap: wrap;
 }
+.about-intro-freelancer .personal-info-list li{width: 100%;}
 	.about-8-content .about-button{
 		display: flex;
         width: 100% !important;
