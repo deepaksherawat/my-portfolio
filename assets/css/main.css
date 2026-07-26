@@ -8617,7 +8617,7 @@ article.tj-post .tj-post__content .tj-post__btn a:hover {
 }
 .tj-service-7-icon {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 .service-slider-8 {
     overflow: hidden;

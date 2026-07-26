@@ -1023,7 +1023,7 @@ ul.port_meta li.port_meta_text:last-child{justify-content: center; padding: 5px 
 .breadcrumb_navigation span{
 	text-align: center;
 }
-.hire-btn{padding: 15px 30px;}
+.hire-btn{padding: 15px 18px;}
 .single-post_tag_share .tj_tag, .single-post_tag_share{justify-content: center;}
 .preloader .preloader-heading .load-text{font-size: 20px;}
 .about-intro-freelancer.tj-about-section .desc p{padding: 0 10px;}
@@ -1742,7 +1742,7 @@ ul.mobile_social_icon {
 	.breadcrumb_navigation{flex-wrap: wrap; justify-content: center;}
 	/* end breadcrumb */
 	/* popup form */
-	.popup_contact_area .section-header .section-title{font-size: 40px;}
+	.popup_contact_area .section-header .section-title{font-size: 30px;}
 	/* end popup form */
 	/* text area */
 	.text-section .heading-left p {
@@ -1796,7 +1796,7 @@ ul.mobile_social_icon {
 		padding: 25px 15px;
 	}
 	.tj-post__meta {
-		column-gap: 15px;
+		column-gap: 8px;
 		margin-bottom: 15px;
 	}
 	.tj-post__content .tj-post__title {
