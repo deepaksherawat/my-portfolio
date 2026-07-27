@@ -84,7 +84,7 @@ $target_url = '#contact-wrapper';
 <div class="col-lg-5">
 <div class="about-8-images wow fadeInUp" data-wow-delay=".3s">
 <img src="<?php echo esc_url( $profile_image ); ?>" alt="<?php echo esc_attr( $full_name ); ?> - WordPress & Shopify Developer">
-<div class="about_shapes">
+<div class="about_shapes wow fadeInUp" data-wow-delay=".3s">
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ab-8-shapes.png" alt="shape">
 </div>
 </div>

@@ -36,7 +36,7 @@ $query = new WP_Query($args);
 if($query->have_posts()) :
 while($query->have_posts()) : $query->the_post();
 ?>
-<div class="col-lg-4 col-md-4 col-12 wow fadeInUp" data-wow-delay=".3s">
+<div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".3s">
 <div class="tj-service-7-wrapper wow fadeInUp" data-wow-delay=".3s">
 <div class="bg-shape">
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">

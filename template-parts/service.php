@@ -3,7 +3,6 @@
 $service_sub_heading      = get_field('service_sub_heading', 'option') ?: 'my services';
 $service_main_heading      = get_field('service_main_heading', 'option') ?: 'Here is How I can Help!';
 $service_content_text      = get_field('service_content_text', 'option') ?: 'I break down complex user the experience problems the create integrity focused to solutions that’s connect. I break down complex user the experience problems the create integrity focused to solutions thats connect.';
-$service_button_text      = get_field('service_button_text', 'option') ?: 'view all my expertise';
 $service_button_link      = get_field('service_button_link', 'option') ?: 'http://localhost/deepak/';
 $service_popup_button_text      = get_field('service_popup_button_text', 'option') ?: 'HAVE PROJECT IN MIND! LETS DISCUSS ';
 ?>
@@ -80,7 +79,7 @@ while($query->have_posts()) : $query->the_post();
 </div>
 </div>
 <div class="getintouch_btn full_width wow fadeInUp">
-<a class="btn tj-btn-primary modal-popup" href="#contact-wrapper"><?php echo esc_html( $service_popup_button_text ); ?> <i class="fa-solid fa-arrow-right"></i></a>
+<a class="btn tj-btn-primary modal-popup" href="#contact-wrapper">view all my expertise  <i class="fa-solid fa-arrow-right"></i></a>
 </div>
 </div>
 </div>

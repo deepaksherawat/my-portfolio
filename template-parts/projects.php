@@ -23,7 +23,7 @@ $project_button_link      = get_field('service_button_link', 'option') ?: 'http:
 <div class="portfolio-next"><i class="fa-solid fa-arrow-right"></i></div>
 </div>
 <div class="portfolio-button wow fadeInUp" data-wow-delay=".5s">
-<a class="btn tj-btn-primary" href="<?php echo esc_html( $service_button_link ); ?>"><?php echo esc_html( $project_button_text ); ?> <i class="fa-solid fa-eye"></i></a>
+<a class="btn tj-btn-primary" href="<?php echo esc_html( $service_button_link ); ?>">view all my case studies  <i class="fa-solid fa-eye"></i></a>
 </div>
 
 </div>
@@ -122,7 +122,7 @@ echo '</p>';
 <div class="portfolio-next"><i class="fa-solid fa-arrow-right"></i></div>
 </div>
 <div class="portfolio-button wow fadeInUp" data-wow-delay=".5s">
-<a class="btn tj-btn-primary" href="<?php echo esc_html( $service_button_link ); ?>"><?php echo esc_html( $project_button_text ); ?> <i class="fa-solid fa-eye"></i></a>
+<a class="btn tj-btn-primary" href="<?php echo esc_html( $service_button_link ); ?>">view all my case studies  <i class="fa-solid fa-eye"></i></a>
 </div>
 </div>
 </div>

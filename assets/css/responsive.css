@@ -307,6 +307,51 @@ section#contact-section .row .col-lg-5 {
 .tj-service-5-accordion-list-button a {
     width: 100%;
 }
+.resume-section.style-5 .container-fluid {
+    padding: 10px 50px 0px 50px;
+}
+.resume_wrapper_5 .resume_inner_5 {
+        gap: 25px;
+    }
+    .resume_wrapper_5 .resume_inner_5:not(:last-child) .resume_item {
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+    }
+        .resume_wrapper_5 .resume_inner_5 .resume_item.style-5.eductaion .icon_box {
+        background: var(--off-white);
+        max-width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 5px;
+        border-radius: 5px;
+    }
+    .resume_wrapper_5 .resume_inner_5 .resume_item.style-5.eductaion .resume_content .resume_text h5.title {
+        position: absolute;
+        margin-top: -20%;
+        margin-left: 12%;
+    }
+    .resume_wrapper_5 .resume_inner_5 .resume_item.style-5.eductaion .resume_content .resume_text .exp_box {
+        margin-top: -70px !important;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-left: 80px;
+    }
+    .resume_item .resume_content .resume_text .subtitle {
+        margin-bottom: 22px;
+        position: relative;
+        margin-top: 0%;
+        left: 0%;
+        font-size: 15px;
+        line-height: 20px;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+        .resume_item .resume_content .resume_text .subtitle i, .resume_item .resume_content .resume_text span.date i {
+        margin-right: 5px;
+    }
 	h1 {
 		font-size: 50px;
 	}
@@ -380,7 +425,7 @@ section#contact-section .row .col-lg-5 {
 
 	/* hero section */
 	.hero-section {
-		padding: 130px 0 30px;
+		padding: 130px 30px 30px !important;
 	}
 	.hero-section .intro_text svg {
 		top: 40%;
@@ -402,8 +447,54 @@ section#contact-section .row .col-lg-5 {
 		gap: 30px;
 	}
 	.hero-section .funfact-area {
-		margin-top: 60px;
+		margin-top: 120px;
 	}
+	.hero-content-box.style-11 .hero-button{
+		    margin-top: 25px;
+		    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 100px;
+	}
+	.hero-content-box.style-11 .hero-button .btn.tj-btn-primary, .hero-content-box.style-11 .hero-button .btn.tj-btn-secondary{
+		width: 100%;
+    justify-content: center;
+	}
+	.hero-11-socials {
+        top: -45px !important;
+        left: -45px !important;
+        position: relative;
+    }
+    .hero-11-socials ul.ul-reset.social-icons:before{
+    	content: "Follow Me: ";
+    }
+        .hero-11-socials ul.ul-reset.social-icons {
+        flex-direction: row !important;
+        align-items: center;
+    }
+    .hero-11-platform-badge.wordpress-badge {
+        top: 110%;
+        left: 0;
+    }
+    .hero-11-platform-badge.cart-badge {
+        top: 110%;
+        left: 37%;
+    }
+        .hero-11-platform-badge.speed-badge {
+        top: 110%;
+        right: 0%;
+    }
+        .hero-11-platform-badge.shopify-badge {
+        bottom: -23.9%;
+        right: 75%;
+    }
+    .hero-11-platform-badge.seo-badge {
+        bottom: -23.9%;
+        right: 37%;
+    }
+    .hero-11-platform-badge.plug-badge {
+        bottom: -23.9%;
+        left: 75%;
+    }
 	.funfact-item {
 		justify-content: center;
 		margin-bottom: 20px;
@@ -441,9 +532,8 @@ section#contact-section .row .col-lg-5 {
     width: 50%;
 }
 	.service_nav_mobile .service-button a.btn.tj-btn-primary {
-    width: 85.7%;
-    border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
+    width: 100%;
+        border-radius: 10px;
 }
 .tj-service-section.style-8 .service_nav_mobile .service-navigation .service-next {
     top: 81.4%;
@@ -473,13 +563,38 @@ section#contact-section .row .col-lg-5 {
 	.services-widget i {
 		right: 20px;
 	}
+    .tj-service-section.style-8 .service_nav_mobile .service-navigation {
+        display: none;
+    }
+    .service_nav_mobile .service-button {
+    margin-top: 20px;
+}
+.tj-header-area .mobile-menu{
+	top: 110px;
+}
+.tj-header-area .mobile-menu ul{
+	max-width: 100%;
+	padding: 20px 40px;
+}
+.tj-header-area .mobile-menu ul li a:not(.mean-expand){
+	padding: 10px 0;
+	    font-size: 20px;
+}
+.about-intro-freelancer.tj-about-section .row.align-items-center .col-lg-5 {
+    padding: 0 60px;
+    margin-bottom: 30px;
+}
 /* spacing */
-.faq-section{padding-top: 60px;}
+.faq-section{padding-top: 60px; padding-left: 20px;
+        padding-right: 20px;}
 .testimonial-section.style-4 {
     padding-top: 60px;
     padding-bottom: 40px;
+    padding-left: 50px;
+        padding-right: 50px;
 }
-.tj-progress-7-area, .resume-section.style-5{padding: 60px 0px;}
+.resume-section.style-5{padding: 60px 0px;}
+.tj-progress-7-area{padding: 60px 50px;}
 /* end spacing */
 	/* popup */
 	.popup_content_area {
@@ -592,13 +707,15 @@ section#contact-section .row .col-lg-5 {
     display: inline-flex !important;
 }
 .portfolio-section.style-5 .portfolio-navigation .portfolio-prev {
-        top: 87.9%;
-        right: 8.7%;
+        top: 87.3%;
+        right: 8.9%;
         border-radius: 0;
+        padding: 24px 0px;
     }
     .portfolio-section.style-5 .portfolio-navigation .portfolio-next {
-        top: 87.9%;
-        right: 2%;
+        top: 87.3%;
+        right: 2.5%;
+        padding: 24px 0px;
     }
     .portfolio-section.style-5{padding-bottom: 60px;}
     .portfolio_nav_desktop .portfolio-button {
@@ -680,6 +797,8 @@ section#contact-section .row .col-lg-5 {
 	.blog-section {
 		padding-top: 80px;
 		padding-bottom: 50px;
+		padding-left: 20px;
+        padding-right: 20px;
 	}
 	.blog-item .blog-content {
 		bottom: 10px;
@@ -720,9 +839,9 @@ section#contact-section .row .col-lg-5 {
     display: flex;
     justify-content: center;
 }
-.blog_nav_mobile .blog-button a.btn.tj-btn-primary{width: 85%; border-top-left-radius: 10px; border-bottom-left-radius: 10px;}
-.blog_nav_mobile .blog-navigation .blog-prev{top: 86.5%; right: 9%; border-radius: 0px;}
-.blog_nav_mobile .blog-navigation .blog-next{top: 86.5%; right: 2%;}
+.blog_nav_mobile .blog-button a.btn.tj-btn-primary{width: 88.1%; border-top-left-radius: 10px; border-bottom-left-radius: 10px;}
+.blog_nav_mobile .blog-navigation .blog-prev{top: 86.3%; right: 8.5%; border-radius: 0px; padding: 24px 0px;}
+.blog_nav_mobile .blog-navigation .blog-next{top: 86.3%; right: 2%; padding: 24px 0px;}
 .blog-section .blog-pagination {
     margin-top: 0px;
     margin-bottom: 20px;
@@ -749,9 +868,13 @@ section#contact-section .row .col-lg-5 {
 	}
 	.breadcrumb_area {
 		padding: 80px 0;
-		min-height: 300px;
+		min-height: 350px;
 		align-items: end;
 	}
+.tj-portfolio-5-accordion-thumb{width: 100%;}
+    .portfolio_card_left, .portfolio_card:nth-child(even) .row .portfolio_card_left {
+        padding: 10px 35px 20px 35px;
+    }
 .text-section .section-header .section-title{font-size: 85px;}
 .tj-footer-6-wrapper {
     justify-content: center;
@@ -1069,10 +1192,17 @@ article.tj-post .tj-post__content .tj-post__btn a{width: 100% !important;}
 	.hero-section.style-11{
 		padding: 100px 20px 80px !important;
 	}
-	.hero-11-socials ul.ul-reset.social-icons{flex-direction: row !important;}
+	.hero-11-socials ul.ul-reset.social-icons:before{
+    	content: "Follow Me: ";
+    	width: max-content;
+    }
+        .hero-11-socials ul.ul-reset.social-icons {
+        flex-direction: row !important;
+        align-items: center;
+    }
 	.hero-11-socials{
 		top: 45px !important;
-        left: 0 !important;
+        left: -45px !important;
         position: relative;
 	}
 	.resume-section.style-5 .container-fluid {
@@ -1492,7 +1622,7 @@ ul.mobile_social_icon {
 		top: 5px;
 	}
 	.popup_modal_content, #contact-wrapper .popup_modal_content {
-		padding: 20px;
+		padding: 0px;
 		z-index: 9;
         position: relative;
 	}
@@ -1573,7 +1703,7 @@ ul.mobile_social_icon {
 		right: 15px;
 	}
 	.popup_modal_content .portfolio_info {
-		padding: 0px;
+		padding: 20px 20px 0px 20px;
 		gap: 30px;
 	}
 	.popup_modal_content .portfolio_info .portfolio_info_text,
@@ -1594,9 +1724,12 @@ ul.mobile_social_icon {
 	}
 	.popup_modal_content .portfolio_story_approach,
 	.popup_modal_content .portfolio_description {
-		padding: 0px;
+		padding: 20px 20px 0px 20px;
 		margin-top: 40px;
 	}
+	.popup_contact_area{padding: 20px;}
+	.portfolio_gallery button.owl-next{right:1%;}
+	.portfolio_gallery button.owl-prev{left: 1%;}
 	.portfolio_story_approach .portfolio_approach,
 	.portfolio_story_approach .portfolio_story {
 		gap: 0px;

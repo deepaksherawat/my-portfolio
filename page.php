@@ -7,7 +7,7 @@ get_template_part('template-parts/breadcrumb');
 get_template_part('template-parts/marquee');
 ?>
 <!-- END: Breadcrumb and Skill Marquee Section -->
-<?php the_content(); ?>
+<div class="page_content"><?php the_content(); ?></div>
 </main>
 <!-- End Main Section -->
 <?php get_footer(); ?>

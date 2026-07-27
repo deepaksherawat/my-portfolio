@@ -351,23 +351,22 @@ Description: Gerold - Personal Portfolio HTML5 Template
 if ($(".service-slider-8").length > 0) {
 
     var service = new Swiper(".service-slider-8", {
+
         slidesPerView: 3,
         spaceBetween: 30,
 
         loop: true,
-        centeredSlides: true,
+        centeredSlides: false, // <-- Change
+
+        initialSlide: 0,
 
         speed: 1000,
 
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
+        autoplay: true,
 
         scrollbar: {
             el: ".swiper-scrollbar",
             draggable: true,
-            hide: false,
         },
 
         navigation: {
@@ -397,24 +396,57 @@ if ($(".service-slider-8").length > 0) {
                 spaceBetween: 30,
             },
             1200: {
-                slidesPerView: 3,
+                slidesPerView: 2,
                 spaceBetween: 30,
             },
         },
 
         on: {
             init: function () {
-                this.update();
-            },
-            resize: function () {
-                this.update();
-            },
+                this.slideToLoop(0, 0, false);
+            }
         }
 
     });
 
-    // Correct update
-    service.update();
+    let started = false;
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+                service.slideToLoop(0, 0, false);
+
+                if (!started) {
+
+                    started = true;
+
+                    service.params.autoplay = {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true,
+                    };
+
+                    service.autoplay.start();
+                }
+
+            } else {
+
+                service.autoplay.stop();
+                started = false;
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.4
+    });
+
+    observer.observe(document.querySelector(".service-slider-8"));
+
 }
 
 
