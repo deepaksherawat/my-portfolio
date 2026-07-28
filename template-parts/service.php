@@ -1,23 +1,28 @@
 <!-- start: Service Area -->
+<?php
+$service_sub_heading      = get_field('service_sub_heading', 'option') ?: 'my services';
+$service_main_heading      = get_field('service_main_heading', 'option') ?: 'Here is How I can Help!';
+$service_content_text      = get_field('service_content_text', 'option') ?: 'I break down complex user the experience problems the create integrity focused to solutions that’s connect. I break down complex user the experience problems the create integrity focused to solutions thats connect.';
+$service_button_link      = get_field('service_button_link', 'option') ?: 'http://localhost/deepak/';
+$service_popup_button_text      = get_field('service_popup_button_text', 'option') ?: 'HAVE PROJECT IN MIND! LETS DISCUSS ';
+?>
 <section class="tj-service-section style-8">
 <div class="container">
 <div class="row">
 <div class="col-12">
 <div class="section-header style-3 service_nav_desktop">
 <div class="sec-text">
-<span class="subtitle wow fadeInLeft" data-wow-delay=".3s">My services</span>
-<h2 class="title">Here's How I can Help!</h2>
+<span class="subtitle wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $service_sub_heading ); ?></span>
+<h2 class="title wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $service_main_heading ); ?></h2>
 </div>
-<div class="service-navigation wow fadeInRight" data-wow-delay=".4s">
+<div class="service-navigation wow fadeInUp" data-wow-delay=".4s">
 <div class="service-prev"><i class="fa-solid fa-arrow-left"></i></div>
 <div class="service-next"><i class="fa-solid fa-arrow-right"></i></div>
 </div>
-<div class="service-button wow fadeInRight" data-wow-delay=".5s">
-<a class="btn tj-btn-primary" href="#">View All Expertise <i class="fa-solid fa-arrow-right"></i></a>
+<div class="service-button wow fadeInUp" data-wow-delay=".5s">
+<a class="btn tj-btn-primary" href="<?php echo esc_html( $service_button_link ); ?>">view all my expertise <i class="fa-solid fa-eye"></i></a>
 </div>
-<div class="service-shapes">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/h5-progress-2.png" alt="">
-</div>
+
 </div>
 </div>
 </div>
@@ -25,107 +30,56 @@
 <div class="col-12">
 <div class="swiper service-slider-8">
 <div class="swiper-wrapper">
+<?php
+$args = array(
+'post_type' => 'my-expertise', // ya custom post type
+'posts_per_page' => -1,
+'order' => 'ASC', // ASC = upcoming, DESC = latest
+);
+$query = new WP_Query($args);
+if($query->have_posts()) :
+while($query->have_posts()) : $query->the_post();
+?>
 <div class="swiper-slide">
-<div class="service_card">
+<div class="tj-service-7-wrapper wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
 <div class="bg-shape">
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
 </div>
-<div class="row">
-<div class="col-lg-6 col-md-6 col-12 service_card_left">
-<h3 class="tj-service-5-accordion-list-title">
-<span>01.</span> UI/UX Design
-</h3>
-<p class="tj-service-5-accordion-list-paragraph">Conducting qualitative and quantitative research to understand user needs, behaviors, and pain points. Utilizing methods such as surveys, interviews, and usability testing to actionable insights.</p>
-<div class="tj-service-5-accordion-list-item">
-<span>UI/UX Design</span>
-<span>Research</span>
-<span>Mobile &amp; Web App</span>
+<div class="tj-service-7-icon">
+<span><img src="https://themejunction.net/html/gerold/demo/assets/img/icons/service-7-icon1.svg" alt=""></span>
 </div>
-<div class="tj-service-5-accordion-list-button">
-<a class="btn tj-btn-primary modal-popup" href="#service-wrapper">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+<h4 class="tj-service-7-title">
+<a class="" href="<?php echo the_permalink(); ?>"><span><?php echo str_pad($query->current_post + 1, 2, '0', STR_PAD_LEFT); ?>.</span><?php the_title(); ?></a>
+</h4>
+<div class="tj-service-7-paragraph">
+<?php if( get_field('expertise_short_content') ): the_field('expertise_short_content'); endif; ?>
 </div>
-</div>
-<div class="col-lg-6 col-md-6 col-12 service_card_right">
-<div class="tj-service-5-accordion-list-image">
-<div class="tj-service-5-accordion-thumb">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/faq-5-thumb1.jpg" alt="faq-image" class="service-image">
+<div class="tj-service-7-button">
+<a class="" href="<?php echo the_permalink(); ?>">
+<span class="icon_box">
+<i class="icon_first fa-regular fa-arrow-right"></i>
+<i class="icon_second fa-regular fa-arrow-right"></i>
+</span>
+</a>
 </div>
 </div>
 </div>
+<?php endwhile; wp_reset_postdata(); endif; ?>                  
 </div>
-</div>
-</div>
-<div class="swiper-slide">
-<div class="service_card">
-<div class="bg-shape">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
-</div>
-<div class="row">
-<div class="col-lg-6 col-md-6 col-12 service_card_left">
-<h3 class="tj-service-5-accordion-list-title">
-<span>02.</span> UI/UX Design
-</h3>
-<p class="tj-service-5-accordion-list-paragraph">Conducting qualitative and quantitative research to understand user needs, behaviors, and pain points. Utilizing methods such as surveys, interviews, and usability testing to actionable insights.</p>
-<div class="tj-service-5-accordion-list-item">
-<span>UI/UX Design</span>
-<span>Research</span>
-<span>Mobile &amp; Web App</span>
-</div>
-<div class="tj-service-5-accordion-list-button">
-<a class="btn tj-btn-primary modal-popup" href="#service-wrapper">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-</div>
-</div>
-<div class="col-lg-6 col-md-6 col-12 service_card_right">
-<div class="tj-service-5-accordion-list-image">
-<div class="tj-service-5-accordion-thumb">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/faq-5-thumb1.jpg" alt="faq-image" class="service-image">
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="swiper-slide">
-<div class="service_card">
-<div class="bg-shape">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
-</div>
-<div class="row">
-<div class="col-lg-6 col-md-6 col-12 service_card_left">
-<h3 class="tj-service-5-accordion-list-title">
-<span>03.</span> UI/UX Design
-</h3>
-<p class="tj-service-5-accordion-list-paragraph">Conducting qualitative and quantitative research to understand user needs, behaviors, and pain points. Utilizing methods such as surveys, interviews, and usability testing to actionable insights.</p>
-<div class="tj-service-5-accordion-list-item">
-<span>UI/UX Design</span>
-<span>Research</span>
-<span>Mobile &amp; Web App</span>
-</div>
-<div class="tj-service-5-accordion-list-button">
-<a class="btn tj-btn-primary modal-popup" href="#service-wrapper">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-</div>
-</div>
-<div class="col-lg-6 col-md-6 col-12 service_card_right">
-<div class="tj-service-5-accordion-list-image">
-<div class="tj-service-5-accordion-thumb">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/faq-5-thumb1.jpg" alt="faq-image" class="service-image">
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>                     
-</div>
-<div class="service-pagination"></div>
+<div class="swiper-scrollbar"></div>
+<!-- <div class="service-pagination"></div> -->
 </div>
 <div class="service_nav_mobile">
-<div class="service-navigation wow fadeInRight" data-wow-delay=".4s">
+<div class="service-navigation wow fadeInUp" data-wow-delay=".4s">
 <div class="service-prev"><i class="fa-solid fa-arrow-left"></i></div>
 <div class="service-next"><i class="fa-solid fa-arrow-right"></i></div>
 </div>
-<div class="service-button wow fadeInRight" data-wow-delay=".5s">
-<a class="btn tj-btn-primary" href="#">View All Expertise <i class="fa-solid fa-arrow-right"></i></a>
+<div class="service-button wow fadeInUp" data-wow-delay=".5s">
+<a class="btn tj-btn-primary" href="<?php echo esc_html( $service_button_link ); ?>">view all my expertise <i class="fa-solid fa-eye"></i></a>
 </div>
+</div>
+<div class="getintouch_btn full_width wow fadeInUp">
+<a class="btn tj-btn-primary modal-popup" href="#contact-wrapper">view all my expertise  <i class="fa-solid fa-arrow-right"></i></a>
 </div>
 </div>
 </div>

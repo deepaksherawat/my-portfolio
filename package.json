@@ -1,0 +1,25 @@
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "description": "Create My Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepaksherawat/my-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/deepaksherawat/my-portfolio/issues"
+  },
+  "homepage": "https://github.com/deepaksherawat/my-portfolio#readme",
+  "dependencies": {
+    "rimraf": "^6.1.3"
+  }
+}

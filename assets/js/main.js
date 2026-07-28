@@ -179,10 +179,10 @@ Description: Gerold - Personal Portfolio HTML5 Template
 
 		// Portfolio Carousel Js
 		$(".portfolio_gallery.owl-carousel").owlCarousel({
-			items: 2,
+			items: 1,
 			loop: true,
 			lazyLoad: true,
-			center: true,
+			center: false,
 			// autoWidth: true,
 			autoplayHoverPause: false,
 			autoplay: true,
@@ -197,15 +197,45 @@ Description: Gerold - Personal Portfolio HTML5 Template
 					margin: 0,
 				},
 				768: {
-					items: 2,
+					items: 1,
 					margin: 20,
 				},
 				992: {
-					items: 2,
+					items: 1,
 					margin: 30,
 				},
 			},
 		});
+
+		$('.portfolio_page').owlCarousel({
+            items: 1,
+			loop: true,
+			lazyLoad: true,
+			center: false,
+			// autoWidth: true,
+			autoplayHoverPause: false,
+			autoplay: true,
+			autoplayTimeout: 5000,
+			smartSpeed: 800,
+			margin: 30,
+			nav: true,
+			dots: true,
+			responsive: {
+				0: {
+					items: 1,
+					margin: 0,
+				},
+				768: {
+					items: 1,
+					margin: 20,
+				},
+				992: {
+					items: 1,
+					margin: 30,
+				},
+			},
+    });
+
 
 		// Testimonial Carousel Js
 		$(".testimonial-carousel.owl-carousel").owlCarousel({
@@ -318,46 +348,106 @@ Description: Gerold - Personal Portfolio HTML5 Template
 		});
 
 		// Services Slider Js
-		if ($(".service-slider-8").length > 0) {
-			var service = new Swiper(".service-slider-8", {
-				slidesPerView: 1,
-				spaceBetween: 30,
-				loop: true,
-				centeredSlides: true,
-				speed: 10000,
-				autoplay: {
-					delay: 10000,
-				},
-				navigation: {
-					prevEl: ".service-prev",
-					nextEl: ".service-next",
-				},
-				pagination: {
-					el: ".service-pagination",
-					clickable: true,
-				},
-				breakpoints: {
-					320: {
-						slidesPerView: 1,
-					},
-					430: {
-						slidesPerView: 1.2,
-					},
-					768: {
-						slidesPerView: 2,
-					},
-					992: {
-						slidesPerView: 2,
-					},
-					1200: {
-						slidesPerView: 1,
-					},
-					1400: {
-						slidesPerView: 1,
-					},
-				},
-			});
-		}
+if ($(".service-slider-8").length > 0) {
+
+    var service = new Swiper(".service-slider-8", {
+
+        slidesPerView: 3,
+        spaceBetween: 30,
+
+        loop: true,
+        centeredSlides: false, // <-- Change
+
+        initialSlide: 0,
+
+        speed: 1000,
+
+        autoplay: true,
+
+        scrollbar: {
+            el: ".swiper-scrollbar",
+            draggable: true,
+        },
+
+        navigation: {
+            prevEl: ".service-prev",
+            nextEl: ".service-next",
+        },
+
+        pagination: {
+            el: ".service-pagination",
+            clickable: true,
+        },
+
+        observer: true,
+        observeParents: true,
+
+        breakpoints: {
+            320: {
+                slidesPerView: 1.2,
+                spaceBetween: 10,
+            },
+            576: {
+                slidesPerView: 2,
+                spaceBetween: 15,
+            },
+            992: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+            },
+            1200: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+            },
+        },
+
+        on: {
+            init: function () {
+                this.slideToLoop(0, 0, false);
+            }
+        }
+
+    });
+
+    let started = false;
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+                service.slideToLoop(0, 0, false);
+
+                if (!started) {
+
+                    started = true;
+
+                    service.params.autoplay = {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true,
+                    };
+
+                    service.autoplay.start();
+                }
+
+            } else {
+
+                service.autoplay.stop();
+                started = false;
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.4
+    });
+
+    observer.observe(document.querySelector(".service-slider-8"));
+
+}
 
 
 // progress skill Slider Js
@@ -463,7 +553,7 @@ Description: Gerold - Personal Portfolio HTML5 Template
 				slidesPerView: 3,
 				spaceBetween: 30,
 				loop: true,
-				centeredSlides: true,
+				centeredSlides: false,
 				speed: 2000,
 				autoplay: true,
 				navigation: {
@@ -479,7 +569,7 @@ Description: Gerold - Personal Portfolio HTML5 Template
 						slidesPerView: 1,
 					},
 					430: {
-						slidesPerView: 1.2,
+						slidesPerView: 1,
 					},
 					768: {
 						slidesPerView: 2,
@@ -680,10 +770,11 @@ Description: Gerold - Personal Portfolio HTML5 Template
 
 		// Portfolio Slider js
 		var portfolio = new Swiper(".portfolio-slider-5", {
-			spaceBetween: 30,
+			spaceBetween: 20,
 			autoplay: {
 				delay: 8500,
 			},
+			centeredSlides: false,
 			speed: 3000,
 			navigation: {
                  prevEl: ".portfolio-prev",
@@ -695,21 +786,21 @@ Description: Gerold - Personal Portfolio HTML5 Template
 			},
 			loop: true,
 			breakpoints: {
-				320: {
-					slidesPerView: 1,
-				},
-				768: {
-					slidesPerView: 1.5,
-				},
-				992: {
-					slidesPerView: 2.5,
-				},
-				1200: {
-					slidesPerView: 2.5,
-				},
-				1400: {
-					slidesPerView: 2.5,
-				},
+				576: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 2, // 👈 Tablet perfect
+            spaceBetween: 20,
+        },
+        1024: {
+            slidesPerView: 2,
+            spaceBetween: 25,
+        },
+        1200: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
 			},
 		});
 
@@ -752,64 +843,49 @@ Description: Gerold - Personal Portfolio HTML5 Template
 
 		// Testimonial Slider Js
 		if ($(".tj-testimonial-slider8").length > 0) {
-			var brand = new Swiper(".tj-testimonial-slider8", {
-				slidesPerView: 3,
-				spaceBetween: 30,
-				active: true,
-				loop: true,
-				autoplay: {
-					delay: 6000,
-				},
-				speed: 3000,
-				pagination: {
-					el: ".testimonial-pagination",
-					clickable: true,
-				},
-				breakpoints: {
-					320: {
-						slidesPerView: 1,
-					},
-					576: {
-						slidesPerView: 1.5,
-					},
-					768: {
-						slidesPerView: 2,
-					},
-					1024: {
-						slidesPerView: 3,
-					},
-				},
-			});
+			var swiper = new Swiper(".tj-testimonial-slider", {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                loop: true,
+                autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+             },
+                speed: 1000,
+                pagination: {
+                el: ".testimonial-pagination",
+                clickable: true,
+             },
+                breakpoints: {
+                320: { slidesPerView: 1 },
+                640: { slidesPerView: 2 },
+                992: { slidesPerView: 3 },
+             },
+             });
 		}
 
 		// Marquee slider Js
 		if ($(".maquee-slider-one").length > 0) {
-			var swiper = new Swiper(".maquee-slider-one", {
-				slidesPerView: "auto",
-				spaceBetween: 80,
-				loop: true,
-				speed: 5000,
-				breakpoints: {
-					320: {
-						spaceBetween: 40,
-					},
-					768: {
-						spaceBetween: 40,
-					},
-					992: {
-						spaceBetween: 40,
-					},
-					1024: {
-						spaceBetween: 80,
-					},
-				},
-				allowTouchMove: false,
-				autoplay: {
-					delay: 1,
-					disableOnInteraction: true,
-				},
-			});
-		}
+    var swiper = new Swiper(".maquee-slider-one", {
+        slidesPerView: "auto",
+        spaceBetween: 80,
+        loop: true,
+        speed: 8000,
+        freeMode: true,
+        freeModeMomentum: false,
+        allowTouchMove: false,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            320: { spaceBetween: 40 },
+            768: { spaceBetween: 40 },
+            992: { spaceBetween: 40 },
+            1024: { spaceBetween: 80 },
+        },
+    });
+}
 
 		if ($(".maquee-slider-two").length > 0) {
 			var swiper = new Swiper(".maquee-slider-two", {
@@ -997,15 +1073,15 @@ Description: Gerold - Personal Portfolio HTML5 Template
 		}
 
 		// Fun Fact Js
-		if ($(".odometer").length > 0 && $.fn.appear) {
-            $(".odometer").appear(function () {
-            var odo = $(".odometer");
-            odo.each(function () {
-            var countNumber = $(this).attr("data-count");
-           $(this).html(countNumber);
-           });
-          });
-          }
+		if ($(".odometer").length > 0) {
+			$(".odometer").appear(function () {
+				var odo = $(".odometer");
+				odo.each(function () {
+					var countNumber = $(this).attr("data-count");
+					$(this).html(countNumber);
+				});
+			});
+		}
 
 		// Side Bar Sticky Js
 		if ($(".side-sticky").length > 0) {
@@ -1299,16 +1375,65 @@ Description: Gerold - Personal Portfolio HTML5 Template
 	/*
 	============================== Title Animation =====================================
 	*/
+if (typeof SplitText !== "undefined") {
+		// splitText
+		if ($(".tj-char-animation").length > 0) {
+			let char_come = gsap.utils.toArray(".tj-char-animation");
+			char_come.forEach(splitTextLine => {
+				const tl = gsap.timeline({
+					scrollTrigger: {
+						trigger: splitTextLine,
+						start: "top 90%",
+						end: "bottom 60%",
+						scrub: false,
+						markers: false,
+						toggleActions: "play none none none",
+					},
+				});
 
-	// splitText
-	if ($(".tj-char-animation").length > 0) {
-		let char_come = gsap.utils.toArray(".tj-char-animation");
-		char_come.forEach(splitTextLine => {
+				const itemSplitted = new SplitText(splitTextLine, {
+					type: "chars, words",
+				});
+				gsap.set(splitTextLine, { perspective: 300 });
+				itemSplitted.split({ type: "chars, words" });
+				tl.from(itemSplitted.chars, {
+					duration: 1,
+					delay: 0.5,
+					x: 100,
+					autoAlpha: 0,
+					stagger: 0.05,
+				});
+			});
+		}
+
+		// Text Invert
+		const split = new SplitText(".tj-text-invert", { type: "lines" });
+		split.lines.forEach(target => {
+			gsap.to(target, {
+				backgroundPositionX: 0,
+				ease: "none",
+				scrollTrigger: {
+					trigger: target,
+					scrub: 1,
+					start: "top 85%",
+					end: "bottom center",
+				},
+			});
+		});
+	}
+
+		// line 3d
+		let tj_title_anim = gsap.utils.toArray(".tj_title_anim");
+		tj_title_anim.forEach(splitTextLine => {
+			var delay_value = 0.5;
+			if (splitTextLine.getAttribute("data-delay")) {
+				delay_value = splitTextLine.getAttribute("data-delay");
+			}
 			const tl = gsap.timeline({
 				scrollTrigger: {
 					trigger: splitTextLine,
 					start: "top 90%",
-					end: "bottom 60%",
+					duration: 1.5,
 					scrub: false,
 					markers: false,
 					toggleActions: "play none none none",
@@ -1316,72 +1441,24 @@ Description: Gerold - Personal Portfolio HTML5 Template
 			});
 
 			const itemSplitted = new SplitText(splitTextLine, {
-				type: "chars, words",
+				type: "lines",
 			});
-			gsap.set(splitTextLine, { perspective: 300 });
-			itemSplitted.split({ type: "chars, words" });
-			tl.from(itemSplitted.chars, {
+			gsap.set(splitTextLine, {
+				perspective: 400,
+			});
+			itemSplitted.split({
+				type: "lines",
+			});
+			tl.from(itemSplitted.lines, {
 				duration: 1,
-				delay: 0.5,
-				x: 100,
-				autoAlpha: 0,
-				stagger: 0.05,
+				delay: delay_value,
+				opacity: 0,
+				rotationX: -80,
+				force3D: true,
+				transformOrigin: "top center -50",
+				stagger: 0.1,
 			});
 		});
-	}
-
-	// Text Invert
-	const split = new SplitText(".tj-text-invert", { type: "lines" });
-	split.lines.forEach(target => {
-		gsap.to(target, {
-			backgroundPositionX: 0,
-			ease: "none",
-			scrollTrigger: {
-				trigger: target,
-				scrub: 1,
-				start: "top 85%",
-				end: "bottom center",
-			},
-		});
-	});
-
-	// line 3d
-	let tj_title_anim = gsap.utils.toArray(".tj_title_anim");
-	tj_title_anim.forEach(splitTextLine => {
-		var delay_value = 0.5;
-		if (splitTextLine.getAttribute("data-delay")) {
-			delay_value = splitTextLine.getAttribute("data-delay");
-		}
-		const tl = gsap.timeline({
-			scrollTrigger: {
-				trigger: splitTextLine,
-				start: "top 90%",
-				duration: 1.5,
-				scrub: false,
-				markers: false,
-				toggleActions: "play none none none",
-			},
-		});
-
-		const itemSplitted = new SplitText(splitTextLine, {
-			type: "lines",
-		});
-		gsap.set(splitTextLine, {
-			perspective: 400,
-		});
-		itemSplitted.split({
-			type: "lines",
-		});
-		tl.from(itemSplitted.lines, {
-			duration: 1,
-			delay: delay_value,
-			opacity: 0,
-			rotationX: -80,
-			force3D: true,
-			transformOrigin: "top center -50",
-			stagger: 0.1,
-		});
-	});
 
 	/*---------------------------------------------------------
 	 copyright year
@@ -1402,7 +1479,8 @@ Description: Gerold - Personal Portfolio HTML5 Template
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
+// ================= PORTFOLIO =================
+window.addEventListener("load", function () {
 
   const cards = document.querySelectorAll(".portfolio_card");
   const portfolioBtn = document.getElementById("loadMorePortfolio");
@@ -1412,27 +1490,34 @@ document.addEventListener("DOMContentLoaded", function () {
   function showPortfolio() {
     cards.forEach((card, i) => {
       if (i < portfolioCount) {
-        card.style.display = "block";
-        setTimeout(() => card.classList.add("animate"), 150 * i);
+        card.classList.add("show");
+
+        setTimeout(() => {
+          card.classList.add("animate");
+        }, 150 * i);
       }
     });
-
-    if (portfolioBtn) {
-      portfolioBtn.style.display =
-        (portfolioCount >= cards.length) ? "none" : "inline-block";
-    }
   }
 
-  showPortfolio();
+  // Run only if cards exist
+  if (cards.length > 0) {
+    showPortfolio();
+  }
 
   if (portfolioBtn) {
     portfolioBtn.addEventListener("click", function () {
+
       let start = portfolioCount;
       portfolioCount += 3;
+
       showPortfolio();
 
       if (cards[start]) {
         cards[start].scrollIntoView({ behavior: "smooth" });
+      }
+
+      if (portfolioCount >= cards.length) {
+        portfolioBtn.style.display = "none";
       }
     });
   }
@@ -1440,16 +1525,16 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
-
+// ================= BLOG =================
 document.addEventListener("DOMContentLoaded", function () {
 
   const blogs = document.querySelectorAll(".blog-col");
   const blogBtn = document.getElementById("loadMoreBlog");
 
-  let blogCount = 6;
+  let blogCount = 12;
 
   function showBlogs() {
+
     blogs.forEach((blog, i) => {
       if (i < blogCount) {
         blog.style.display = "block";
@@ -1457,19 +1542,28 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
+    // ✅ SAFE CHECK
     if (blogBtn) {
-      blogBtn.style.display =
-        (blogCount >= blogs.length) ? "none" : "flex";
+      if (blogCount >= blogs.length) {
+        blogBtn.style.display = "none";
+      } else {
+        blogBtn.style.display = "flex";
+      }
     }
   }
 
-  blogs.forEach(blog => {
-    blog.style.display = "none";
-    blog.classList.remove("show");
-  });
+  // Run only if blogs exist
+  if (blogs.length > 0) {
 
-  showBlogs();
+    blogs.forEach(blog => {
+      blog.style.display = "none";
+      blog.classList.remove("show");
+    });
 
+    showBlogs();
+  }
+
+  // ✅ SAFE CLICK EVENT
   if (blogBtn) {
     blogBtn.addEventListener("click", function () {
       blogCount += 3;
@@ -1477,4 +1571,123 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+});
+
+
+
+document.querySelectorAll('.project_read_more').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute('href'));
+
+        target.scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const extraItems = document.querySelectorAll(".skills-list li.extra-item");
+    const toggleBtn = document.getElementById("toggleSkills");
+
+    let expanded = false;
+
+    // Default button text
+    toggleBtn.innerHTML = 'View More Skills <i class="fa-solid fa-arrow-right"></i>';
+
+    toggleBtn.addEventListener("click", function () {
+
+        expanded = !expanded;
+
+        extraItems.forEach(item => {
+
+            if (expanded) {
+                item.style.setProperty("display", "list-item", "important");
+            } else {
+                item.style.setProperty("display", "none", "important");
+            }
+
+        });
+
+        // Button text + icon change
+        toggleBtn.innerHTML = expanded
+            ? 'Hide Skills <i class="fa-solid fa-arrow-right"></i>'
+            : 'View More Skills <i class="fa-solid fa-arrow-right"></i>';
+
+    });
+
+});
+
+
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 60 },
+    color: { value: "#dcb86c" },
+    shape: { type: "circle" },
+    opacity: { value: 0.7 },
+    size: { value: 2 },
+    line_linked: {
+      enable: true,
+      distance: 140,
+      color: "#dcb86c",
+      opacity: 0.15,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 2,
+      direction: "none",
+      out_mode: "out"
+    }
+  },
+  interactivity: {
+    events: {
+      onhover: { enable: true, mode: "grab" }
+    }
+  }
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof particlesJS !== "undefined" && document.getElementById("hero-particles")) {
+    particlesJS("hero-particles", {
+      particles: {
+        number: { value: 90 },
+        color: { value: "#dcb86c" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 140,
+          color: "#dcb86c",
+          opacity: 0.2,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1.8,
+          out_mode: "out"
+        }
+      },
+      interactivity: {
+        detect_on: "window",
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          resize: true
+        },
+        modes: {
+          grab: {
+            distance: 220,
+            line_linked: { opacity: 0.7 }
+          }
+        }
+      },
+      retina_detect: true
+    });
+  }
 });

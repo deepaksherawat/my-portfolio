@@ -1,99 +1,45 @@
 <!-- start: Faq Area -->
+<?php
+$faq_sub_heading      = get_field('faq_sub_heading') ?: 'FAQ';
+$faq_main_heading      = get_field('faq_heading') ?: 'Your Questions and Answers';
+?>
+<?php if( have_rows('faq_content') ): ?>
 <section class="faq-section">
 <div class="container">
+<?php if(get_field('faq_heading')): ?>
 <div class="row">
 <div class="col-md-12">
 <div class="section-header text-center">
-<h2 class="section-title wow fadeInUp" data-wow-delay=".3s">Your Questions and Answers</h2>
+<span class="subtitle wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $faq_sub_heading ); ?></span>
+<h2 class="section-title wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $faq_main_heading ); ?></h2>
 </div>
 </div>
-            </div>
-            <div class="row">
-               <div class="col-12">
-                  <div class="accordion tj-faq" id="faqOne">
-                     <div class="accordion-item active wow fadeInUp" data-wow-delay=".4s">
-                        <div class="bg-shape">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
-       </div>
-                        <button class="faq-title" type="button" data-bs-toggle="collapse" data-bs-target="#faq-1"
-                           aria-expanded="true">
-                           How do I get Quotation for my project?
-                        </button>
-                        <div id="faq-1" class="collapse show" data-bs-parent="#faqOne">
-                           <div class="accordion-body faq-text">
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                 incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                                 adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="accordion-item wow fadeInUp" data-wow-delay=".5s">
-                        <div class="bg-shape">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
-       </div>
-                        <button class="faq-title collapsed" type="button" data-bs-toggle="collapse"
-                           data-bs-target="#faq-2" aria-expanded="false">
-                           How many landing page can I work with your project?
-                        </button>
-                        <div id="faq-2" class="collapse" data-bs-parent="#faqOne">
-                           <div class="accordion-body faq-text">
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                 incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                                 adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="accordion-item wow fadeInUp" data-wow-delay=".6s">
-                        <div class="bg-shape">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
-       </div>
-                        <button class="faq-title collapsed" type="button" data-bs-toggle="collapse"
-                           data-bs-target="#faq-3" aria-expanded="false">
-                           Can I use your project for my clients?
-                        </button>
-                        <div id="faq-3" class="collapse" data-bs-parent="#faqOne">
-                           <div class="accordion-body faq-text">
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                 incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                                 adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="accordion-item wow fadeInUp" data-wow-delay=".7s">
-                        <div class="bg-shape">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
-       </div>
-                        <button class="faq-title collapsed" type="button" data-bs-toggle="collapse"
-                           data-bs-target="#faq-4" aria-expanded="false">
-                           Will growth products slow down my products?
-                        </button>
-                        <div id="faq-4" class="collapse" data-bs-parent="#faqOne">
-                           <div class="accordion-body faq-text">
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                 incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                                 adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="accordion-item wow fadeInUp" data-wow-delay=".8s">
-                        <div class="bg-shape">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
-       </div>
-                        <button class="faq-title collapsed" type="button" data-bs-toggle="collapse"
-                           data-bs-target="#faq-5" aria-expanded="false">
-                           Can I use your project for my clients?
-                        </button>
-                        <div id="faq-5" class="collapse" data-bs-parent="#faqOne">
-                           <div class="accordion-body faq-text">
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                 incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                                 adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- end: Faq Area -->
+</div>
+<?php endif; ?>
+<?php if( have_rows('faq_content') ): ?>
+<div class="row">
+<div class="col-12">
+<div class="accordion tj-faq" id="faqOne">
+<?php while( have_rows('faq_content') ) : the_row();
+$faq_question = get_sub_field('faq_question');
+$faq_answer = get_sub_field('faq_answer'); ?>
+<div class="accordion-item <?php echo ( get_row_index() == 1 ) ? 'active' : ''; ?> wow fadeInUp" data-wow-delay=".4s">
+<div class="bg-shape">
+<img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-shape.png" alt="img">
+</div>
+<button class="faq-title" type="button" data-bs-toggle="collapse" data-bs-target="#faq-<?php echo get_row_index(); ?>" aria-expanded="false"><span class="faq_index">Q<?php echo get_row_index(); ?>. </span><?php echo $faq_question; ?></button>
+<div id="faq-<?php echo get_row_index(); ?>" class="collapse <?php echo ( get_row_index() == 1 ) ? 'show' : ''; ?>" data-bs-parent="#faqOne">
+<div class="accordion-body faq-text">
+<div class="faq_ans"><?php echo $faq_answer; ?></div>
+</div>
+</div>
+</div>
+<?php endwhile; ?>        
+</div>
+</div>
+</div>
+<?php endif; ?>
+</div>
+</section>
+<?php endif; ?>
+<!-- end: Faq Area -->

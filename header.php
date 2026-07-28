@@ -4,12 +4,6 @@
 <meta charset="utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="" />
-<!-- Site Title -->
-<title>Portfolio | Gerold - Personal Portfolio HTML5 Template</title>
-<!-- Place favicon.ico in the root directory -->
-<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.png" />
-<link rel="shortcut icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.png" />
 <!-- CSS here -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
 <?php wp_head(); ?>
@@ -21,15 +15,15 @@
 <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
 </svg>
 <div class="preloader-heading">
+<?php
+$loading_text = get_field('loading_text', 'option') ?: 'LOADING';
+if ( ! empty( $loading_text ) ) : ?>
 <div class="load-text">
-<span>L</span>
-<span>o</span>
-<span>a</span>
-<span>d</span>
-<span>i</span>
-<span>n</span>
-<span>g</span>
+<?php foreach ( preg_split('//u', $loading_text, -1, PREG_SPLIT_NO_EMPTY) as $char ) : ?>
+<span><?php echo $char === ' ' ? '&nbsp;' : esc_html( $char ); ?></span>
+<?php endforeach; ?>
 </div>
+<?php endif; ?>
 </div>
 </div>
 <!-- Preloader Area End -->
@@ -47,126 +41,37 @@
 <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
 <div class="logo-box">
 <a href="<?php echo site_url(); ?>">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-9.png" alt="Logo" />
+<?php 
+$logo = get_field('main_logo', 'option');
+if( !empty( $logo ) ): ?>
+    <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" />
+<?php endif; ?>
+<p class="logo_tagline"><?php echo get_field('main_logo_tagline', 'option'); ?></p>
 </a>
 </div>
 <div class="header-menu" id="headerMenu">
-<nav>
-<ul>
-<li class="has-dropdown current-menu-ancestor">
-<a class="current-menu-item" href="<?php echo site_url(); ?>">Home</a>
-<ul class="sub-menu">
-<li class="has-dropdown current-menu-ancestor">
-<a href="<?php echo site_url(); ?>">Dark Mode</a>
-<ul class="sub-menu">
-<li>
-<a href="<?php echo site_url(); ?>">Home One</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Two</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Three</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Four</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Five</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Six</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Seven</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Eight</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Nine</a>
-</li>
-<li class="current-menu-item">
-<a href="<?php echo site_url(); ?>">Home Ten</a>
-</li>
-</ul>
-</li>
-<li class="has-dropdown">
-<a href="index-light.html">Light Mode</a>
-<ul class="sub-menu">
-<li>
-<a href="<?php echo site_url(); ?>">Home One</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Two</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Three</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Four</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Five</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Six</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Seven</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Eight</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Nine</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Ten</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="about.html">About</a></li>
-<li class="has-dropdown"><a href="services.html">Services</a>
-<ul class="sub-menu">
-<li>
-<a href="services.html">Service</a>
-</li>
-<li>
-<a href="single-services.html">Single Service</a>
-</li>
-</ul>
-</li>
-<li class="has-dropdown"><a href="portfolio.html">Portfolios</a>
-<ul class="sub-menu">
-<li>
-<a href="portfolio.html">Portfolios</a>
-</li>
-<li>
-<a href="single-portfolio.html">Single Portfolio</a>
-</li>
-</ul>
-</li>
-<li class="has-dropdown">
-<a href="blog.html">Blog</a>
-<ul class="sub-menu">
-<li>
-<a href="blog.html">Blog</a>
-</li>
-<li>
-<a href="blog-details.html">Blog Details</a>
-</li>
-</ul>
-</li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
+<nav class="main-navigation">
+<?php
+wp_nav_menu(array(
+'theme_location' => 'primary-menu',
+'menu_class'     => 'main-menu',
+'container'      => false
+));
+?>
+<a href="#contact-wrapper" class="btn tj-btn-primary link modal-popup mobile_hire">Hire Me <i class="fa-solid fa-arrow-right"></i></a>
 </nav>
 </div>
 <div class="mobile-menu d-lg-none"></div>
 <div class="header-button d-none d-lg-inline-flex">
-<a href="#contact-wrapper" class="btn tj-btn-primary link modal-popup">Hire Me <i class="fa-solid fa-arrow-right"></i></a>
+<?php
+$head_right_button_text = get_field('head_right_button_text', 'option') ?: 'Hire Me';
+$head_right_button_link = get_field('head_right_button_link', 'option') ?: '#contact-wrapper';
+$target_url = '#contact-wrapper';
+?>
+<!-- <a href="#contact-wrapper" class="btn tj-btn-primary link modal-popup">Hire Me <i class="fa-solid fa-arrow-right"></i></a> -->
+
+<a href="<?php echo ! empty( $head_right_button_link ) ? esc_url( $head_right_button_link ) : '#'; ?>" class="btn tj-btn-primary <?php if( $head_right_button_link === $target_url ) : ?>link modal-popup<?php endif; ?>"><?php echo esc_html( $head_right_button_text ); ?> <i class="fa-solid fa-arrow-right"></i></a>
+
 </div>
 <div class="menu-bar d-lg-none">
 <button>
@@ -186,121 +91,24 @@
 <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
 <div class="logo-box">
 <a href="<?php echo site_url(); ?>">
-<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-9.png" alt="Logo" />
+<?php 
+$logo = get_field('main_logo', 'option');
+if( !empty( $logo ) ): ?>
+    <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" />
+<?php endif; ?>
+<p class="logo_tagline"><?php echo get_field('main_logo_tagline', 'option'); ?></p>
 </a>
 </div>
 <div class="header-menu">
-<nav>
-<ul>
-<li class="has-dropdown current-menu-ancestor">
-<a class="current-menu-item" href="<?php echo site_url(); ?>">Home</a>
-<ul class="sub-menu">
-<li class="has-dropdown current-menu-ancestor">
-<a href="<?php echo site_url(); ?>">Dark Mode</a>
-<ul class="sub-menu">
-<li>
-<a href="<?php echo site_url(); ?>">Home One</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Two</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Three</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Four</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Five</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Six</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Seven</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Eight</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Nine</a>
-</li>
-<li class="current-menu-item">
-<a href="<?php echo site_url(); ?>">Home Ten</a>
-</li>
-</ul>
-</li>
-<li class="has-dropdown">
-<a href="index-light.html">Light Mode</a>
-<ul class="sub-menu">
-<li>
-<a href="<?php echo site_url(); ?>">Home One</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Two</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Three</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Four</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Five</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Six</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Seven</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Eight</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Nine</a>
-</li>
-<li>
-<a href="<?php echo site_url(); ?>">Home Ten</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="about.html">About</a></li>
-<li class="has-dropdown"><a href="services.html">Services</a>
-<ul class="sub-menu">
-<li>
-<a href="services.html">Service</a>
-</li>
-<li>
-<a href="single-services.html">Single Service</a>
-</li>
-</ul>
-</li>
-<li class="has-dropdown"><a href="portfolio.html">Portfolios</a>
-<ul class="sub-menu">
-<li>
-<a href="portfolio.html">Portfolios</a>
-</li>
-<li>
-<a href="single-portfolio.html">Single Portfolio</a>
-</li>
-</ul>
-</li>
-<li class="has-dropdown">
-<a href="blog.html">Blog</a>
-<ul class="sub-menu">
-<li>
-<a href="blog.html">Blog</a>
-</li>
-<li>
-<a href="blog-details.html">Blog Details</a>
-</li>
-</ul>
-</li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
+<nav class="main-navigation">
+<?php
+wp_nav_menu(array(
+'theme_location' => 'primary-menu',
+'menu_class'     => 'main-menu',
+'container'      => false
+));
+?>
+<a href="#contact-wrapper" class="btn tj-btn-primary link modal-popup mobile_hire">Hire Me <i class="fa-solid fa-arrow-right"></i></a>
 </nav>
 </div>
 <div class="mobile-menu d-lg-none"></div>
