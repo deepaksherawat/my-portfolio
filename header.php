@@ -50,13 +50,16 @@ if( !empty( $logo ) ): ?>
 </a>
 </div>
 <div class="header-menu" id="headerMenu">
+<nav class="main-navigation">
 <?php
 wp_nav_menu(array(
 'theme_location' => 'primary-menu',
 'menu_class'     => 'main-menu',
-'container'      => 'nav'
+'container'      => false
 ));
 ?>
+<a href="#contact-wrapper" class="btn tj-btn-primary link modal-popup mobile_hire">Hire Me <i class="fa-solid fa-arrow-right"></i></a>
+</nav>
 </div>
 <div class="mobile-menu d-lg-none"></div>
 <div class="header-button d-none d-lg-inline-flex">
@@ -97,13 +100,16 @@ if( !empty( $logo ) ): ?>
 </a>
 </div>
 <div class="header-menu">
+<nav class="main-navigation">
 <?php
 wp_nav_menu(array(
 'theme_location' => 'primary-menu',
 'menu_class'     => 'main-menu',
-'container'      => 'nav'
+'container'      => false
 ));
 ?>
+<a href="#contact-wrapper" class="btn tj-btn-primary link modal-popup mobile_hire">Hire Me <i class="fa-solid fa-arrow-right"></i></a>
+</nav>
 </div>
 <div class="mobile-menu d-lg-none"></div>
 <div class="header-button d-none d-lg-inline-flex">

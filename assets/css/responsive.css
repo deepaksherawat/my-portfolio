@@ -5,10 +5,10 @@
 }
 @media only screen and (min-width: 1400px) and (max-width: 1599px) {
 	.hero-section .intro_text svg text {
-		.resume_wrapper_5 .resume_inner_5 .icon_box.desktop_version {
-    display: none;
-}
 		font-size: 260px;
+	}
+	.resume_wrapper_5 .resume_inner_5 .icon_box.desktop_version {
+		display: none;
 	}
 	.service_nav_mobile, .portfolio_nav_mobile, .icon_box.desktop_version, ul.mobile_social_icon {display: none;}
 	.resume_item.style-5{gap:20px;}
@@ -974,6 +974,7 @@ ul.port_meta li.port_meta_text:last-child{justify-content: center; padding: 5px 
     line-height: 20px;
     margin-bottom: 0px;
     padding-bottom: 0px;
+	color: var(--white-1);
 }
 .resume_item .resume_content .resume_text .subtitle i, .resume_item .resume_content .resume_text span.date i {
     margin-right: 5px;
@@ -995,6 +996,7 @@ ul.port_meta li.port_meta_text:last-child{justify-content: center; padding: 5px 
     border-right: 0px solid;
     margin-bottom: 0px !important;
     padding-right: 0px;
+	color: var(--white-1);
 }
 .check-list ul li {
     display: flex;
@@ -1136,6 +1138,10 @@ ul.port_meta li.port_meta_text:last-child{justify-content: center; padding: 5px 
 }
 /* Mobile Devices */
 @media only screen and (max-width: 767px) {
+.main-navigation a.mobile_hire {
+	display:none;
+}
+	.tj-header-area .mobile-menu ul li a:not(.mean-expand){padding: 10px 0px;}
 	.getintouch_text p{font-size: 20px;}
 	.about-8-content{margin-top: 50px;}
 	.about-intro-freelancer.tj-about-section .section-header.style-3 {
@@ -1195,6 +1201,7 @@ article.tj-post .tj-post__content .tj-post__btn a{width: 100% !important;}
 	.hero-11-socials ul.ul-reset.social-icons:before{
     	content: "Follow Me: ";
     	width: max-content;
+		color: var(--white-1);
     }
         .hero-11-socials ul.ul-reset.social-icons {
         flex-direction: row !important;
@@ -2098,4 +2105,129 @@ img.portfolio-image{border-bottom-left-radius: 0px; border-bottom-right-radius: 
 
 
 @media only screen and (max-width: 768px){
+}
+
+/* =========================================================
+   LANDSCAPE MODE FIXES — Phones & small tablets
+   Targets short-viewport-height landscape orientation
+   (covers all Android + iPhone landscape, incl. notch devices)
+   ========================================================= */
+@media only screen and (max-width: 991px) and (orientation: landscape) and (max-height: 500px) {
+
+	/* Header: reduce vertical padding so header doesn't eat the limited height */
+	.tj-header-area {
+		padding: 10px 0 10px;
+	}
+	.tj-header-area .logo-box {
+		max-height: 40px;
+	}
+	.tj-header-area .logo-box img {
+		max-height: 40px;
+		width: auto;
+	}
+
+	/* Mobile menu overlay: make it fit + scroll comfortably in short viewport */
+	.tj-header-area .mobile-menu {
+		top: 60px;
+		min-height: 100vh;
+		padding-bottom: 40px;
+	}
+	.tj-header-area .mobile-menu ul {
+		padding: 10px 0;
+		max-width: 80%;
+	}
+	.tj-header-area .mobile-menu ul li a:not(.mean-expand) {
+		font-size: 18px;
+		padding: 10px 0;
+	}
+	.tj-header-area .header-menu {
+		top: 55px;
+		min-height: 100vh;
+	}
+	.tj-header-area .header-menu ul li a {
+		padding: 10px 0;
+		font-size: 18px;
+	}
+
+	/* Hero sections: cut down the large top/bottom padding used for portrait mode */
+	.hero-section {
+		padding: 90px 20px 40px !important;
+	}
+	.hero-section .funfact-area {
+		margin-top: 40px;
+	}
+	.hero-wrrapper .hero-title,
+	.hero-title {
+		font-size: 28px;
+	}
+	.hero-sub-title {
+		font-size: 16px;
+	}
+
+	/* Breadcrumb / page header: shrink min-height that assumes portrait space */
+	.breadcrumb_area {
+		padding: 70px 0 30px;
+		min-height: unset;
+	}
+
+	/* Popups / modals: reduce fixed padding so the modal content is reachable
+	   without excessive scrolling on short landscape screens */
+	.popup-mfp .mfp-container {
+		padding: 30px 0;
+	}
+	.popup_content_area {
+		max-width: 100%;
+	}
+}
+
+/* Tablet landscape (iPad, Android tablets in landscape): ensure header/hero
+   don't reserve portrait-sized vertical space */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+	.hero-section {
+		padding-top: 110px;
+	}
+	.breadcrumb_area {
+		padding: 90px 0 40px;
+		min-height: 220px;
+	}
+}
+@media only screen and (max-width: 356px) {
+    /* Responsive styles for all mobile devices */
+	.header-button a.tj-btn-primary{display:none;}
+	.main-navigation a.mobile_hire {
+	display:block;
+    background: linear-gradient(90deg, var(--golden-yellow-1), var(--golden-yellow-2), var(--golden-yellow-3));
+    color: var(--full-black);
+    width: 100%;
+}
+.main-navigation a.mobile_hire:hover {
+    background: linear-gradient(90deg, var(--white-1), var(--white-2), var(--white-3));
+    color: var(--full-black);
+}
+	.tj-header-area .mobile-menu ul {
+        max-width: 100%;
+    }
+	nav.main-navigation {
+    padding: 0 15px;
+}
+	.hero-11-socials .social-icons{gap: 10px;}
+	.tj-service-7-wrapper {
+        height: 550px;
+    }
+	.tj-service-7-paragraph{margin-bottom: 50px;}
+	.portfolio_nav_mobile a.btn.tj-btn-primary{padding: 21.1px 10px 21.1px 0px; font-size: 12px;}
+	.resume_text h5.title{font-size: 16px;}
+	.resume_text h5.title, .exp_box span, .check-list ul li, .skill-set ul.key-skills:before{font-size: 14px !important;}
+	.skill-set ul.key-skills:before{font-size: 10px;}
+	.resume_wrapper_5 .resume_inner_5 .resume_item.style-5.eductaion .resume_content .resume_text h5.title{
+		 margin-top: -60%;
+        margin-left: 28%;
+        font-size: 14px;
+        line-height: 20px;
+	}
+	.my-skills .skill_title{padding: 8px 16px;}
+	.testimonial-item.style-4 .desc, .my-skills a .skill_title{font-size: 14px;}
+	    .text-section .section-header .section-title {
+        font-size: 34px;
+    }
 }

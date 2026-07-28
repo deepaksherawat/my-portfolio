@@ -253,6 +253,7 @@ span.present-text{color: var(--golden-yellow-1);}
 	align-items: flex-start;
 	gap: 10px;
 	margin-bottom: 15px;
+	color: var(--white-1);
 }
 .resume-list li:nth-child(n+6) {
     display: none;
@@ -296,6 +297,7 @@ span.present-text{color: var(--golden-yellow-1);}
 }
 .skill-set ul.key-skills:before{
 	content: "Skills In Used : ";
+	color: var(--white-1);
 }
 .skill-set ul.key-skills {
     display: flex;
@@ -312,6 +314,7 @@ span.present-text{color: var(--golden-yellow-1);}
     padding: 6px 12px;
     font-size: 14px;
     text-transform: uppercase;
+	color: var(--white-1);
 }
 .skill-set ul.key-skills li.toggle-li {
     display: block;

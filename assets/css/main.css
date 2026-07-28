@@ -4443,6 +4443,9 @@ img.portfolio-image {
     z-index: 9;
     height: 360px;
 }
+.testimonial-item.style-4 .desc {
+    color: var(--white-1);
+}
 .testimonial-item.style-4 .bg-shape{
 position: absolute;
     left: 0;
@@ -4506,6 +4509,7 @@ position: absolute;
 .testimonial-item.style-4 .testimonial-auother .auother-text .subtitle {
     font-size: 14px;
     letter-spacing: 0.02em;
+	color: var(--white-1);
 }
 .testimonial-section.style-4 .testimonial-pagination {
 	  display: flex;
