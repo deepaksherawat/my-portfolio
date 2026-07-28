@@ -1,3 +1,3 @@
 <?php get_header(); ?>
-<!-- Deepa Sherawat Web Developer -->
+<!-- Deepak Sherawat Web Developer -->
 <?php get_footer(); ?>
