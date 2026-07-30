@@ -392,11 +392,11 @@ if ($(".service-slider-8").length > 0) {
                 spaceBetween: 15,
             },
             992: {
-                slidesPerView: 2,
+                slidesPerView: 3,
                 spaceBetween: 30,
             },
             1200: {
-                slidesPerView: 2,
+                slidesPerView: 3,
                 spaceBetween: 30,
             },
         },

@@ -2,8 +2,14 @@
 	.side-navbar {
 		display: none;
 	}
+	.main-navigation a.mobile_hire {
+    display: none;
+}
 }
 @media only screen and (min-width: 1400px) and (max-width: 1599px) {
+	.main-navigation a.mobile_hire {
+    display: none;
+}
 	.hero-section .intro_text svg text {
 		font-size: 260px;
 	}
@@ -21,6 +27,9 @@
 
 /* Extra Large Devices */
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+	.main-navigation a.mobile_hire {
+    display: none;
+}
 	.resume_wrapper_5 .resume_inner_5 .icon_box.desktop_version {
     display: none;
 }
@@ -64,6 +73,9 @@
 
 /* Large Devices */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.main-navigation a.mobile_hire {
+    display: none;
+}
 	.resume_wrapper_5 .resume_inner_5 .icon_box.desktop_version {
     display: none;
 }
@@ -211,6 +223,9 @@
 
 /* Tablet Devices */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+	.main-navigation a.mobile_hire {
+    display: none;
+}
 	.tj-service-section.style-8 .service_nav_desktop .service-navigation,.tj-service-section.style-8 .service_nav_desktop .service-button{
 		display: none;
 	}
@@ -923,6 +938,9 @@ section#contact-section .row .col-lg-5 {
 }
 /* Mobile Devices 575px */
 @media (max-width: 575px) {
+	.main-navigation a.mobile_hire {
+    display: none;
+}
 	/*.resume_wrapper_5 .resume_inner_5 .icon_box.mobile_version {
     display: none;
 }*/
