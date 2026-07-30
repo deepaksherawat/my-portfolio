@@ -6,6 +6,7 @@
 <div class="row">
 <div class="col-md-12">
 <div class="section-header text-center">
+<span class="subtitle wow fadeInUp" data-wow-delay=".3s"><?php echo esc_html( $faq_sub_heading ); ?></span>
 <h2 class="section-title wow fadeInUp" data-wow-delay=".3s"><?php the_field('faq_heading') ?></h2>
 </div>
 </div>
